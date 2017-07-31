@@ -7,7 +7,9 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
-var users = require('./routes/users');
+var med = require('./routes/med');
+var login = require('./routes/login');
+var my = require('./routes/my');
 
 var app = express();
 
@@ -23,8 +25,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', index);
-app.use('/users', users);
+app.all('/my*', my);
+app.all('/med*', med);
+app.all('/login*', login);
+app.all('/', index);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -46,12 +50,12 @@ app.use(function(err, req, res, next) {
 
 
 
-// app.listen(3000,function(){
-//   console.log("Server connected");
-// });
+app.listen(3000,function(){
+   console.log("Server connected");
+});
 //localhost 실행시
 
-app.listen(process.env.PORT, process.env.IP);  //c9 실행시 알아서 주석을 없애요
+//app.listen(process.env.PORT, process.env.IP);  //c9 실행시 알아서 주석을 없애요
 
 
 
