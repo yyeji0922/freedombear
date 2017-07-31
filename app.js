@@ -51,10 +51,10 @@ app.use(function(err, req, res, next) {
 
 
 //localhost 실행시
-app.listen(3000,function(){
-   console.log("Server connected");
-});
+// app.listen(3000,function(){
+//   console.log("Server connected");
+// });
 
-//app.listen(process.env.PORT, process.env.IP);  //c9 실행시 알아서 주석을 없애요
+app.listen(process.env.PORT, process.env.IP);  //c9 실행시 알아서 주석을 없애요
 
 module.exports = app;
