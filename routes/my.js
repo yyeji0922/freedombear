@@ -17,9 +17,19 @@ var router = express.Router();
 // });
 
 /* GET news listing. */
-router.get('/my', function(req, res) {
+router.get('/my/show', function(req, res) {
  res.render('my_show', { title: 'My' });
 
 });
+
+router.get('/my/update', function(req, res) {
+ res.render('my_show', { title: 'My' });
+
+});
+router.get('/my/posted', function(req, res) {
+ res.render('my_show', { title: 'My' });
+
+});
+
 
 module.exports = router;

@@ -21,4 +21,7 @@ router.get('/med', function(req, res) {
  res.render('med', { title: 'med' });
 });
 
+router.get('/med/new', function(req, res) {
+ res.render('med', { title: 'med' });
+});
 module.exports = router;
