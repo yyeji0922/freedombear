@@ -1,6 +1,6 @@
 
 <%include main%>
-
+<link href="/stylesheets/plugins/footable.core.css" rel="stylesheet">
 
     </head>
 
@@ -33,7 +33,7 @@
                         <div class="text-center card-box">
                             <div class="member-card">
                                 <div class="thumb-xl member-thumb m-b-10 center-block">
-                                    <img src="/images/users/avatar-1.jpg" class="img-circle img-thumbnail" alt="profile-image">
+                                    <img src="/images/gom.jpg" class="img-circle img-thumbnail" alt="profile-image">
                                 </div>
 
                                 <div class="">
@@ -71,27 +71,7 @@
 
                         </div> <!-- end card-box -->
 
-                        <div class="card-box">
-                            <h4 class="m-t-0 m-b-20 header-title">Skills</h4>
-
-                            <div class="p-b-10">
-                                <p>HTML5</p>
-                                <div class="progress progress-sm">
-                                    <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-                                    </div>
-                                </div>
-                                <p>PHP</p>
-                                <div class="progress progress-sm">
-                                    <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-                                    </div>
-                                </div>
-                                <p>Wordpress</p>
-                                <div class="progress progress-sm m-b-0">
-                                    <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        
 
                     </div> <!-- end col -->
 
@@ -100,16 +80,10 @@
                         <div class="">
                             <div class="">
                                 <ul class="nav nav-tabs navtab-custom">
-                                    <li class="">
+                                    <li class="active">
                                         <a href="#home" data-toggle="tab" aria-expanded="true">
                                             <span class="visible-xs"><i class="fa fa-user"></i></span>
                                             <span class="hidden-xs">작성한 프로젝트</span>
-                                        </a>
-                                    </li>
-                                    <li class="active">
-                                        <a href="#profile" data-toggle="tab" aria-expanded="false">
-                                            <span class="visible-xs"><i class="fa fa-photo"></i></span>
-                                            <span class="hidden-xs">해야할 프로젝트</span>
                                         </a>
                                     </li>
                                     <li class="">
@@ -120,117 +94,122 @@
                                     </li>
                                 </ul>
                                 <div class="tab-content">
-                                    <div class="tab-pane" id="home">
-                                        <p class="m-b-5">Hi I'm Johnathn Deo,has been the industry's standard dummy text ever
-                                            since the 1500s, when an unknown printer took a galley of type.
-                                            Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.
-                                            In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.
-                                            Nullam dictum felis eu pede mollis pretium. Integer tincidunt.Cras
-                                            dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend
-                                            tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend
-                                            ac, enim.</p>
-
-                                        <div class="m-t-30">
-                                            <h4>Experience</h4>
-
-                                            <div class=" p-t-10">
-                                                <h5 class="text-primary m-b-5">Lead designer / Developer</h5>
-                                                <p class="">websitename.com</p>
-                                                <p><b>2010-2015</b></p>
-
-                                                <p class="text-muted font-13 m-b-0">Lorem Ipsum is simply dummy text
-                                                    of the printing and typesetting industry. Lorem Ipsum has
-                                                    been the industry's standard dummy text ever since the
-                                                    1500s, when an unknown printer took a galley of type and
-                                                    scrambled it to make a type specimen book.
-                                                </p>
+                                    <div class="tab-pane active" id="home">
+                                        
+                                       <table id="demo-foo-addrow" class="table m-b-0 toggle-circle" data-page-size="7">
+                                            <thead>
+                                                <tr>
+                                                    <th data-sort-ignore="true" class="min-width"></th>
+                                                    <th data-sort-initial="true" data-toggle="true">작성자</th>
+                                                    <th>제목</th>
+                                                    <th data-hide="phone">내용</th>
+                                                    <th data-hide="phone, tablet">날짜</th>
+                                                    <th data-hide="phone, tablet">상태</th>
+                                                </tr>
+                                            </thead>
+                                            <div class="pad-btm form-inline">
+                                                <div class="row">
+                                                    <div class="col-sm-6 text-xs-center text-right">
+                                                        <div class="form-group">
+                                                            <input id="demo-input-search2" type="text" placeholder="Search" class="form-control  input-sm" autocomplete="off">
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
-
-                                            <hr>
-
-                                            <div class="">
-                                                <h5 class="text-primary m-b-5">Senior Graphic Designer</h5>
-                                                <p class="">coderthemes.com</p>
-                                                <p><b>2007-2009</b></p>
-
-                                                <p class="text-muted font-13">Lorem Ipsum is simply dummy text
-                                                    of the printing and typesetting industry. Lorem Ipsum has
-                                                    been the industry's standard dummy text ever since the
-                                                    1500s, when an unknown printer took a galley of type and
-                                                    scrambled it to make a type specimen book.
-                                                </p>
-                                            </div>
-                                        </div>
+                                            <tbody>
+                                                <tr>
+                                                    <td style="text-align: center;"><button class="demo-delete-row btn btn-danger btn-xs btn-icon fa fa-times"></button></td>
+                                                    <td>Isidra</td>
+                                                    <td>Boudreaux</td>
+                                                    <td>Traffic Court Referee</td>
+                                                    <td>22 Jun 1972</td>
+                                                    <td><span class="label label-table label-success">Active</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: center;"><button class="demo-delete-row btn btn-danger btn-xs btn-icon fa fa-times"></button></td>
+                                                    <td>Shona</td>
+                                                    <td>Woldt</td>
+                                                    <td>Airline Transport Pilot</td>
+                                                    <td>3 Oct 1981</td>
+                                                    <td><span class="label label-table label-inverse">Disabled</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: center;"><button class="demo-delete-row btn btn-danger btn-xs btn-icon fa fa-times"></button></td>
+                                                    <td>Granville</td>
+                                                    <td>Leonardo</td>
+                                                    <td>Business Services Sales Representative</td>
+                                                    <td>19 Apr 1969</td>
+                                                    <td><span class="label label-table label-danger">Suspended</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: center;"><button class="demo-delete-row btn btn-danger btn-xs btn-icon fa fa-times"></button></td>
+                                                    <td>Easer</td>
+                                                    <td>Dragoo</td>
+                                                    <td>Drywall Stripper</td>
+                                                    <td>13 Dec 1977</td>
+                                                    <td><span class="label label-table label-success">Active</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: center;"><button class="demo-delete-row btn btn-danger btn-xs btn-icon fa fa-times"></button></td>
+                                                    <td>Maple</td>
+                                                    <td>Halladay</td>
+                                                    <td>Aviation Tactical Readiness Officer</td>
+                                                    <td>30 Dec 1991</td>
+                                                    <td><span class="label label-table label-danger">Suspended</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: center;"><button class="demo-delete-row btn btn-danger btn-xs btn-icon fa fa-times"></button></td>
+                                                    <td>Maxine</td>
+                                                    <td><a href="#">Woldt</a></td>
+                                                    <td><a href="#">Business Services Sales Representative</a></td>
+                                                    <td>17 Oct 1987</td>
+                                                    <td><span class="label label-table label-inverse">Disabled</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: center;"><button class="demo-delete-row btn btn-danger btn-xs btn-icon fa fa-times"></button></td>
+                                                    <td>Lorraine</td>
+                                                    <td>Mcgaughy</td>
+                                                    <td>Hemodialysis Technician</td>
+                                                    <td>11 Nov 1983</td>
+                                                    <td><span class="label label-table label-inverse">Disabled</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: center;"><button class="demo-delete-row btn btn-danger btn-xs btn-icon fa fa-times"></button></td>
+                                                    <td>Lizzee</td>
+                                                    <td><a href="#">Goodlow</a></td>
+                                                    <td>Technical Services Librarian</td>
+                                                    <td>1 Nov 1961</td>
+                                                    <td><span class="label label-table label-danger">Suspended</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: center;"><button class="demo-delete-row btn btn-danger btn-xs btn-icon fa fa-times"></button></td>
+                                                    <td>Judi</td>
+                                                    <td>Badgett</td>
+                                                    <td>Electrical Lineworker</td>
+                                                    <td>23 Jun 1981</td>
+                                                    <td><span class="label label-table label-success">Active</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: center;"><button class="demo-delete-row btn btn-danger btn-xs btn-icon fa fa-times"></button></td>
+                                                    <td>Lauri</td>
+                                                    <td>Hyland</td>
+                                                    <td>Blackjack Supervisor</td>
+                                                    <td>15 Nov 1985</td>
+                                                    <td><span class="label label-table label-danger">Suspended</span></td>
+                                                </tr>
+                                            </tbody>
+                                            <tfoot>
+                                                <tr>
+                                                    <td colspan="6">
+                                                        <div class="text-right">
+                                                            <ul class="pagination pagination-split m-t-30"></ul>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
                                     </div>
-                                    <div class="tab-pane active" id="profile">
-                                        <div class="row">
-                                            <div class="col-sm-4">
-                                                <div class="gal-detail thumb">
-                                                    <a href="#" class="image-popup" title="Screenshot-2">
-                                                        <img src="/images/gallery/1.jpg" class="thumb-img" alt="work-thumbnail">
-                                                    </a>
-                                                    <h4 class="text-center">Gallary Image</h4>
-                                                    <div class="ga-border"></div>
-                                                    <p class="text-muted text-center"><small>Photography</small></p>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-sm-4">
-                                                <div class="gal-detail thumb">
-                                                    <a href="#" class="image-popup" title="Screenshot-2">
-                                                        <img src="/images/gallery/2.jpg" class="thumb-img" alt="work-thumbnail">
-                                                    </a>
-                                                    <h4 class="text-center">Gallary Image</h4>
-                                                    <div class="ga-border"></div>
-                                                    <p class="text-muted text-center"><small>Photography</small></p>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-sm-4">
-                                                <div class="gal-detail thumb">
-                                                    <a href="#" class="image-popup" title="Screenshot-2">
-                                                        <img src="/images/gallery/3.jpg" class="thumb-img" alt="work-thumbnail">
-                                                    </a>
-                                                    <h4 class="text-center">Gallary Image</h4>
-                                                    <div class="ga-border"></div>
-                                                    <p class="text-muted text-center"><small>Photography</small></p>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-sm-4">
-                                                <div class="gal-detail thumb">
-                                                    <a href="#" class="image-popup" title="Screenshot-2">
-                                                        <img src="/images/gallery/4.jpg" class="thumb-img" alt="work-thumbnail">
-                                                    </a>
-                                                    <h4 class="text-center">Gallary Image</h4>
-                                                    <div class="ga-border"></div>
-                                                    <p class="text-muted text-center"><small>Photography</small></p>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-sm-4">
-                                                <div class="gal-detail thumb">
-                                                    <a href="#" class="image-popup" title="Screenshot-2">
-                                                        <img src="/images/gallery/5.jpg" class="thumb-img" alt="work-thumbnail">
-                                                    </a>
-                                                    <h4 class="text-center">Gallary Image</h4>
-                                                    <div class="ga-border"></div>
-                                                    <p class="text-muted text-center"><small>Photography</small></p>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-sm-4">
-                                                <div class="gal-detail thumb">
-                                                    <a href="#" class="image-popup" title="Screenshot-2">
-                                                        <img src="/images/gallery/6.jpg" class="thumb-img" alt="work-thumbnail">
-                                                    </a>
-                                                    <h4 class="text-center">Gallary Image</h4>
-                                                    <div class="ga-border"></div>
-                                                    <p class="text-muted text-center"><small>Photography</small></p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    
                                     <div class="tab-pane" id="settings">
                                         <form role="form">
                                             <div class="form-group">
@@ -288,7 +267,11 @@
 
 
         <%include mainjs%>
-
+        
+        <!--FooTable-->
+		<script src="/js/plugins/footable.all.min.js"></script>
+		<!--FooTable Example-->
+		<script src="/js/pages/jquery.footable.js"></script>
 
     </body>
 </html>
