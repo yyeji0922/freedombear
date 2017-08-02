@@ -1,7 +1,12 @@
 var express = require('express');
+var mongoose = require('mongoose');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
+var passport=require('passport');
+var session=require('expresss-session');
+var flash= require('connect-flash');
+var async= require('async');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
@@ -20,9 +25,17 @@ app.set('view engine', 'ejs');
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(flash());
+app.use(methodOverride("_method"));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(session({
+  secret : "freedombear"
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+
 
 app.all('/my*', my);
 app.all('/med*', med);
