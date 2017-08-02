@@ -1,14 +1,14 @@
 var express = require('express');
-var mongoose = require('mongoose');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
-var passport=require('passport');
-var session=require('expresss-session');
+var passport = require('./config/passport');
+var session=require('express-session');
 var flash= require('connect-flash');
 var async= require('async');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var methodOverride = require('method-override');
 
 var index = require('./routes/index');
 var med = require('./routes/med');
@@ -16,6 +16,7 @@ var login = require('./routes/login');
 var my = require('./routes/my');
 
 var app = express();
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -26,12 +27,18 @@ app.set('view engine', 'ejs');
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(flash());
 app.use(methodOverride("_method"));
 app.use(cookieParser());
+app.use(flash());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({
-  secret : "freedombear"
+  secret : "freedombear",
+  key: "freedombear",
+  resave: false,
+  saveUninitialized: true,
+  cookie: {
+    maxAge: 1000*60*60 
+  }  
 }));
 app.use(passport.initialize());
 app.use(passport.session());
@@ -63,10 +70,10 @@ app.use(function(err, req, res, next) {
 
 
 //localhost 실행시
-// app.listen(3000,function(){
-//   console.log("Server connected");
-// });
+ app.listen(3000,function(){
+   console.log("Server connected");
+ });
 
-app.listen(process.env.PORT, process.env.IP);  //c9 실행시 알아서 주석을 없애요
+//app.listen(process.env.PORT, process.env.IP);  //c9 실행시 알아서 주석을 없애요
 
 module.exports = app;

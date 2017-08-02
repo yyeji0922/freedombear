@@ -1,14 +1,10 @@
 var express = require('express');
+//var mariasql = require('mariasql');
+var async = require('async');
 var router = express.Router();
-// var mysql = require('mysql');
+const db_config = require('../config/db_config.json');
+
 // /*DB Connection*/
-// var con = mysql.createConnection({
-// 	host : '10.10.10.10',
-// 	port : 3306,
-// 	user : 'freedombear',
-// 	password:'freedombear',
-// 	database:'freedombear'
-// });
 
 // con.connect();
 // con.query('SELECT now()',function(err,rows,fields){
@@ -17,11 +13,32 @@ var router = express.Router();
 // });
 
 /* GET users listing. */
-router.get('/login', function(req, res, next) {
- res.render('login', { title: 'Login' });
+router.get('/login', function(req, res) {
+ res.render('login',{id : req.flash("id")[0], loginError:req.flash("loginError")});
 });
 
-router.get('/login/new', function(req, res, next) {
- res.render('login', { title: 'Login' });
+router.post('/login', function(req, res) {
+    req.flash("id");
+    if( req.body.id.length===0 || req.body.password.length===0 ){
+        req.flash("id",req.body.id);
+        req.flash("loginError","Please enter both email AND password");
+        req.redirect('/login');
+    }
+    else console.log("NEED TO CHANGE HERE");
 });
+
+router.get('/login/new', function(req, res) {
+ res.render('login_new',{
+                        formData : req.flash("formData")[0],
+                        nicknameError : req.flash("nicknameError")[0],
+                        passwordError : req.flash("passwordError")[0]
+                        });
+});
+
+router.get('/login/logout',function(req,res){
+    req.logout();
+    res.redirect('/');
+});
+
+
 module.exports = router;
