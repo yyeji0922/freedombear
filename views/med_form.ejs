@@ -1,4 +1,5 @@
-<% include main %>
+<%include main%>
+        <link rel="stylesheet" href="/stylesheets/plugins/summernote.css">
     </head>
 
 
@@ -15,72 +16,102 @@
         <div class="wrapper">
             <div class="container">
 
-                
-                <!-- Page-Title -->
+
 
                 <div class="row">
-                    <div class="col-lg-2"></div>
-                    <div class="col-lg-8">
-                        <div class="card-box">
-                            <h4 class="m-t-0 m-b-30 header-title"><b>게시글 작성하기</b></h4>
-                            
-                                    <form class="form-horizontal group-border-dashed" action="#">
-                                        <div class="form-group">
-                                            <label class="col-sm-2 control-label">제목</label>
-                                            <div class="col-sm-8">
-                                                <input type="text" class="form-control" required placeholder="Type something" />
-                                            </div>
-                                        </div>
 
-                                        <div class="form-group">
-                                            <label class="col-sm-2 control-label">내용</label>
-                                            <div class="col-sm-8">
-                                                <textarea id="elm1" required class="form-control" rows=10></textarea>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <div class="col-sm-offset-3 col-sm-9 m-t-15">
-                                                <button type="submit" class="btn btn-primary waves-effect waves-light">
-                                                    Submit
-                                                </button>
-                                                <button type="reset" class="btn btn-default waves-effect m-l-5">
-                                                    Cancel
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </form>
+                    <!-- Left sidebar -->
+                    <div class="col-lg-3 col-md-4">
+
+                        <div class="m-t-20">
+                            <a href="/med/new" class="btn btn-danger btn-custom btn-block waves-effect waves-light">목록으로</a>
+
+                            <div class="list-group mail-list  m-t-20">
+                                <a href="#" class="list-group-item b-0"><i class="fa fa-download m-r-10"></i>금액높은순</a>
+                                <a href="#" class="list-group-item b-0"><i class="fa fa-star-o m-r-10"></i>금액낮은순</a>
+                                <a href="#" class="list-group-item b-0"><i class="fa fa-file-text-o m-r-10"></i>최신등록순</a>
+                                <a href="#" class="list-group-item b-0"><i class="fa fa-paper-plane-o m-r-10"></i>마감임박순</a>
                             </div>
-                            <div class="col-lg-2"></div>
-                                
                             
+                            <!--<div class="list-group mail-list  m-t-20">-->
+                            <!--    <a href="mail-inbox.html" class="list-group-item b-0 active"><i class="fa fa-download m-r-10"></i>Inbox <b>(8)</b></a>-->
+                            <!--    <a href="#" class="list-group-item b-0"><i class="fa fa-star-o m-r-10"></i>Starred</a>-->
+                            <!--    <a href="#" class="list-group-item b-0"><i class="fa fa-file-text-o m-r-10"></i>Draft <b>(20)</b></a>-->
+                            <!--    <a href="#" class="list-group-item b-0"><i class="fa fa-paper-plane-o m-r-10"></i>Sent Mail</a>-->
+                            <!--    <a href="#" class="list-group-item b-0"><i class="fa fa-trash-o m-r-10"></i>Trash <b>(354)</b></a>-->
+                            <!--</div>-->
+
+
+                        </div>
+
                     </div>
-                </div>
+                    <!-- End Left sidebar -->
 
-                <!--<div class="row">-->
-                <!--    <div class="col-sm-12">-->
-                <!--        <div class="card-box">-->
-                <!--            <form method="post">-->
-                <!--                <textarea id="elm1" name="area"></textarea>-->
-                <!--            </form>-->
-                <!--        </div>-->
-                <!--    </div>-->
-                <!--</div>-->
+                    <!-- Right Sidebar -->
+                    <div class="col-lg-9 col-md-8">
 
-                <!-- End row -->
-
-
-
-                <!-- Footer -->
-                <footer class="footer text-right">
-                    <div class="container">
                         <div class="row">
-                            <div class="col-xs-12">
-                                2017 © Minton.
+                            <div class="col-sm-12">
+                                <div class="card-box m-t-20">
+                                    <div class="p-20">
+                                        <form role="form">
+                                            <div class="form-group">
+                                                <input type="email" class="form-control" placeholder="제목">
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <input type="email" class="form-control" placeholder="담당자연락처">
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <input type="email" class="form-control" placeholder="예상금액">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="프로젝트 기한">
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="summernote">
+                                                    <h6>내용입력하자</h6>
+                                                    <ul>
+                                                        <li>
+                                                            Select a text to reveal the toolbar.
+                                                        </li>
+                                                        <li>
+                                                            Edit rich document on-the-fly, so elastic!
+                                                        </li>
+                                                    </ul>
+                                                    <p>
+                                                        End of air-mode area
+                                                    </p>
+
+                                                </div>
+                                            </div>
+
+                                            <div class="btn-toolbar form-group m-b-0">
+                                                <div class="pull-right">
+                                                    <button class="btn btn-purple waves-effect waves-light"> <span>등록하기</span> <i class="fa fa-send m-l-10"></i> </button>
+                                                </div>
+                                            </div>
+
+                                        </form>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
-                    </div>
-                </footer>
-                <!-- End Footer -->
+
+                        <!-- End row -->
+
+
+                    </div> <!-- end Col-9 -->
+
+                </div><!-- End row -->
+
+
+
+                <%include footer%>
 
             </div> <!-- end container -->
         </div>
@@ -88,22 +119,24 @@
 
 
 
-        <% include mainjs%>
-     
-        <!--form wysiwig-->
-        <!--<script src="/js/tinymce.min.js"></script>-->
+       <%include mainjs%>
 
-         <!-- Parsleyjs -->
-        <script type="text/javascript" src="/js/plugins/parsley.min.js"></script>
+        <!-- Summer note -->
+        <script src="/js/plugins/summernote.min.js"></script>
+
         
-       
-         <script type="text/javascript">
- 			$(document).ready(function() {
- 				$('form').parsley();
- 			});
- 		</script>   
-        
-        
+
+        <script>
+            jQuery(document).ready(function () {
+
+                $('.summernote').summernote({
+                    height: 350,                 // set editor height
+                    minHeight: null,             // set minimum height of editor
+                    maxHeight: null,             // set maximum height of editor
+                    focus: false                 // set focus to editable area after initializing summernote
+                });
+            });
+        </script>
 
 
     </body>
