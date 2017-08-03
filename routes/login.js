@@ -1,9 +1,9 @@
 var express = require('express');
-//var mariasql = require('mariasql');
+var mariasql = require('mariasql');
 var async = require('async');
 var router = express.Router();
 const db_config = require('../config/db_config.json');
-const pool = mysql.createPool(db_config);
+const pool = mariasql.createPool(db_config);
 // /*DB Connection*/
 
 // con.connect();
