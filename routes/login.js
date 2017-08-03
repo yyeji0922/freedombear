@@ -2,8 +2,8 @@ var express = require('express');
 var mysql = require('mysql');
 var async = require('async');
 var router = express.Router();
-const db_config = require('../config/db_config.json');
-const pool = mysql.createPool(db_config);
+//const db_config = require('../config/db_config.json');
+//const pool = mysql.createPool(db_config);
 // /*DB Connection*/
 
 // con.connect();
@@ -12,7 +12,7 @@ const pool = mysql.createPool(db_config);
 // 	console.log(rows);
 // });
 
-/* GET users listing. */
+/* GET users listing. 
 router.get('/login', function(req, res) {
  res.render('login',{id : req.flash("id")[0], loginError:req.flash("loginError")});
 });
@@ -29,10 +29,10 @@ router.post('/login', function(req, res, next) {
     passport.authenticate('local-login',{
         successRedirect : '/',
         failureRedirect : '/login',
-        failureFalsh: true
+        failureFalsh:s true
     })
 );
-/*
+
 router.get('/login/new', function(req, res) {
  res.render('login_new',{
                         formData : req.flash("formData")[0],
