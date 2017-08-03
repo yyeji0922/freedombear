@@ -26,21 +26,11 @@ router.post('/login', function(req, res, next) {
     }
     else next(); 
     },
-    pool.getConnection( function (err, conn){
-        if(err){
-            res.status(500).send( 'error' );
-            console.log( "Failed to Connect to Database" + err );
-        }
-        else{
-            conn.query( 'select id, password from User where id=?' , [ req.body.id, req.body.password ], function(err,rows){
-            if(err) console.log("hmm");
-            else console.log("LOGIN!");
-            });
-        }
-    }),
-    function(){
-        console.log("gg");
-    }
+    passport.authenticate('local-login',{
+        successRedirect : '/',
+        failureRedirect : '/login',
+        failureFalsh: true
+    })
 );
 /*
 router.get('/login/new', function(req, res) {
@@ -57,4 +47,21 @@ router.get('/login/logout',function(req,res){
 });
 */
 
+
+
+    /*pool.getConnection( function (err, conn){
+        if(err){
+            res.status(500).send( 'error' );
+            console.log( "Failed to Connect to Database" + err );
+        }
+        else{
+            conn.query( 'select id, password from User where id=?' , [ req.body.id, req.body.password ], function(err,rows){
+            if(err) console.log("hmm");
+            else console.log("LOGIN!");
+            });
+        }
+    }),
+    function(){
+        console.log("gg");
+    }*/
 module.exports = router;
