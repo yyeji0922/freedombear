@@ -1,5 +1,4 @@
 var express = require('express');
-var mariasql = require('mariasql');
 var mysql = require('mysql');
 var async = require('async');
 var router = express.Router();
@@ -17,7 +16,7 @@ const pool = mysql.createPool(db_config);
 router.get('/login', function(req, res) {
  res.render('login',{id : req.flash("id")[0], loginError:req.flash("loginError")});
 });
-
+/*
 router.post('/login', function(req, res, next) {
     req.flash( "id" );    
     if( req.body.id.length === 0 || req.body.password.length === 0 ){
@@ -53,6 +52,6 @@ router.get('/login/logout',function(req,res){
     req.logout();
     res.redirect('/');
 });
-
+*/
 
 module.exports = router;
