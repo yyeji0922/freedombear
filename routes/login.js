@@ -3,7 +3,7 @@ var express = require('express');
 var async = require('async');
 var router = express.Router();
 const db_config = require('../config/db_config.json');
-
+const pool = mysql.createPool(db_config);
 // /*DB Connection*/
 
 // con.connect();
@@ -17,15 +17,27 @@ router.get('/login', function(req, res) {
  res.render('login',{id : req.flash("id")[0], loginError:req.flash("loginError")});
 });
 
-router.post('/login', function(req, res) {
-    req.flash("id");
-    if( req.body.id.length===0 || req.body.password.length===0 ){
-        req.flash("id",req.body.id);
-        req.flash("loginError","Please enter both email AND password");
-        req.redirect('/login');
+router.post('/login', function(req, res, next) {
+    req.flash( "id" );    
+    if( req.body.id.length === 0 || req.body.password.length === 0 ){
+        req.flash( "id", req.body.id);
+        req.flash( "loginError", "Please enter both email AND password" );
+        req.redirect( '/login' );
     }
-    else console.log("NEED TO CHANGE HERE");
-});
+    else next(); 
+    },
+    pool.getConnection( function (err, conn){
+        if(err){
+            res.status(500).send( 'error' );
+            console.log( "Failed to Connect to Database" + err );
+        }
+        else{
+            conn.query( 'select id, password from User where id=?' , [ req.body.id, req.body.password ], function(err,rows){
+            console.log("LOGIN!");
+            });
+        }
+    })
+);
 
 router.get('/login/new', function(req, res) {
  res.render('login_new',{
