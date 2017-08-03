@@ -1,9 +1,10 @@
 var express = require('express');
 var mariasql = require('mariasql');
+var mysql = require('mysql');
 var async = require('async');
 var router = express.Router();
 const db_config = require('../config/db_config.json');
-const pool = mariasql.createPool(db_config);
+const pool = mysql.createPool(db_config);
 // /*DB Connection*/
 
 // con.connect();
@@ -33,7 +34,8 @@ router.post('/login', function(req, res, next) {
         }
         else{
             conn.query( 'select id, password from User where id=?' , [ req.body.id, req.body.password ], function(err,rows){
-            console.log("LOGIN!");
+            if(err) console.log("hmm");
+            else console.log("LOGIN!");
             });
         }
     })
