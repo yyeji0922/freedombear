@@ -14,10 +14,59 @@
         <div class="wrapper">
             <div class="container">
 
-               <!-- Page-Title -->
-
 
                 <div class="row">
+
+                    <!-- Left sidebar -->
+                    <div class="col-lg-3 col-md-4">
+
+                        <div class="m-t-20">
+                            <a href="/med/new" class="btn btn-danger btn-custom btn-block waves-effect waves-light">새로 등록하기</a>
+
+                            <div class="list-group mail-list  m-t-20">
+                                <a href="#" class="list-group-item b-0 active"><i class="fa fa-download m-r-10"></i>금액높은순</a>
+                                <a href="#" class="list-group-item b-0"><i class="fa fa-star-o m-r-10"></i>금액낮은순</a>
+                                <a href="#" class="list-group-item b-0"><i class="fa fa-file-text-o m-r-10"></i>최신등록순</a>
+                                <a href="#" class="list-group-item b-0"><i class="fa fa-paper-plane-o m-r-10"></i>마감임박순</a>
+                            </div>
+                            
+                            <!--<div class="list-group mail-list  m-t-20">-->
+                            <!--    <a href="mail-inbox.html" class="list-group-item b-0 active"><i class="fa fa-download m-r-10"></i>Inbox <b>(8)</b></a>-->
+                            <!--    <a href="#" class="list-group-item b-0"><i class="fa fa-star-o m-r-10"></i>Starred</a>-->
+                            <!--    <a href="#" class="list-group-item b-0"><i class="fa fa-file-text-o m-r-10"></i>Draft <b>(20)</b></a>-->
+                            <!--    <a href="#" class="list-group-item b-0"><i class="fa fa-paper-plane-o m-r-10"></i>Sent Mail</a>-->
+                            <!--    <a href="#" class="list-group-item b-0"><i class="fa fa-trash-o m-r-10"></i>Trash <b>(354)</b></a>-->
+                            <!--</div>-->
+
+
+                        </div>
+
+                    </div>
+                    <!-- End Left sidebar -->
+
+                    <!-- Right Sidebar -->
+                    <div class="col-lg-9 col-md-8">
+                        
+                        
+                        <!--<div class="row" style="margin-bottom:20px">-->
+                   
+                        <!--    <div class="col-lg-3"></div>-->
+                        <!--    <div class="col-lg-6">-->
+                                    
+                        <!--        <form role="search" class="form-inline">-->
+                                            
+                        <!--             <input type="text" class="form-control" placeholder="Search" style="width:90%;background-color:white; line-height:40px;height:40px;">-->
+                        <!--             <a href=""><i class="fa fa-search"></i></a>-->
+                                                
+                        <!--        </form>-->
+                        <!--    </div>            -->
+                        <!--    <div class="col-lg-3"></div>            -->
+                                   
+                            
+                        <!--</div>-->
+                        
+                        
+                        <div class="row">
                     <div class="col-sm-12">
                         <div class="card-box">
                             
@@ -32,23 +81,21 @@
                                     </tr>
                                 </thead>
                                 <div class="form-inline m-b-20">
-                                    <div class="row">
-                                        <div class="col-sm-6 text-xs-center">
-                                            <div class="form-group">
-                                                <label class="control-label m-r-5">상태</label>
-                                                <select id="demo-foo-filter-status" class="form-control input-sm">
-                                                    <option value="">전체</option>
-                                                    <option value="active">진행중</option>
-                                                    <option value="disabled">완료</option>
-                                                    <option value="suspended">Suspended</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6 text-xs-center text-right">
-                                            <div class="form-group">
-                                                <input id="demo-foo-search" type="text" placeholder="Search" class="form-control input-sm" autocomplete="on">
-                                            </div>
-                                        </div>
+                                    <div class="row" style="margin-bottom:20px">
+                   
+                                        <div class="col-lg-3"></div>
+                                        <div class="col-lg-6">
+                                                
+                                            <form role="search" class="form-inline">
+                                                        
+                                                 <input type="text" class="form-control" placeholder="Search" style="width:90%;background-color:white; line-height:40px;height:40px;">
+                                                 <a href=""><i class="fa fa-search"></i></a>
+                                                            
+                                            </form>
+                                        </div>            
+                                        <div class="col-lg-3"></div>            
+                                               
+                                        
                                     </div>
                                 </div>
                                 <tbody>
@@ -277,10 +324,12 @@
                     </div>
                 </div>
 
+                        
 
+                    </div> <!-- end Col-9 -->
 
-               
-
+                </div><!-- End row -->
+                
 
                 <!-- Footer -->
                 <%include footer%>
