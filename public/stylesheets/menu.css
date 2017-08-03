@@ -22,13 +22,13 @@ File: Menu
   min-height: 62px;
 }
 #topnav .has-submenu.active a {
-  color: #6a76fc;
+  color: #e6e6ef;
 }
 #topnav .has-submenu.active a i {
-  color: #6a76fc;
+  color: #e6e6ef;
 }
 #topnav .has-submenu.active .submenu li.active > a {
-  color: #6a76fc;
+  color: #e6e6ef;
 }
 #topnav .topbar-main {
   background-color: #6a76fc;
@@ -40,6 +40,7 @@ File: Menu
   letter-spacing: .05em;
   margin-top: 9px;
   float: left;
+  padding: 0px 10px;
 }
 #topnav .topbar-main .logo h1 {
   margin: 0px auto;
@@ -303,7 +304,7 @@ File: Menu
   padding-right: 20px;
 }
 #topnav .navigation-menu > li > a:hover {
-  color: #6a76fc;
+  color: #e6e6ef;
 }
 #topnav .navigation-menu > li > a:hover i {
   color: #6a76fc;
@@ -476,6 +477,9 @@ File: Menu
     padding: 7px 20px;
     color: #797979;
   }
+  
+  
+  
   #topnav .navigation-menu > li .submenu li a:hover {
     color: #6a76fc;
   }
@@ -509,7 +513,7 @@ File: Menu
     color: #79818a;
   }
   #topnav .navigation-menu > li.has-submenu.open > a {
-    color: #6a76fc;
+    color: #e6e6ef;
   }
   #topnav .navbar-header {
     float: left;

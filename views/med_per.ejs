@@ -1,0 +1,132 @@
+<%include main%>
+
+        <link rel="stylesheet" href="/stylesheets/plugins/summernote.css">
+    </head>
+
+
+    <body>
+
+
+        <%include navbar%>
+
+        <!-- =======================
+             ===== START PAGE ======
+             ======================= -->
+
+        <div class="wrapper">
+            <div class="container">
+
+                
+                <div class="row">
+
+                    <!-- Left sidebar -->
+                    <div class="col-lg-3 col-md-4">
+
+                        <div class="m-t-20">
+                            <a href="/med/new" class="btn btn-danger btn-custom btn-block waves-effect waves-light">목록으로</a>
+
+                            <div class="list-group mail-list  m-t-20">
+                                <a href="#" class="list-group-item b-0 active"><i class="fa fa-download m-r-10"></i>금액높은순</a>
+                                <a href="#" class="list-group-item b-0"><i class="fa fa-star-o m-r-10"></i>금액낮은순</a>
+                                <a href="#" class="list-group-item b-0"><i class="fa fa-file-text-o m-r-10"></i>최신등록순</a>
+                                <a href="#" class="list-group-item b-0"><i class="fa fa-paper-plane-o m-r-10"></i>마감임박순</a>
+                            </div>
+                            
+                            <!--<div class="list-group mail-list  m-t-20">-->
+                            <!--    <a href="mail-inbox.html" class="list-group-item b-0 active"><i class="fa fa-download m-r-10"></i>Inbox <b>(8)</b></a>-->
+                            <!--    <a href="#" class="list-group-item b-0"><i class="fa fa-star-o m-r-10"></i>Starred</a>-->
+                            <!--    <a href="#" class="list-group-item b-0"><i class="fa fa-file-text-o m-r-10"></i>Draft <b>(20)</b></a>-->
+                            <!--    <a href="#" class="list-group-item b-0"><i class="fa fa-paper-plane-o m-r-10"></i>Sent Mail</a>-->
+                            <!--    <a href="#" class="list-group-item b-0"><i class="fa fa-trash-o m-r-10"></i>Trash <b>(354)</b></a>-->
+                            <!--</div>-->
+
+
+                        </div>
+
+                    </div>
+                    <!-- End Left sidebar -->
+
+                    <!-- Right Sidebar -->
+                    <div class="col-lg-9 col-md-8">
+
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="card-box m-t-20">
+                                    <h4 class="m-t-0"><b>커피 데이터 정형화 요청</b></h4>
+
+                                    <hr/>
+
+                                    <div class="media m-b-30 ">
+                                        <a href="#" class="pull-left">
+                                            <img alt="" src="/images/users/avatar-2.jpg" class="media-object thumb-sm img-circle">
+                                        </a>
+                                        <div class="media-body">
+                                            <span class="media-meta pull-right">2017-08-03  10:22AM</span>
+                                            <h4 class="text-primary m-0">박소윤</h4>
+                                            <small class="text-muted">010-1234-5678</small>
+                                        </div>
+                                    </div> <!-- media -->
+
+                                    <p><b>Hi Bro...</b></p>
+                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>
+                                    <p>Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi.</p>
+                                    <p>Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar,</p>
+
+                                    <hr/>
+
+                                    <h4> <i class="fa fa-paperclip m-r-10 m-b-10"></i> Attachments <span>(3)</span> </h4>
+
+                                    <div class="row">
+                                        <div class="col-sm-2 col-xs-4">
+                                            <a href="#"> <img src="/images/small/img1.jpg" alt="attachment" class="img-thumbnail img-responsive"> </a>
+                                        </div>
+                                        <div class="col-sm-2 col-xs-4">
+                                            <a href="#"> <img src="/images/small/img2.jpg" alt="attachment" class="img-thumbnail img-responsive"> </a>
+                                        </div>
+                                        <div class="col-sm-2 col-xs-4">
+                                            <a href="#"> <img src="/images/small/img3.jpg" alt="attachment" class="img-thumbnail img-responsive"> </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <button type="button" class="btn btn-primary waves-effect waves-light w-md m-b-30">수정하기</button>
+                                    <button type="button" class="btn btn-primary waves-effect waves-light w-md m-b-30">삭제하기</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div> <!-- end Col-9 -->
+
+                </div><!-- End row -->
+
+
+
+
+                <%include footer%>
+
+            </div> <!-- end container -->
+        </div>
+        <!-- End wrapper -->
+
+
+        
+        <!-- jQuery  -->
+        <%include mainjs%>
+
+        <!-- summer note -->
+        <script src="/js/plugins/summernote.min.js"></script>
+
+       
+
+        <script>
+            jQuery(document).ready(function(){
+
+                $('.summernote').summernote({
+                    airMode: true
+                });
+            });
+        </script>
+
+
+    </body>
+</html>
