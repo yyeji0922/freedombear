@@ -16,7 +16,7 @@ const pool = mysql.createPool(db_config);
 router.get('/login', function(req, res) {
  res.render('login',{id : req.flash("id")[0], loginError:req.flash("loginError")});
 });
-/*
+
 router.post('/login', function(req, res, next) {
     req.flash( "id" );    
     if( req.body.id.length === 0 || req.body.password.length === 0 ){
@@ -37,9 +37,12 @@ router.post('/login', function(req, res, next) {
             else console.log("LOGIN!");
             });
         }
-    })
+    }),
+    function(){
+        console.log("gg");
+    }
 );
-
+/*
 router.get('/login/new', function(req, res) {
  res.render('login_new',{
                         formData : req.flash("formData")[0],
