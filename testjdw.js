@@ -34,8 +34,6 @@ var medSchema= new Schema({
 	writer_id : {type: String, required:true },
 	email : {type: String, required:true},
 	due_date : {type: Date},
-	project_start:{type:Date},
-	project_end:{type:Date},
 	pay: {type: Number, required: true, default: -1},
 	finished: {type: Boolean, required: true, default: false},
 	upload_time : { type: Date, required: true, default: Date.now },
@@ -77,8 +75,6 @@ var med1 = new Med({
 	writer_id:'ilikefruit',
 	email:'freedombear@naver.com',
 	due_date:Date.now + 1000*60*24*3,
-	project_start:Date.now + 1000*60*24*5,
-	project_end:Date.now + 1000*60*24*66,
 	pay:1
 	finished: default,
 	upload_time:default,
@@ -91,8 +87,6 @@ var med2 = new Med({
 	writer_id:'yyeji0922',
 	email:'yyeji0922@naver.com',
 	due_date:Date.now + 1000*60*24*4,
-	project_start:Date.now + 1000*60*24*4,
-	project_end:Date.now + 1000*60*24*34,
 	pay:1.5
 	finished: default,
 	upload_time:default,
