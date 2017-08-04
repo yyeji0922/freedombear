@@ -1,0 +1,109 @@
+
+<%include main%>
+<link href="/stylesheets/plugins/footable.core.css" rel="stylesheet">
+
+    </head>
+
+
+    <body>
+
+
+        <%include navbar%>
+        <!-- End Navigation Bar-->
+
+
+        <!-- =======================
+             ===== START PAGE ======
+             ======================= -->
+
+        <div class="wrapper">
+            <div class="container">
+
+                <!-- Page-Title -->
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h4 class="page-title">Profile</h4>
+                    </div>
+                </div>
+                <!-- Page-Title -->
+
+
+                <div class="row">
+                    <div class="col-lg-12 col-md-4">
+                        <div class="text-center card-box">
+                            <div class="member-card">
+                                <div class="thumb-xl member-thumb m-b-10 center-block">
+                                    <img src="/images/gom.jpg" class="img-circle img-thumbnail" alt="profile-image">
+                                </div>
+
+                                <div class="">
+                                    <h4 class="m-b-5">Mark A. McKnight</h4>
+                                    <p class="text-muted">@webdesigner</p>
+                                </div>
+
+                                <button type="button" class="btn btn-success btn-sm w-sm waves-effect m-t-10 waves-light">Follow</button>
+                                <button type="button" class="btn btn-danger btn-sm w-sm waves-effect m-t-10 waves-light">Message</button>
+
+
+                                <div class="text-left m-t-40">
+                                    <form action="/my/update" method="post">
+                                    <p class="text-muted font-13"><strong>Name :</strong> <span class="m-l-15">
+                                       <input class="form-control" type="text" required="" placeholder="이용자 이름" name="user[name]"></span></p>
+
+                                    <p class="text-muted font-13"><strong>NewPassword :</strong><span class="m-l-15">
+                                        <input class="form-control" type="password" required="" placeholder="OLD Password" name="user[password]"></span></p>
+
+                                    <p class="text-muted font-13"><strong>NewPassword :</strong><span class="m-l-15">
+                                        <input class="form-control" type="password" required="" placeholder="NEW Password" name="user[newpassword]"></span></p>
+
+                                    <p class="text-muted font-13"><strong>NewPassword Confirm :</strong> <span class="m-l-15">
+                                        <input class="form-control" type="password" required="" placeholder="NEW Password" name="user[newpasswordcon]"></span></p>
+                        
+                                    <p class="text-muted font-13"><strong>Email :</strong> <span class="m-l-15">
+                                        <input class="form-control" type="email" required="" placeholder="Email" name="user[email]"></span></p>
+                                    
+                                    <button type="submit">수정</button>
+                                    </form>
+                                    <button >회원 탈퇴</button>
+                                </div>
+
+
+                            </div>
+
+                        </div> <!-- end card-box -->
+
+                        
+
+                    </div> <!-- end col -->
+
+                </div>
+                <!-- end row -->
+
+
+                <!-- Footer -->
+                <footer class="footer text-right">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                2017 © Minton.
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+                <!-- End Footer -->
+
+            </div> <!-- end container -->
+        </div>
+        <!-- End wrapper -->
+
+
+
+        <%include mainjs%>
+        
+        <!--FooTable-->
+		<script src="/js/plugins/footable.all.min.js"></script>
+		<!--FooTable Example-->
+		<script src="/js/pages/jquery.footable.js"></script>
+
+    </body>
+</html>

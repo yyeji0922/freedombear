@@ -10,7 +10,7 @@ var userSchema= mongoose.Schema({
 	email : {type: String,required:true},
 	image: {type:String, required:true, default: "default.jpg"}
 });
-/*
+
 userSchema.pre('save', function (next) {
 	var user = this;
 	if (!user.isModified('password')) {
@@ -29,7 +29,7 @@ userSchema.methods.authenticate = function (password) {
 userSchema.methods.hash = function (password) {
   return bcrypt.hashSync(password);
 };
-*/
+
 
 var User = mongoose.model('user', userSchema);
 module.exports = User;
