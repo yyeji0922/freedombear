@@ -1,5 +1,4 @@
 var express = require('express');
-var mysql = require('mysql');
 var async = require('async');
 var router = express.Router();
 //const db_config = require('../config/db_config.json');

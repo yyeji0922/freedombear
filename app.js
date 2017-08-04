@@ -1,9 +1,10 @@
 var express = require('express');
+var mongoose =require('mongoose');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
-var passport = require('./config/passport');
 var session=require('express-session');
+var passport=require('passport');
 var flash= require('connect-flash');
 var async= require('async');
 var cookieParser = require('cookie-parser');
@@ -14,7 +15,7 @@ var index = require('./routes/index');
 var med = require('./routes/med');
 var login = require('./routes/login');
 var my = require('./routes/my');
-
+var config= require('./config/config')
 var app = express();
 
 
@@ -22,6 +23,15 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+mongoose.connect('mongodb://'+config.account.mongoid+':'+config.account.mongopw+'@ds129030.mlab.com:29030/freedombear');
+
+var db = mongoose.connection;
+db.once("open",function(){
+  console.log("DB connected!");
+});
+db.on("error",function (err){
+  console.log("DB ERROR :", err);
+});
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
