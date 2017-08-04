@@ -12,7 +12,7 @@
                     <div class="menu-extras">
 
                         <ul class="nav navbar-nav navbar-right pull-right">
-                            
+                            <!--
                             <li class="dropdown hidden-xs">
                                 <a href="#" data-target="#" class="dropdown-toggle waves-effect waves-light"
                                    data-toggle="dropdown" aria-expanded="true">
@@ -22,7 +22,7 @@
                                 <ul class="dropdown-menu dropdown-menu-lg">
                                     <li class="text-center notifi-title">Notification</li>
                                     <li class="list-group nicescroll notification-list">
-                                        <!-- list item-->
+                                        
                                         <a href="javascript:void(0);" class="list-group-item">
                                             <div class="media">
                                                 <div class="pull-left p-r-10">
@@ -38,7 +38,6 @@
                                             </div>
                                         </a>
 
-                                        <!-- list item-->
                                         <a href="javascript:void(0);" class="list-group-item">
                                             <div class="media">
                                                 <div class="pull-left p-r-10">
@@ -53,7 +52,6 @@
                                             </div>
                                         </a>
 
-                                        <!-- list item-->
                                         <a href="javascript:void(0);" class="list-group-item">
                                             <div class="media">
                                                 <div class="pull-left p-r-10">
@@ -80,13 +78,17 @@
 
                                 </ul>
                             </li>
-
+                            -->
                             <li class="dropdown">
+                                <% if (user) {%>
                                 <a href="" class="dropdown-toggle waves-effect waves-light profile" data-toggle="dropdown" aria-expanded="true"><img src="/images/gom.jpg" alt="user-img" class="img-circle"> </a>
                                 <ul class="dropdown-menu">
                                     <li><a href="/my/show"><i class="ti-user m-r-5"></i> Profile</a></li>
-                                    <li><a href="javascript:void(0)"><i class="ti-power-off m-r-5"></i> Logout</a></li>
+                                    <li><a href="/login/logout"><i class="ti-power-off m-r-5"></i> Logout</a></li>
                                 </ul>
+                                <%} else {%>
+                                    <a href="/login"  aria-expanded="true"><img src="/images/icon/login.png" alt="user-img" class="img-circle"> </a>
+                                <% } %>
                             </li>
                         </ul>
 
@@ -128,7 +130,7 @@
                                 <a href="/"><i class="md md-invert-colors-on"></i>데이터저장소-출시예정</a>
                             </li>
                             <li class="has-submenu">
-                                <a href="/"><i class="md md-class"></i>이용방법</a>
+                                <a href="/howto"><i class="md md-class"></i>이용방법</a>
                             </li>
 
                         </ul>    

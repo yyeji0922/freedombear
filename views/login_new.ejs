@@ -15,38 +15,41 @@
                 <a href="/" class="logo logo-lg"><img src="/images/data-logo.png"></a>
             </div>
 
-            <form class="form-horizontal m-t-20" action="index.html">
+            <form class="form-horizontal m-t-20" id="user" action="/login/new" method="post">
                 <div class="form-group">
                     <div class="col-xs-12">
-                        <input class="form-control" type="text" required="" placeholder="아이디 입력" name="id">
+                        <input class="form-control" type="text" required="" placeholder="아이디 입력" name="user[uid]">
                         <i class="md md-perm-identity form-control-feedback l-h-34"></i>
                     </div>
                 </div>
                 
                 <div class="form-group">
                     <div class="col-xs-12">
-                        <input class="form-control" type="password" required="" placeholder="Password" name="password">
+                        <input class="form-control" type="password" required="" placeholder="Password" name="user[password]">
+                        <i class="md md-vpn-key form-control-feedback l-h-34"></i>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-12">
+                        <input class="form-control" type="password" required="" placeholder="Password" name="user[passwordConfirmation]">
                         <i class="md md-vpn-key form-control-feedback l-h-34"></i>
                     </div>
                 </div>
                 
                 <div class="form-group">
                     <div class="col-xs-12">
-                        <input class="form-control" type="email" required="" placeholder="Email" name="email">
+                        <input class="form-control" type="email" required="" placeholder="Email" name="user[email]">
                         <i class="md md-email form-control-feedback l-h-34"></i>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <div class="col-xs-12">
-                        <input class="form-control" type="text" required="" placeholder="이용자이름" name="nam">
+                        <input class="form-control" type="text" required="" placeholder="이용자 이름" name="user[name]">
                         <i class="md md-account-circle form-control-feedback l-h-34"></i>
                     </div>
                 </div>
                 
-               
-
-               
 
                 <div class="form-group">
                     <div class="col-xs-12">

@@ -39,8 +39,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 app.use(cookieParser());
-app.use(flash());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(flash());
 app.use(session({
   secret : "freedombear",
   key: "freedombear",
@@ -79,7 +79,7 @@ app.use(function(err, req, res, next) {
 
 
 //localhost 실행시
- app.listen(3000,function(){
+ app.listen(3010,function(){
    console.log("Server connected");
  });
 
