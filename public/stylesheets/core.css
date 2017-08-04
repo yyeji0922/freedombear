@@ -23,7 +23,8 @@ body {
   overflow-x: hidden !important;
 }
 .body-login{
- 
+  background-image: url("/public/images/login-image.jpg");
+  background-size: cover;
 }
 html {
   overflow-x: hidden;
