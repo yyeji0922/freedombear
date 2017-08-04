@@ -31,7 +31,7 @@
                 <div class="row">
 
                     <!-- Left sidebar -->
-                    <div class="col-lg-3 col-md-4">
+                    <div class="col-lg-2 col-md-4">
 
                         <div class="m-t-20">
                             <a href="/med/new" class="btn btn-danger btn-custom btn-block waves-effect waves-light">목록으로</a>
@@ -58,12 +58,12 @@
                     <!-- End Left sidebar -->
 
                     <!-- Right Sidebar -->
-                    <div class="col-lg-9 col-md-8">
+                    <div class="col-lg-10 col-md-8">
 
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="card-box m-t-20">
-                                    <div class="p-20">
+                                    <div class="p-20" style="padding:40px">
                                         <form role="form" class="form-horizontal" action="/med/new" method="post">
                                             <div class="form-group">
                                                 <input type="email" class="form-control" placeholder="제목" name="title">
@@ -78,9 +78,15 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                           <div class="form-group">
-                                                <input class="form-control input-daterange-datepicker" type="text" name="daterange" value="01/01/2015 - 01/31/2015"/>
+                                            <div class="form-group">
+                                                <div class="input-group">
+                                                        
+                                                        <input type="text" class="form-control" placeholder="mm/dd/yyyy" id="datepicker-autoclose">
+                                                        <span class="input-group-addon bg-primary b-0 text-white"><i class="ion-calendar"></i></span>
+                                                        
+                                                </div><!-- input-group -->
                                             </div>
+                                           
                                             <div class="form-group">
                                                 <div class="summernote">
                                                     <h6>내용입력하자</h6>
