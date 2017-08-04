@@ -53,7 +53,6 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-
 app.all('/my*', my);
 app.all('/med*', med);
 app.all('/login*', login);
