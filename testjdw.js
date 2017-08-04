@@ -21,19 +21,18 @@ var userSchema= new Schema({
 	password: {type:String, required: true },
 	name: {type:String, required: true },
 	point : {type: Number, required: true },
-	job : {type: Boolean, required: true },
 	contact : {type: String },
-	email : {type: String},
+	email : {type: String,required:true},
 	image: {type:String, required:true, default: "default.jpg"},
 });
 
 
 var medSchema= new Schema({
+	med_id:{type:Number,required:true, unique:true},
 	title : {type: String, required:true },
 	content : {type: String, required:true },
 	writer_id : {type: String, required:true },
-	contact: {type: String},
-	email : {type: String},
+	email : {type: String, required:true},
 	due_date : {type: Date},
 	project_start:{type:Date},
 	project_end:{type:Date},
@@ -48,20 +47,16 @@ var User = mongoose.model('User', userSchema);
 var Med = mongoose.model('Med',medSchema);
 
 var user1 = new User({ id: 'yyeji0922', 
-			password: 'dbcndfuf',
-			name:'정예지',
+			password: 'yyeji0922',
+			name:'에지',
 			point:0,
-			job:'normal',
-			contact:'01028432813',
 			email:'yyeji0922@naver.com',
 			image:'default.jpg' });
-var user2 = new User({ id: 'freedombear', 
-			password: 'freedombear',
-			name:'자유곰',
+var user2 = new User({ id: 'ilikefruit', 
+			password: 'ilikefruit',
+			name:'다우니',
 			point:0,
-			job:'company',
-			contact:'01012341234',
-			email:'freedombear@naver.com',
+			email:'ilikefruit@naver.com',
 			image:'default.jpg' });
 
 // save user1
@@ -78,8 +73,8 @@ user2.save(function(err,user1){
 
 var med1 = new Med({
 	title:'인물 사진 데이터 정형화 해주실분 구합니다.',
-	content:'안녕하세요 저희는 freedombear 입니다. 저희가 얼굴인식기능을 구현하기 위해 데이터를 정형화 해주실 분을 구합니다. 관심 있으신 분은 저희에게 연락해주세요.',
-	writer_id:'freedombear',
+	content:'안녕하세요 저희가 얼굴인식기능을 구현하기 위해 데이터를 정형화 해주실 분을 구합니다. 관심 있으신 분은 저희에게 연락해주세요.',
+	writer_id:'ilikefruit',
 	email:'freedombear@naver.com',
 	due_date:Date.now + 1000*60*24*3,
 	project_start:Date.now + 1000*60*24*5,
