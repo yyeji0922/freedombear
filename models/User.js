@@ -9,7 +9,7 @@ var userSchema= mongoose.Schema({
 	job : {type: Boolean, required: true },
 	contact : {type: String },
 	email : {type: String},
-	image: {type:String, required:true, default: "default.jpg"},
+	image: {type:String, required:true, default: "default.jpg"}
 });
 /*
 userSchema.pre('save', function (next) {
