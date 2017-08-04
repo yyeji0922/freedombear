@@ -105,88 +105,19 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <tbody>
+                                            <!--tbody>
+                                                <%data.forEach(d){%>
                                                 <tr>
                                                     <td style="text-align: center;"><button class="demo-delete-row btn btn-danger btn-xs btn-icon fa fa-times"></button></td>
-                                                    <td>Isidra</td>
-                                                    <td>Boudreaux</td>
-                                                    <td>Traffic Court Referee</td>
-                                                    <td>22 Jun 1972</td>
-                                                    <td><span class="label label-table label-success">Active</span></td>
+                                                    <td><%=d.title%></td>
+                                                    <td><%=d.due_date%></td>
+                                                    <td><%=d.summary%></td>
+                                                    <td><%=d.upload_time%></td>
+                                                    <td><span class="label label-table label-success"><%=d.finished%>Active</span></td>
+                                                    <td><a ref="/my/<%=d._id%>">Go-></a></td>
                                                 </tr>
-                                                <tr>
-                                                    <td style="text-align: center;"><button class="demo-delete-row btn btn-danger btn-xs btn-icon fa fa-times"></button></td>
-                                                    <td>Shona</td>
-                                                    <td>Woldt</td>
-                                                    <td>Airline Transport Pilot</td>
-                                                    <td>3 Oct 1981</td>
-                                                    <td><span class="label label-table label-inverse">Disabled</span></td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="text-align: center;"><button class="demo-delete-row btn btn-danger btn-xs btn-icon fa fa-times"></button></td>
-                                                    <td>Granville</td>
-                                                    <td>Leonardo</td>
-                                                    <td>Business Services Sales Representative</td>
-                                                    <td>19 Apr 1969</td>
-                                                    <td><span class="label label-table label-danger">Suspended</span></td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="text-align: center;"><button class="demo-delete-row btn btn-danger btn-xs btn-icon fa fa-times"></button></td>
-                                                    <td>Easer</td>
-                                                    <td>Dragoo</td>
-                                                    <td>Drywall Stripper</td>
-                                                    <td>13 Dec 1977</td>
-                                                    <td><span class="label label-table label-success">Active</span></td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="text-align: center;"><button class="demo-delete-row btn btn-danger btn-xs btn-icon fa fa-times"></button></td>
-                                                    <td>Maple</td>
-                                                    <td>Halladay</td>
-                                                    <td>Aviation Tactical Readiness Officer</td>
-                                                    <td>30 Dec 1991</td>
-                                                    <td><span class="label label-table label-danger">Suspended</span></td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="text-align: center;"><button class="demo-delete-row btn btn-danger btn-xs btn-icon fa fa-times"></button></td>
-                                                    <td>Maxine</td>
-                                                    <td><a href="#">Woldt</a></td>
-                                                    <td><a href="#">Business Services Sales Representative</a></td>
-                                                    <td>17 Oct 1987</td>
-                                                    <td><span class="label label-table label-inverse">Disabled</span></td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="text-align: center;"><button class="demo-delete-row btn btn-danger btn-xs btn-icon fa fa-times"></button></td>
-                                                    <td>Lorraine</td>
-                                                    <td>Mcgaughy</td>
-                                                    <td>Hemodialysis Technician</td>
-                                                    <td>11 Nov 1983</td>
-                                                    <td><span class="label label-table label-inverse">Disabled</span></td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="text-align: center;"><button class="demo-delete-row btn btn-danger btn-xs btn-icon fa fa-times"></button></td>
-                                                    <td>Lizzee</td>
-                                                    <td><a href="#">Goodlow</a></td>
-                                                    <td>Technical Services Librarian</td>
-                                                    <td>1 Nov 1961</td>
-                                                    <td><span class="label label-table label-danger">Suspended</span></td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="text-align: center;"><button class="demo-delete-row btn btn-danger btn-xs btn-icon fa fa-times"></button></td>
-                                                    <td>Judi</td>
-                                                    <td>Badgett</td>
-                                                    <td>Electrical Lineworker</td>
-                                                    <td>23 Jun 1981</td>
-                                                    <td><span class="label label-table label-success">Active</span></td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="text-align: center;"><button class="demo-delete-row btn btn-danger btn-xs btn-icon fa fa-times"></button></td>
-                                                    <td>Lauri</td>
-                                                    <td>Hyland</td>
-                                                    <td>Blackjack Supervisor</td>
-                                                    <td>15 Nov 1985</td>
-                                                    <td><span class="label label-table label-danger">Suspended</span></td>
-                                                </tr>
-                                            </tbody>
+                                                <%}%>
+                                            </tbody-->
                                             <tfoot>
                                                 <tr>
                                                     <td colspan="6">

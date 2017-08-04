@@ -37,7 +37,7 @@
                                 </div>
 
                                 <div class="">
-                                    <h4 class="m-b-5">Mark A. McKnight</h4>
+                                    <h4 class="m-b-5"><%=data.name%></h4>
                                     <p class="text-muted">@webdesigner</p>
                                 </div>
 
@@ -46,11 +46,11 @@
 
 
                                 <div class="text-left m-t-40">
-                                    <form action="/my/update" method="post">
+                                    <form action="/my/update" method="post" id="user">
                                     <p class="text-muted font-13"><strong>Name :</strong> <span class="m-l-15">
-                                       <input class="form-control" type="text" required="" placeholder="이용자 이름" name="user[name]"></span></p>
+                                       <input class="form-control" type="text" required="" value="<%=data.name%>" name="user[name]"></span></p>
 
-                                    <p class="text-muted font-13"><strong>NewPassword :</strong><span class="m-l-15">
+                                    <p class="text-muted font-13"><strong>OldPassword :</strong><span class="m-l-15">
                                         <input class="form-control" type="password" required="" placeholder="OLD Password" name="user[password]"></span></p>
 
                                     <p class="text-muted font-13"><strong>NewPassword :</strong><span class="m-l-15">
@@ -60,7 +60,7 @@
                                         <input class="form-control" type="password" required="" placeholder="NEW Password" name="user[newpasswordcon]"></span></p>
                         
                                     <p class="text-muted font-13"><strong>Email :</strong> <span class="m-l-15">
-                                        <input class="form-control" type="email" required="" placeholder="Email" name="user[email]"></span></p>
+                                        <input class="form-control" type="email" required="" value="<%=data.email%>" name="user[email]"></span></p>
                                     
                                     <button type="submit">수정</button>
                                     </form>

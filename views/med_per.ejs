@@ -52,7 +52,7 @@
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="card-box m-t-20">
-                                    <h4 class="m-t-0"><b>커피 데이터 정형화 요청</b></h4>
+                                    <h4 class="m-t-0"><b><%=data.title%></b></h4>
 
                                     <hr/>
 
@@ -61,17 +61,14 @@
                                             <img alt="" src="/images/users/avatar-2.jpg" class="media-object thumb-sm img-circle">
                                         </a>
                                         <div class="media-body">
-                                            <span class="media-meta pull-right">2017-08-03  10:22AM</span>
-                                            <h4 class="text-primary m-0">박소윤</h4>
-                                            <small class="text-muted">010-1234-5678</small>
+                                            <span class="media-meta pull-right"><%=data.due_date%></span>
+                                            <h4 class="text-primary m-0"><%=data.writer_id%></h4>
+                                            <small class="text-muted"><%=data.contact%></small>
                                         </div>
                                     </div> <!-- media -->
 
-                                    <p><b>Hi Bro...</b></p>
-                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>
-                                    <p>Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi.</p>
-                                    <p>Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar,</p>
-
+                                    <p><b><%=data.summary%></b></p>
+                                    <%=data.content%>
                                     <hr/>
 
                                     <h4> <i class="fa fa-paperclip m-r-10 m-b-10"></i> Attachments <span>(3)</span> </h4>
@@ -88,14 +85,17 @@
                                         </div>
                                     </div>
                                 </div>
+                                <% if(user) {%>
+                                    여기도 다시해야함 이거 user랑 그거랑 같은지 보기
                                 <div class="text-right">
-                                    <form action="/med/<%= data.post_id %>/update">
+                                    <form action="/med/<%= data._id %>">
                                         <button type="submit" class="btn btn-primary waves-effect waves-light w-md m-b-30">수정하기</button>
                                     </form>
-                                    <form action="/med/<%= data.post_id %>/update?_method=delete" method="post">
+                                    <form action="/med/<%= data._id %>?_method=delete" method="post">
                                         <button type="submit" class="btn btn-primary waves-effect waves-light w-md m-b-30">삭제하기</button>
                                     </form>
                                 </div>
+                                <%}%>
                             </div>
                         </div>
 

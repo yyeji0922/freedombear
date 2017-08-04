@@ -56,6 +56,7 @@ app.use(passport.session());
 app.all('/my*', my);
 app.all('/med*', med);
 app.all('/login*', login);
+app.all('/howto*', index);
 app.all('/', index);
 
 // catch 404 and forward to error handler
