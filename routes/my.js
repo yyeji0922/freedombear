@@ -19,7 +19,11 @@ router.get('/my/show', isLoggedIn, function(req, res) {
 router.get('/my/update', isLoggedIn, function(req, res) {
     User.findById(req.user,function(err,data){
         if(err) return res.json({success:false, message:err}); 
-       res.render('my_update', { title: 'My' ,user: req.user, data: data});
+       res.render('my_update', { title: 'My' ,user: req.user, data: data,
+                                formData: req.flash("formData")[0],
+                                emailError: req.flash('emailError')[0],
+                                passwordError:req.flash('passwordError')[0]
+                              });
     })
 
 });
