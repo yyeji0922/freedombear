@@ -54,22 +54,22 @@
                             <div class="col-sm-12">
                                 <div class="card-box m-t-20">
                                     <div class="p-20">
-                                        <form role="form">
+                                        <form role="form" action="/med/new" method="post">
                                             <div class="form-group">
-                                                <input type="email" class="form-control" placeholder="제목">
+                                                <input type="text" class="form-control" placeholder="제목" name="title" required>
                                             </div>
                                             <div class="form-group">
                                                 <div class="row">
                                                     <div class="col-md-6">
-                                                        <input type="email" class="form-control" placeholder="담당자연락처">
+                                                        <input type="email" class="form-control" placeholder="담당자이메일" name="phone">
                                                     </div>
                                                     <div class="col-md-6">
-                                                        <input type="email" class="form-control" placeholder="예상금액">
+                                                        <input type="text" class="form-control" placeholder="예상금액" name="cost">
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <input type="text" class="form-control" placeholder="프로젝트 기한">
+                                                <input type="text" class="form-control" placeholder="프로젝트 기한" name="duedate">
                                             </div>
                                             <div class="form-group">
                                                 <div class="summernote">
@@ -91,7 +91,7 @@
 
                                             <div class="btn-toolbar form-group m-b-0">
                                                 <div class="pull-right">
-                                                    <button class="btn btn-purple waves-effect waves-light"> <span>등록하기</span> <i class="fa fa-send m-l-10"></i> </button>
+                                                    <button type="submit" class="btn btn-purple waves-effect waves-light"> <span>등록하기</span> <i class="fa fa-send m-l-10"></i> </button>
                                                 </div>
                                             </div>
 
