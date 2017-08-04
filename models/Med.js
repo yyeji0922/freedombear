@@ -7,6 +7,8 @@ var MedSchema= mongoose.Schema({
 	contact: {type: String},
 	email : {type: String},
 	due_date : {type: Date},
+	project_start:{type:Date},
+	project_end:{type:Date},
 	pay: {type: Number, required: true, default: -1},
 	finished: {type: Boolean, required: true, default: false},
 	upload_time : { type: Date, required: true, default: Date.now },
