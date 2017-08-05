@@ -23,7 +23,7 @@
                     <div class="col-lg-3 col-md-4">
 
                         <div class="m-t-20">
-                            <a href="/med/new" class="btn btn-danger btn-custom btn-block waves-effect waves-light">목록으로</a>
+                            <a href="/med/" class="btn btn-danger btn-custom btn-block waves-effect waves-light">목록으로</a>
 
                             <div class="list-group mail-list  m-t-20">
                                 <a href="#" class="list-group-item b-0"><i class="fa fa-download m-r-10"></i>금액높은순</a>
@@ -96,15 +96,16 @@
                                         </div>
                                     </div>
                                 </div>
-                                <% if(user) {%>
+                                
                                 <div class="text-right">
-                                   
+                                   <% if(data.writer_id == user.writer_id) {%>
                                     <button type="submit" class="btn btn-primary waves-effect waves-light w-md m-b-30" onclick="location.href='/med/<%=data.id%>';">수정하기</button>
                                     <form action="/med/<%= data._id %>?_method=delete" method="post">
                                         <button type="submit" class="btn btn-primary waves-effect waves-light w-md m-b-30" onclick="med_delete();">삭제하기</button>
                                     </form>
+                                    <%}%>
                                 </div>
-                                <%}%>
+                                
                             </div>
                         </div>
 
