@@ -105,19 +105,16 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <!--tbody>
-                                                <%data.forEach(d){%>
+                                            <tbody>
+                                                <% data.forEach(function(d) {%>
                                                 <tr>
                                                     <td style="text-align: center;"><button class="demo-delete-row btn btn-danger btn-xs btn-icon fa fa-times"></button></td>
-                                                    <td><%=d.title%></td>
-                                                    <td><%=d.due_date%></td>
-                                                    <td><%=d.summary%></td>
-                                                    <td><%=d.upload_time%></td>
-                                                    <td><span class="label label-table label-success"><%=d.finished%>Active</span></td>
-                                                    <td><a ref="/my/<%=d._id%>">Go-></a></td>
+                                                   
                                                 </tr>
-                                                <%}%>
-                                            </tbody-->
+                                                <% }) %>
+
+                                                
+                                            </tbody>
                                             <tfoot>
                                                 <tr>
                                                     <td colspan="6">
