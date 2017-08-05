@@ -1,11 +1,20 @@
 var express = require('express');
 var async=require('async');
-
 var bcrypt=require('bcrypt-nodejs');
 var mongoose=require('mongoose');
 var router = express.Router();
+var multer = require('multer');
+var path = require('path');
 var User= require('../models/User.js');
 var Med= require('../models/Med.js');
+
+var storage = multer.diskStorage({
+  destination: path.join(__dirname, '../public/upload/profile'),
+  filename: function (req, file, cb) {
+    cb(null, "pro"  + Date.now());
+  }
+});
+var upload = multer({ storage: storage });
 
 router.get('/my',isLoggedIn, function(req, res) {
   
@@ -36,6 +45,12 @@ router.get('/my',isLoggedIn, function(req, res) {
                       });
     }
   )
+});
+router.post('/my',upload.single('filetoupload'), function(req,res){
+	User.findByIdAndUpdate(req.user, { 'image' : req.file.filename } ,function (err,content) {
+		if(err) return res.json({success: false, message: err});
+		res.redirect('/my');
+	});
 });
 
 router.put('/my', isLoggedIn, checkUserRegValidation2, function(req,res){

@@ -28,17 +28,19 @@
                         <div class="text-center card-box">
                             <div class="member-card">
                                 <div class="thumb-xl member-thumb m-b-10 center-block">
-                                    <img src="/images/gom.jpg" class="img-circle img-thumbnail" alt="profile-image">
+                                    <img src="/upload/profile/<%= data.userinfo.image %>" class="img-circle img-thumbnail" alt="profile-image">
                                 </div>
 
                                 <div class="">
                                     <h4 class="m-b-5"><%=data.userinfo.name%></h4>
                                     <p class="text-muted"><%=data.userinfo.uid%></p>
                                 </div>
-
-                                <input type="file" class="btn btn-success btn-sm w-sm waves-effect m-t-10 waves-light">프로필 변경</button>
-                                <button type="button" class="btn btn-danger btn-sm w-sm waves-effect m-t-10 waves-light">포인트 충전</button>
-
+                                
+                                
+                            <form class="" action="/my" role="form" method="post" enctype="multipart/form-data">
+                                <input type="file" name="filetoupload" class="btn btn-success btn-sm w-sm waves-effect m-t-10 waves-light">프로필 변경</button>
+                                <button type="submit" class="btn btn-danger btn-sm w-sm waves-effect m-t-10 waves-light">submit</button>
+                            </form>
 
                                 <div class="text-left m-t-40">
                                     <p class="text-muted font-13"><strong>Full Name :</strong> <span class="m-l-15"><%=data.userinfo.name%></span></p>

@@ -8,7 +8,7 @@ var userSchema= mongoose.Schema({
 	point : {type: Number, required: true, default:0 },
 	contact : {type: String },
 	email : {type: String,required:true},
-	image: {type:String, required:true, default: "default.jpg"}
+	image: {type:String, required:true, default: "default.svg"}
 });
 
 userSchema.pre('save', function (next) {
@@ -20,7 +20,7 @@ userSchema.pre('save', function (next) {
 		return next();
 	}
 });
-
+ 
 userSchema.methods.authenticate = function (password) {
 	var user = this;
 	return bcrypt.compareSync(password, user.password);

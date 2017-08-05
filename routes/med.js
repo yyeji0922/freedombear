@@ -2,7 +2,14 @@ var express = require('express');
 var router = express.Router();
 var Med= require("../models/Med");
 var User= require("../models/User");
-
+var multer = require('multer');
+var path = require('path');
+var storage = multer.diskStorage({
+  destination: path.join(__dirname, '../public/upload/news'),
+  filename: function (req, file, cb) {
+    cb(null, "profile"  + Date.now());
+  }
+});
 /* GET news listing. */
 router.get('/med',isLoggedIn, function(req, res,next) {
     Med.find({}).sort('-due_date').exec( function(err,data){
