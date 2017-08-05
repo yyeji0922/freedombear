@@ -73,6 +73,7 @@ router.get('/login/new',function(req,res){
 })
 
 router.post('/login/new',checkUserRegValidation, function(req,res,next){
+  console.log(req.major);
   User.create(req.body.user, function(err,user){
         console.log("dd");
         if(err) return res.json({success:false, message:err});
