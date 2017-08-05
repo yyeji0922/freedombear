@@ -55,7 +55,7 @@ router.post('/med', isLoggedIn,function(req, res) {
     console.log(req.body.query);
     res.redirect('/med',{user:req.user});
 });
-
+ 
 /*새로운 news 작성-> 완료*/
 //LOGIN!
 router.get('/med/new',isLoggedIn, function(req, res) {
