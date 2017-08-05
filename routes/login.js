@@ -1,6 +1,5 @@
 var express = require('express');
 var async = require('async');
-var path = require('path');
 var mongoose = require('mongoose');
 var passport=require('../config/passport.js')
 var User= require('../models/User.js');
