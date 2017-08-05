@@ -4,6 +4,8 @@ var Med= require("../models/Med");
 var User= require("../models/User");
 var multer = require('multer');
 var path = require('path');
+const dede = 1; 
+
 var storage = multer.diskStorage({
   destination: path.join(__dirname, '../public/upload/med'),
   filename: function (req, file, cb) {
@@ -15,13 +17,7 @@ var upload = multer({ storage: storage });
 
 /* GET news listing. */
 
-router.get('/med',isLoggedIn, function(req, res,next) {
-        Med.find({}).sort('-upload_time').exec( function(err,data){
-            if (err) return res.json({success: false, message: err, user:req.user});
-            res.render('med',{ data : data, user:req.user} );
-        });
-});
-
+/*
 router.get('/med/:id',isLoggedIn, function(req, res,next) {
     
     if(req.params.id==1){
@@ -48,25 +44,29 @@ router.get('/med/:id',isLoggedIn, function(req, res,next) {
             res.render('med',{ data : data, user:req.user} );
         });
     }
-
-
-
-    });
-
+});
+*/
 /* search & show */
-router.post('/med', isLoggedIn,function(req, res) {
-    console.log(req.body.query);
-    res.redirect('/med',{user:req.user});
+router.post('/med', isLoggedIn,function(req, res, next) {
+    console.log(req.body.which);
+    next( req.body.which );
 });
  
+router.get('/med', isLoggedIn, function(req, res,next) {
+        Med.find({}).sort('-upload_time').exec( function(err,data){
+            if (err) return res.json({success: false, message: err, user:req.user});
+            res.render('med',{ data : data, user:req.user} );
+        });
+});
 /*새로운 news 작성-> 완료*/
 //LOGIN!
 router.get('/med/new',isLoggedIn, function(req, res) {
     User.findById(req.user, function(err,data){
         if(err) return res.json({success:false,message:err});
         res.render('med_form',{user:req.user,data:data});
-    });
+    })
     //if(err) return res.json({success:false, message:err});
+    
 });
 
 /*새로운 news 작성 ->완료*/ 
