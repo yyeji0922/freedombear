@@ -47,7 +47,8 @@ router.get('/my',isLoggedIn, function(req, res) {
   )
 });
 router.post('/my',upload.single('filetoupload'), function(req,res){
-	User.findByIdAndUpdate(req.user, { 'image' : req.file.filename } ,function (err,content) {
+  console.log(req.file);
+  User.findByIdAndUpdate(req.user, { 'image' : req.file.filename } ,function (err,content) {
 		if(err) return res.json({success: false, message: err});
 		res.redirect('/my');
 	});

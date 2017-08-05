@@ -6,7 +6,9 @@ var userSchema= mongoose.Schema({
 	password: {type:String, required: true },
 	name: {type:String, required: true },
 	point : {type: Number, required: true, default:0 },
-	contact : {type: String },
+	contact : {type: String},
+	major : {type: Number, required: true, default: -1},
+	lang : {type: Number, required: true, default: -1},
 	email : {type: String,required:true},
 	image: {type:String, required:true, default: "default.svg"}
 });
