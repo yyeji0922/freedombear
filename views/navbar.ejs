@@ -1,12 +1,15 @@
 <!-- Navigation Bar-->
+<style>
+ 
+</style>
         <header id="topnav">
             <div class="topbar-main">
                 <div class="container">
 
                     <!-- Logo container-->
-                    <div class="logo">
-                        <a href="/" class="logo"><i class="md md-equalizer"></i> <span>데대리</span> </a>
-                    </div>
+                      
+                    <a href="/" class="logo logo-lg" ><img src="/images/data-logo.png" width="65%" height="65%" align="center"></a>
+                                          
                     <!-- End Logo container-->
 
                     <div class="menu-extras">
@@ -83,11 +86,11 @@
                                 <% if (user) {%>
                                 <a href="" class="dropdown-toggle waves-effect waves-light profile" data-toggle="dropdown" aria-expanded="true"><img src="/images/gom.jpg" alt="user-img" class="img-circle"> </a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="/my"><i class="ti-user m-r-5"></i> Profile</a></li>
+                                    <li><a href="/my/show"><i class="ti-user m-r-5"></i> Profile</a></li>
                                     <li><a href="/login/logout"><i class="ti-power-off m-r-5"></i> Logout</a></li>
                                 </ul>
                                 <%} else {%>
-                                    <a href="/login"  aria-expanded="true"><img src="/images/icon/login.png" alt="user-img" class="img-circle"> </a>
+                                    <a href="/login"  aria-expanded="true"  style="margin-top:10px;">로그인 </a>
                                 <% } %>
                             </li>
                         </ul>
@@ -126,6 +129,10 @@
                                     <li><a href="/med/new">등록하기</a></li>
                                 </ul>
                             </li>
+                            <li class="has-submenu">
+                                <a href="/my/test"><i class="md md-invert-colors-on"></i>대리찾기</a>
+                            </li>
+                            
                             <li class="has-submenu">
                                 <a><i class="md md-invert-colors-on"></i>데이터저장소-출시예정</a>
                             </li>

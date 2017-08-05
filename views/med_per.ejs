@@ -61,12 +61,14 @@
                                             <img alt="" src="/images/users/avatar-2.jpg" class="media-object thumb-sm img-circle">
                                         </a>
                                         <div class="media-body">
-                                            <span class="media-meta pull-right"><%=data.due_date%></span>
+                                            <span class="media-meta pull-right"><%=data.upload_time%></span>
                                             <h4 class="text-primary m-0"><%=data.writer_id%></h4>
-                                            <small class="text-muted"><%=data.contact%></small>
+                                            <small class="text-muted"><%=data.contact%>pys2@gmail.com</small>
                                         </div>
                                     </div> <!-- media -->
-
+                                    <p><b>예상금액: <%=data.pay%></b>&nbsp;&nbsp;
+                                        <b>마감날짜: <%=data.pay%></b>
+                                    </p>
                                     <p><b><%=data.summary%></b></p>
                                     <%=data.content%>
                                     <hr/>
