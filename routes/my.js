@@ -7,12 +7,13 @@ var Med= require('../models/Med.js');
 
 /* 해야함. */
 router.get('/my/show', isLoggedIn, function(req, res) {
-    User.findById(req.user, function(errs, datas){
-        if(errs) return res.json({success:false, message:err});
-        Med.find({ writer_id : datas.uid}, function(err,data){
+    User.findById( req.user, function(errs, datas){
+        if(errs) return res.json({success:false, message:errs});
+        Med.find({ writer_id : datas.uid }, function(err,data){
             if(err) return res.json({success:false, message:err});
+            console.log(data);
             res.render('my_show', { title: 'My' ,user: req.user, data: data});
-        }); 
+        });
     });
 });
 
