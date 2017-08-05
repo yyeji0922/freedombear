@@ -59,6 +59,7 @@ app.all('/med*', med);
 app.all('/login*', login);
 app.all('/match*', match);
 app.all('/howto*', index);
+app.all('/coming*', index);
 app.all('/', index);
 
 // catch 404 and forward to error handler

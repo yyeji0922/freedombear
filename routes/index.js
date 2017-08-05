@@ -9,6 +9,9 @@ router.get('/howto', function(req, res, next) {
   res.render('howto',{ title: 'Express' , user:req.user});
 });
 
+router.get('/coming', function(req, res, next) {
+  res.render('coming',{ title: 'Express' , user:req.user});
+});
 router.get('/', function(req, res, next) {
   Med.find({}).sort('due_date').limit(6).exec(function(err,data){
     if (err) return res.json({success: false, message: err});
