@@ -3,13 +3,12 @@
 
     
 #cover {
-  padding-top: 100px;
   text-align:center;
-  font-family: "SDMiSaeng" ;
+  margin-top: -20px;
   font-size: 70px;
   font-weight: bold;
   color: White;
-  background: url("/images/teamwork.jpg") no-repeat center bottom;
+  background: url("/images/seoul.jpg") no-repeat center bottom;
   background-size: cover;
   background-attachment: fixed;
   height: 450px;
@@ -22,22 +21,17 @@
 <body>
   
         <%include navbar%>    
+        
       <div class="wrapper">
-            <div class="container">
-
-                
-                 <div class="row">
-                    <div class="col-lg-9 center-page">
-                        <div class="text-center">
+          <div class="text-center">
                              <div id="ti">
                                 <div class="row">
                                     <div class="col-sm-12">
                                         
                                         
                                       <div id="cover">
+
                                         <div class="cover-content">
-                                          <p>저희가 대신 찾아서 매칭해드립니다.</p>
-                                          <p>필요한 사항에 체크해주세요!</p>
                                         </div>
                                       </div>
 
@@ -46,6 +40,12 @@
                                 </div>
                             </div>
                         </div>
+            <div class="container">
+
+                
+                 <div class="row">
+                    <div class="col-lg-10 center-page">
+                        
 
                         <div class="row m-t-40" >
 
@@ -84,13 +84,14 @@
                                     </div>
                                     <ul class="plan-stats list-unstyled text-center">
                                         
-                                        <li><i class="ti-wand text-success"></i>Python, R/SAS 전문가</li>
-                                        <li><i class="ti-user text-success"></i>방대한 양의 데이터를 전문적인 툴로 작업</li>
+                                        <li><i class="ti-wand text-success"></i>&nbspPython, R/SAS 전문가</li>
+                                        <li><i class="ti-user text-success"></i>&nbsp방대한 양의 데이터를 전문적인 툴로 작업</li>
                                     </ul>
+                                    <center>
                                     <p class="ti-pin-alt" style="padding:5px">&nbsp선택할 컴퓨터 언어</p>
                                     <form action="/match/2" method="post"> 
                                          <div class="checkbox checkbox-primary form-group">
-                                                    <input class="langcl lang_checkbox" id="lang_checkbox2" type="checkbox" name="lang" value=1 required>
+                                                    <input class="langcl lang_checkbox" id="lang_checkbox2" type="checkbox" name="lang" value=1>
                                                     <label for="checkbox2">
                                                         <b>Excel</b>
                                                     </label>
@@ -107,13 +108,15 @@
                                                         <b>R/SAS</b>
                                                     </label>
                                                 </div>
-                                    
+                                    </center>
+                                    <br>
                                     <div class="text-center" style="padding-bottom: 50px;  bottom:0px"> 
                                         <button class="btn btn-danger btn-bordred btn-rounded waves-effect waves-light" type="submit">대리찾기</button>
                                     </div>
                                     
                                     
                                     </form>
+                                    </center>
                                 </div>
                             </article>
 
@@ -127,14 +130,15 @@
                                         <h2 class="plan-price" style="font-size:33px">전문직 종사자</h2>
                                     </div>
                                     <ul class="plan-stats list-unstyled text-center">
-                                        <li><i class="ti-wand text-success"></i>여러 분야의 전문가</li>
-                                        <li><i class="ti-user text-success"></i>다양한 분야에서 흔하지 않은 정보가 필요할 경우</li>
+                                        <li><i class="ti-wand text-success"></i>&nbsp여러 분야의 전문가</li>
+                                        <li><i class="ti-user text-success"></i>&nbsp다양한 분야에서&nbsp&nbsp&nbsp 흔하지 않은 정보가 필요할 경우</li>
                                     </ul>
+                                    <center>
                                     <p class="ti-pin-alt" style="padding:5px">&nbsp선택할 분야</p>
                                     <form action="/match/3" method="post">
                                         
                                     <div class="checkbox checkbox-primary form-group">
-                                                        <input class="majorcl major_checkbox" id="major_checkbox2" type="checkbox" name="major" value=1 required>
+                                                        <input class="majorcl major_checkbox" id="major_checkbox2" type="checkbox" name="major" value=1>
                                                         <label for="checkbox2">
                                                             <b>생명/의학/약학</b>
                                                         </label>
@@ -163,12 +167,13 @@
                                                             <b>언어</b>
                                                         </label>
                                                     </div>
-                                    
-                                            <div class="text-center" style="padding-bottom: 50px;  bottom:0px"> 
+                                            
+                                            <div class="text-center" style="padding-bottom: 50px;padding-top: 15px;  bottom:0px"> 
                                                 <button class="btn btn-danger btn-bordred btn-rounded waves-effect waves-light" type="submit">대리찾기</button>
                                             </div>
                                     
                                     </form>
+                                    </center>
                                 </div>
                             </article>
 
