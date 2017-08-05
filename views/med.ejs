@@ -109,7 +109,8 @@
                                     var full_date = year+"/"+month+"/"+date+" "+hour +":"+minute;
 
                                  %>
-                                    <tr>
+                                    
+                                    <tr onclick="location.href='/med/<%=oneItem.id%>';" style="cursor:pointer;">
                                         <td><%=oneItem.writer_id%></td>
                                         <td><%=oneItem.title%></td>
                                         <td><%=oneItem.summary%></td>
@@ -119,6 +120,7 @@
                                         else{%>
                                         <span class="label label-table label-danger">마감</span><%}%></td>
                                     </tr>
+                                    
                                 <% }%>    
                                 </tbody>
                                 <tfoot>
