@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var Med= require("../models/Med");
+var User= require("../models/User");
 
 /* GET news listing. */
 router.get('/med', function(req, res,next) {
@@ -29,32 +30,48 @@ router.get('/med/new', function(req, res) {
 //LOGIN!
 router.post('/med/new', /*upload.single('filetoupload'),*/ function (req, res) {
     console.log(req.body);
-    var due_date = req.body.date.val();
-    console.log(due_date);
+    var due_date = req.body.date;
     var strDate = due_date.split('/');
-    console.log(strDate[0]);
-    console.log(strDate[1]);
-    console.log(strDate[2]);
-    var mydate = (strDate[2],strDate[0],strDate[1],23,59);
-    var med1 = new Med({
-        med_id:Med.count()+1,
-        title:req.body.title,
-        content:req.body.content,
-        writer_id: Med.findById(req.user),
-        email:req.body.email,
-        due_date: mydate,
-        pay:req.body.pay,
-        summary:req.body.summary
+    var mydate = new Date(parseInt(strDate[2],10),parseInt(strDate[0],10),parseInt(strDate[1],10),23,59);
+
+    User.findById(req.user, function(err,data){
+        if(err)  return res.json({success:false, messsage:err});
+        var med1 = new Med({
+            title:req.body.title,
+            content:req.body.content,
+            writer_id: data.uid,
+            email:req.body.email,
+            due_date: mydate,
+            pay:req.body.pay,
+            summary:req.body.summary
+        });
+        console.log(med1);
+        /*
+        Med.create(med1,function(err,med1){
+            if(err) return res.json({success:false, messsage:err});
+            res.redirect('/med');
+        });*/
+
+        /*Med.save(med1,function(err,result){
+            if(err) return res.json({success:false, messsage:err});
+            res.redirect('/med');
+        });*/
+
+        Med.create(med1, function(err,med1){
+            if(err) return res.json({success:false, message:err});
+            res.redirect('/med');
+        });
     });
-    console.log(med1);
-    med1.save(function(err,med1){
+    
+
+    /*med1.save(function(err,med1){
         if(err)
             console.log("error:can't insert");
         else
             console.log("insertion success");
     });
+    res.redirect('/med');*/
 
-    res.redirect('/med', {user:req.user});
 });
 
 /*news 보여주기*/

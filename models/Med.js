@@ -1,7 +1,6 @@
 var mongoose = require('mongoose');
 
 var MedSchema= mongoose.Schema({
-	med_id:{type:Number,required:true, unique:true},
 	title : {type: String, required:true },
 	content : {type: String, required:true },
 	writer_id : {type: String, required:true },
