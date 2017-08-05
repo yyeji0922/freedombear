@@ -20,7 +20,7 @@
     }
 
 </style>
-
+    <link href="../plugins/bootstrap-sweetalert/sweet-alert.css" rel="stylesheet" type="text/css">
 </head>
 
     <body class="login">
@@ -100,37 +100,37 @@
                                                 
                                                     <p><b>전공 또는 관심분야</b></p>
                                                     <div class="checkbox form-group">
-                                                        <input id="checkbox0" type="checkbox" checked name="major" value=-1>
+                                                        <input class="major_checkbox" id="majorcl_checkbox0" type="checkbox" checked name="major" value=-1>
                                                         <label for="checkbox0">
                                                             <b>없음</b>
                                                         </label>
                                                     </div>
                                                     <div class="checkbox checkbox-primary form-group">
-                                                        <input id="checkbox2" type="checkbox" name="major" value=1>
+                                                        <input class="majorcl major_checkbox" id="checkbox2" type="checkbox" name="major" value=1>
                                                         <label for="checkbox2">
                                                             <b>생명/의학/약학</b>
                                                         </label>
                                                     </div>
                                                     <div class="checkbox checkbox-success form-group">
-                                                        <input id="checkbox3" type="checkbox" name="major" value=2>
+                                                        <input class="majorcl major_checkbox" id="checkbox3" type="checkbox" name="major" value=2>
                                                         <label for="checkbox3">
                                                             <b>금융/경제</b>
                                                         </label>
                                                     </div>
                                                     <div class="checkbox checkbox-info form-group">
-                                                        <input id="checkbox4" type="checkbox" name="major" value=3>
+                                                        <input class="majorcl major_checkbox" id="checkbox4" type="checkbox" name="major" value=3>
                                                         <label for="checkbox4">
                                                             <b>IT/공학</b>
                                                         </label>
                                                     </div>
                                                     <div class="checkbox checkbox-warning form-group">
-                                                        <input id="checkbox5" type="checkbox" name="major" value=4>
+                                                        <input class="majorcl major_checkbox" id="checkbox5" type="checkbox" name="major" value=4>
                                                         <label for="checkbox5">
                                                             <b>사회/교육/심리</b>
                                                         </label>
                                                     </div>
                                                     <div class="checkbox checkbox-danger form-group">
-                                                        <input id="checkbox6" type="checkbox" name="major" value=5>
+                                                        <input class="majorcl major_checkbox" id="checkbox6" type="checkbox" name="major" value=5>
                                                         <label for="checkbox6">
                                                             <b>언어</b>
                                                         </label>
@@ -146,29 +146,30 @@
                                             <div class="col-xs-12">
                                                 <p><b>사용가능한 언어 선택</b></p>
                                                 <div class="checkbox form-group">
-                                                    <input id="checkbox0" type="checkbox" checked name="lang" value=-1>
+                                                    <input class="lang_checkbox" id="langcl_checkbox0" type="checkbox" checked name="lang" value=-1>
                                                     <label for="checkbox0">
                                                         <b>없음</b>
                                                     </label>
                                                 </div>
                                                 <div class="checkbox checkbox-primary form-group">
-                                                    <input id="checkbox2" type="checkbox" name="lang" value=1>
+                                                    <input class="langcl lang_checkbox" id="checkbox2" type="checkbox" name="lang" value=1>
                                                     <label for="checkbox2">
                                                         <b>Excel</b>
                                                     </label>
                                                 </div>
                                                 <div class="checkbox checkbox-success form-group">
-                                                    <input id="checkbox3" type="checkbox" name="lang" value=2>
+                                                    <input class="langcl lang_checkbox" id="checkbox3" type="checkbox" name="lang" value=2>
                                                     <label for="checkbox3">
                                                         <b>Python</b>
                                                     </label>
                                                 </div>
                                                 <div class="checkbox checkbox-info form-group">
-                                                    <input id="checkbox4" type="checkbox" name="lang" value=3>
+                                                    <input class="langcl lang_checkbox" id="checkbox4" type="checkbox" name="lang" value=3>
                                                     <label for="checkbox4">
                                                         <b>R/SAS</b>
                                                     </label>
                                                 </div>
+                                                
                                             </div>
 
                                         </div>
@@ -191,7 +192,7 @@
                                         </li>
                                         <li class="previous"><a href="#" class="btn btn-primary waves-effect waves-light">Previous</a></li>
                                         <li class="next last" style="display:none;"><a href="#">Last</a></li>
-                                        <li class="next"><a href="#" class="btn btn-primary waves-effect waves-light">&nbsp Next &nbsp</a></li>
+                                        <li class="next"><a href="#" class="btn btn-primary waves-effect waves-light" onclick="checkcheck()">&nbsp Next &nbsp</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -265,6 +266,58 @@
             });
 
         </script>
-	
+	    <script>
+                      
+            // $(".lang_checkbox").click(function() {
+            //     var legchecked = $('input[class^=langcl]:checked').length;
+            //     if (legchecked){ alert("no riders")};
+            // });
+          
+           $('.langcl').on('change', function() {
+            
+             if($(this).is(":checked")) {
+                      $("#langcl_checkbox0").attr("checked", false);
+               }
+               
+              var legchecked = $('input[class=lang_checkbox]:checked').length;
+                if (legchecked){ $("#langcl_checkbox0").attr("checked", true);}; 
+            });
+            
+            $('#langcl_checkbox0').on('change', function() {
+               if($(this).is(":checked")) {
+                      $(".langcl").attr("checked", false);
+               }else{
+                   var legchecked = $('input[class=lang_checkbox]:checked').length;
+                    if (legchecked){ $("#langcl_checkbox0").attr("checked", true);};
+               }
+            });
+            
+            $('.majorcl').on('change', function() {
+            
+             if($(this).is(":checked")) {
+                      $("#majorcl_checkbox0").attr("checked", false);
+               }
+               
+              var legchecked = $('input[class=major_checkbox]:checked').length;
+                if (legchecked){ $("#major_checkbox0").attr("checked", true);}; 
+            });
+            
+            $('#majorcl_checkbox0').on('change', function() {
+               if($(this).is(":checked")) {
+                      $(".majorcl").attr("checked", false);
+               }else{
+                   var legchecked = $('input[class=major_checkbox]:checked').length;
+                    if (legchecked){ $("#majorcl_checkbox0").attr("checked", true);};
+               }
+            });
+        
+            function checkcheck(){
+                temp=$('.form-control').val();
+                if(temp==""){
+                    alert("빈 칸을 채워주세요")    
+                }
+                
+            }
+        </script>
 	</body>
 </html>
