@@ -73,7 +73,44 @@ router.get('/login/new',function(req,res){
 })
 
 router.post('/login/new',checkUserRegValidation, function(req,res,next){
-  console.log(req.major);
+
+  var major=0;
+
+  if(typeof req.body.major=="string"){
+    console.log("Here");
+    if(req.body.major == -1) major=-1;
+    else major=1<<(req.body.major-1);
+  }
+  else{
+    console.log("Tere");
+    for(var j=0; j<req.body.major.length; j++){
+        if(req.body.major[j]==-1){
+          continue;
+        }
+        else{
+          major+=1<<(req.body.major[j]-1);
+        }
+      }
+  }
+
+  var lang=0;
+  if(typeof req.body.lang=="string"){
+    if(req.body.lang==-1) lang=-1;
+    else lang=1<<(req.body.lang-1);
+  }
+  else{
+    for(var j=0; j<req.body.lang.length; j++){
+        if(req.body.lang[j]==-1){
+          continue;
+        }
+        else{
+          lang+=1<<(req.body.lang[j]-1);
+        }
+      }
+  }
+  req.body.user.major=major;
+  req.body.user.lang=lang;
+  console.log(req.body.user);
   User.create(req.body.user, function(err,user){
         console.log("dd");
         if(err) return res.json({success:false, message:err});
