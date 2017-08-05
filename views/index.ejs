@@ -40,17 +40,17 @@
                     <% for(var i=0; i<6; i++){%>
                     <div class="col-md-4 col-sm-6" style="position: relative">    
                         <div class="text-center card-box" >
-                            <div class="member-card" style="height:250px">
-                                <img src="/upload/med/<%=medinfo[i].image%>">
-                                <p class="text-muted font-13 text-center text-dark" style="font-size:18px; font-weight:bold"><span class="m-l-15 text-center"><%=medinfo[i].title%></span></p>
-                                <p class="text-muted font-13 text-center text-dark" style="font-size:14px"><span class="m-l-15 text-center"><%=medinfo[i].summary%></span></p>
+                            <div class="member-card" style="height:300px">
+                                <span><img src="/upload/med/<%=medinfo[i].image%>" width=100px height=100px class="img-circle text-center"></span>
+                                <p class="text-muted font-13 text-center text-dark" style="font-size:18px; font-weight:bold"><span class="text-center"><%=medinfo[i].title%></span></p>
+                                <p class="text-muted font-13 text-center text-dark" style="font-size:14px"><span class="text-center"><%=medinfo[i].summary%></span></p>
                                 <div class="text-left m-t-10" style="position: absolute; bottom:20px;">    
                                     <p class="text-muted font-13"><strong>작성자 :</strong> <span class="m-l-15"><%=medinfo[i].writer_id%></span></p>
                                     <p class="text-muted font-13"><strong>연락처 :</strong> <span class="m-l-15"><%=medinfo[i].email%></span></p>
                                     <p class="text-muted font-13"><strong>마감일 :</strong> <span class="m-l-15"><%=medinfo[i].due_date%></span></p>
-                                    <div  style="text-align:center">
-                                        <button type="button" class="btn btn-success btn-sm w-sm waves-effect m-t-10 waves-light">자세히보기</button>
-                                    </div>
+                                    
+                                        <button type="button" style="margin-left: 180px" onclick="location.href='/med/<%=medinfo[i].id%>'"; class="btn btn-success btn-sm w-sm waves-effect m-t-10 waves-light">자세히보기</button>
+                                    
                                 </div>
 
                                 
