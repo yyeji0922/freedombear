@@ -149,8 +149,8 @@ router.post('/med/:id/update', isLoggedIn,function(req, res) {
 /*update 해서 지우기로함*/
 //LOGIN
 router.delete('/med/:id', isLoggedIn,function(req, res) {
-    console.log(id);
-    Med.remove({ _id : id }, function (err,user) {
+    console.log(req.params.id);
+    Med.remove({ _id : req.params.id }, function (err,user) {
     	if(err) return res.json({success: false, message: err,user:req.user});
       res.redirect('/med');
   });
