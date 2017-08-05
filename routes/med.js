@@ -4,22 +4,22 @@ var Med= require("../models/Med");
 var User= require("../models/User");
 
 /* GET news listing. */
-router.get('/med', function(req, res,next) {
+router.get('/med',isLoggedIn, function(req, res,next) {
     Med.find({}).sort('-due_date').exec( function(err,data){
 		if (err) return res.json({success: false, message: err, user:req.user});
-		res.render('med',{ data : data,user:req.user} );
+		res.render('med',{ data : data, user:req.user} );
 	});
 });
 
 /* search & show */
-router.post('/med', function(req, res) {
+router.post('/med', isLoggedIn,function(req, res) {
     console.log(req.body.query);
     res.redirect('/med',{user:req.user});
 });
 
 /*새로운 news 작성-> 완료*/
 //LOGIN!
-router.get('/med/new', function(req, res) {
+router.get('/med/new',isLoggedIn, function(req, res) {
     User.findById(req.user, function(err,data){
         if(err) return res.json({success:false,message:err});
         res.render('med_form',{user:req.user,data:data});
@@ -30,7 +30,7 @@ router.get('/med/new', function(req, res) {
 
 /*새로운 news 작성 ->완료*/ 
 //LOGIN!
-router.post('/med/new', /*upload.single('filetoupload'),*/ function (req, res) {
+router.post('/med/new', isLoggedIn,/*upload.single('filetoupload'),*/ function (req, res) {
     console.log(req.body);
     var due_date = req.body.date;
     var strDate = due_date.split('/');
@@ -77,7 +77,7 @@ router.post('/med/new', /*upload.single('filetoupload'),*/ function (req, res) {
 });
 
 /*news 보여주기*/
-router.get('/med/:id', function(req, res) {
+router.get('/med/:id', isLoggedIn,function(req, res) {
     Med.findById(req.params.id, function(err,content){
         if (err) return res.json({success: false, message: err});
         res.render('med_per', { data : content , showornot : 0 ,user:req.user} );
@@ -86,7 +86,7 @@ router.get('/med/:id', function(req, res) {
 
 /*update 페이지로 고우*/
 //LOGIN
-router.get('/med/:id/update', function(req, res) {
+router.get('/med/:id/update', isLoggedIn,function(req, res) {
     Med.findById(req.params.id, function(err,content){
         if (err) return res.json({success: false, message: err});
         res.render('med_per', { data : content , showornot : 1 ,user:req.user} );
@@ -95,7 +95,7 @@ router.get('/med/:id/update', function(req, res) {
 
 /*update 페이지 update*/
 //LOGIN + 내꺼
-router.post('/med/:id/update', function(req, res) {
+router.post('/med/:id/update', isLoggedIn,function(req, res) {
     var updated={title: req.body.title, content:req.body.content, contact:req.body.contact, email:req.body.email, due_date:req.body.due_date, pay:req.body.pay, finished:req.body.finished, summary:req.body.summary };
 	Med.findByIdAndUpdate(req.params.id, updated, function (err,content) {
 		if(err) return res.json({success: false, message: err, user:req.user});
@@ -106,11 +106,20 @@ router.post('/med/:id/update', function(req, res) {
 
 /*update 해서 지우기로함*/
 //LOGIN
-router.delete('/med/:id/update', function(req, res) {
+router.delete('/med/:id/update', isLoggedIn,function(req, res) {
     News.findOneAndRemove({ _id : req.params.id }, function (err,user) {
     	if(err) return res.json({success: false, message: err,user:req.user});
       res.redirect('back');
   });
 });
+
+
+function isLoggedIn (req, res, next) {
+  if (req.isAuthenticated()) {
+    return next();
+  } else {
+    res.redirect('/login');
+  }
+}
 
 module.exports = router;
