@@ -29,7 +29,7 @@ router.get('/med/new', function(req, res) {
 //LOGIN!
 router.post('/med/new', /*upload.single('filetoupload'),*/ function (req, res) {
     console.log(req.body);
-    var due_date = req.body.date;
+    var due_date = req.body.date.val();
     console.log(due_date);
     var strDate = due_date.split('/');
     console.log(strDate[0]);
@@ -44,7 +44,7 @@ router.post('/med/new', /*upload.single('filetoupload'),*/ function (req, res) {
         email:req.body.email,
         due_date: mydate,
         pay:req.body.pay,
-        summary:req.body.summernote
+        summary:req.body.summary
     });
     console.log(med1);
     med1.save(function(err,med1){
