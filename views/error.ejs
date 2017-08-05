@@ -14,17 +14,20 @@
       min-height: 100%;
       width: auto;
       height: auto;
-     
       overflow: hidden;
+      
     }
 
+    #error {
+        color: white;  
+        font-size: 100px;
+    }
+    
     </style>
 </head>
     <body>
-
-        
-        <video src="/images/error.mp4" id="video" preload="auto" autoplay="true" loop="loop" muted="muted" volume="0">
-        
+        <video  id="video" preload="auto" autoplay="true" loop="loop" muted="muted" volume="0">
+        <source src="/images/error.mp4">
         </video>
         <!-- =======================
              ===== START PAGE ======
@@ -32,26 +35,16 @@
 
         <div class="wrapper">
             <div class="container">
-
-                <!-- Page-Title -->
-
-                <!-- Page-Title -->
-                <!--<div class="row" style="background-image:url('/images/login.jpg'); backgorund-size: cover;margin-bottom:20px">-->
-                <!--    아아아아아아-->
-                <!--</div>-->
-                여기다가 이용방법 영상을 넣고싶
-                <!-- end row -->
-                
-                
-                
-                
-                <!-- end row -->
-
-
+                <div class="col-xs-12">
+                    <div class="text-center">
+                        <p id="error">(ㅇㅂㅇ)/ 에러에요~<br>
+                        <%= error.status %><%= message %>
+                        </p>
+                    </div>
+                </div>
 
 
                <%include footer%>
-
             </div> <!-- end container -->
         </div>
         <!-- End wrapper -->

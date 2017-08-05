@@ -1090,7 +1090,7 @@ h3.timeline-title {
  =============*/
 
 .wrapper-page {
-  background-color: rgba(100,100,160,1);
+  background-color: rgb(100,100,160);
   border-radius: 15px;
   padding: 5px 20px;
   margin: 20% auto;
