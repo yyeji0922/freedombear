@@ -100,14 +100,24 @@
                                             </div>
                                             <tbody>
 
-                                                <% for( var i=0; i < data.medinfo.length ;i++){%>
+                                                <% 
+
+                                                for( var i=0; i < data.medinfo.length ;i++){
+                                                    var oneItem = data.medinfo[i];
+                                                    var month = ("0"+oneItem.due_date.getMonth().toString()).substr(-2);
+                                                    var date = ("0"+oneItem.due_date.getDate().toString()).substr(-2);
+                                                    var year = oneItem.due_date.getFullYear().toString();
+                                                    var full_date = year+"/"+month+"/"+date;
+
+
+                                                %>
                                                 
                                                 <tr>
                                                     <td></td>
                                                     <td><%=data.medinfo[i].writer_id%></td>
                                                     <td><%= data.medinfo[i].title%></td>
                                                     <td><%= data.medinfo[i].summary%></td>
-                                                    <td><%= data.medinfo[i].due_date%></td>
+                                                    <td><%= full_date%></td>
                                                     <td style="text-align: center;"><button class="demo-delete-row btn btn-danger btn-xs btn-icon fa fa-times"></button></td>
                                       
                                                 </tr>
