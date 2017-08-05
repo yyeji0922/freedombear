@@ -1,22 +1,11 @@
 var express = require('express');
 var async=require('async');
+
+var bcrypt=require('bcrypt-nodejs');
 var mongoose=require('mongoose');
 var router = express.Router();
 var User= require('../models/User.js');
 var Med= require('../models/Med.js');
-
-/* 해야함. 
-router.get('/my/show', isLoggedIn, function(req, res) {
-    User.findById( req.user, function(errs, datas){
-        if(errs) return res.json({success:false, message:errs});
-        Med.find({ writer_id : datas.uid }, function(err,data){
-            if(err) return res.json({success:false, message:err});
-            console.log(data);
-            res.render('my_show', { title: 'My' ,user: req.user, data: data});
-        });
-    });
-});
-*/
 
 router.get('/my',isLoggedIn, function(req, res) {
   
@@ -37,28 +26,42 @@ router.get('/my',isLoggedIn, function(req, res) {
     })}
     ],
       function (err, data) {
-        console.log(data);
         if (err) return res.json({success:'false', message: err});
-          res.render('my_show',{user:req.user, data:data});
+          res.render('my_show',{user:req.user, data:data,
+                      formData: req.flash('formData')[0],
+                      emailError: req.flash('emailError')[0],     
+                      nicknameError : req.flash('nicknameError')[0],
+                      passwordError: req.flash('passwordError')[0],
+                      passwordConfirmationError: req.flash('passwordConfirmationError')[0],
+                      });
     }
   )
 });
 
-router.post('/my',checkUserRegValidation, function(req,res){
-  User.findById(req.user, function(err,user){
+router.put('/my', isLoggedIn, checkUserRegValidation2, function(req,res){
+  
+  User.findById(req.user, req.body.user, function(err,user){
+    console.log('hahahahaha');
     if(err) return res.json( { success:"false", message:err });
-    console.log("1");
-    if(req.body.user.password==user.password){
-      if(req.body.user.newpassword){
-        req.body.user.password=req.body.user.newpassword;
-      } else{
-        delete req.body.user.password;
-      }
-      User.findByIdAndUpdate(req.user, req.body.user,function(err,user){
-        if(err) return res.json({success:"false",message:err});
-        res.redirect('/my');
-      });
+    if(user.authenticate( req.body.user.password ) ){
+      console.log(11111111);
+      if(req.body.user.newpassword1.length!=0){
+        if(req.body.user.newpassword1==req.body.user.newpassword2){
+          req.body.user.password=req.user.hash(req.body.user.newpassword1); //req.body.user.newpassword1;//;
+        }
+        else{
+          delete req.body.user.password;
+        }
+      } 
+        console.log(req.body.user);
+        User.findByIdAndUpdate(req.user, req.body.user, function(err,user){
+            if (err) return res.json({success:'false', message: err});
+            console.log("success");
+            res.redirect('/my'); 
+          });
+      
     } else{
+      console.log("WRONG PASSWORD");
       req.flash("formData",req.body.user);
       req.flash("passwordError","-Invalid password");
       res.redirect('/my');
@@ -72,13 +75,6 @@ router.get('/my/:id', isLoggedIn, function(req, res) {
     if (err) return res.json({ success: false, message: err});
     res.render('med_per', { title: 'My',user: req.user ,data:content});
   });
-
-});
-
-router.get('/my/test', function(req, res) {
-
-    res.render('find_user', {user: req.user });
-
 
 });
 
@@ -108,7 +104,7 @@ function isLoggedIn (req, res, next) {
   }
 }
 
-function checkUserRegValidation (req, res, next) {
+function checkUserRegValidation2 (req, res, next) {
   var isValid = true;
   async.waterfall(
     [ function (callback) {
@@ -122,7 +118,7 @@ function checkUserRegValidation (req, res, next) {
           callback(null, isValid);
         }
       );
-    }, function (isValid, callback) {
+    }/*, function (isValid, callback) {
       User.findOne({email: req.body.user.email, _id: {$ne: mongoose.Types.ObjectId(req.params.id)}},
         function (err,user) {
           if (user) {
@@ -134,8 +130,8 @@ function checkUserRegValidation (req, res, next) {
 
           callback(null, isValid);
         }
-      );
-    }], function (err, isValid) {
+      );}*/
+    ], function (err, isValid) {
       if (err) return res.json({success:'false', message: err});
       if (isValid) {
         return next();
