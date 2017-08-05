@@ -104,13 +104,13 @@ router.post('/my/:id', isLoggedIn, function(req, res) {
 
 });
  */
-/* 해야함. */
+/* 해야함. 
 router.delete('/my', isLoggedIn, function (req, res) {
 	User.findOneAndRemove( req.user, function (err,user) {
     	if(err) return res.json({success: false, message: err});
         res.redirect('/my');
   });
-});
+});*/
 
 function isLoggedIn (req, res, next) {
   if (req.isAuthenticated()) {

@@ -14,6 +14,7 @@ var methodOverride = require('method-override');
 var index = require('./routes/index');
 var med = require('./routes/med');
 var login = require('./routes/login');
+var match = require('./routes/match');
 var my = require('./routes/my');
 var config= require('./config/config')
 var app = express();
@@ -56,6 +57,7 @@ app.use(passport.session());
 app.all('/my*', my);
 app.all('/med*', med);
 app.all('/login*', login);
+app.all('/match*', match);
 app.all('/howto*', index);
 app.all('/', index);
 
