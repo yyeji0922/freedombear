@@ -7,14 +7,14 @@ var User= require("../models/User");
 
 router.get('/med',isLoggedIn, function(req, res,next) {
         Med.find({}).sort('-upload_time').exec( function(err,data){
-        if (err) return res.json({success: false, message: err, user:req.user});
+            if (err) return res.json({success: false, message: err, user:req.user});
             res.render('med',{ data : data, user:req.user} );
         });
 });
 
 router.get('/med/:id',isLoggedIn, function(req, res,next) {
     
-    if(req.params._id==1){
+    if(req.params.id==1){
         Med.find({}).sort('-pay').exec( function(err,data){
             if (err) return res.json({success: false, message: err, user:req.user});
             res.render('med',{ data : data, user:req.user} );
@@ -41,8 +41,7 @@ router.get('/med/:id',isLoggedIn, function(req, res,next) {
 
 
 
-    }
-});
+    });
 
 /* search & show */
 router.post('/med', isLoggedIn,function(req, res) {
