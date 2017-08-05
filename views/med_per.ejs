@@ -86,13 +86,11 @@
                                     </div>
                                 </div>
                                 <% if(user) {%>
-                                    여기도 다시해야함 이거 user랑 그거랑 같은지 보기
                                 <div class="text-right">
-                                    <form action="/med/<%= data._id %>">
-                                        <button type="submit" class="btn btn-primary waves-effect waves-light w-md m-b-30">수정하기</button>
-                                    </form>
+                                   
+                                    <button type="submit" class="btn btn-primary waves-effect waves-light w-md m-b-30" onclick="location.href='/med/<%=data.id%>';">수정하기</button>
                                     <form action="/med/<%= data._id %>?_method=delete" method="post">
-                                        <button type="submit" class="btn btn-primary waves-effect waves-light w-md m-b-30">삭제하기</button>
+                                        <button type="submit" class="btn btn-primary waves-effect waves-light w-md m-b-30" onclick="med_delete();">삭제하기</button>
                                     </form>
                                 </div>
                                 <%}%>
@@ -129,6 +127,15 @@
                     airMode: true
                 });
             });
+            
+            function med_update () {
+                var form = document.createElement('form');
+                form.setAttribute('method', 'get');
+                form.setAttribute('action', 'http://google.com');
+                form.style.display = 'hidden';
+                document.body.appendChild(form)
+                form.submit();
+            }
         </script>
 
 

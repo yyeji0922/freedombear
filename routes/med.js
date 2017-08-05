@@ -29,8 +29,12 @@ router.get('/med/new', function(req, res) {
 //LOGIN!
 router.post('/med/new', /*upload.single('filetoupload'),*/ function (req, res) {
     console.log(req.body);
-    var due_date = req.body.text;
+    var due_date = req.body.date.val();
+    console.log(due_date);
     var strDate = due_date.split('/');
+    console.log(strDate[0]);
+    console.log(strDate[1]);
+    console.log(strDate[2]);
     var mydate = (strDate[2],strDate[0],strDate[1],23,59);
     var med1 = new Med({
         med_id:Med.count()+1,
@@ -40,16 +44,17 @@ router.post('/med/new', /*upload.single('filetoupload'),*/ function (req, res) {
         email:req.body.email,
         due_date: mydate,
         pay:req.body.pay,
-        summary:req.body.summernote
+        summary:req.body.summary
     });
+    console.log(med1);
     med1.save(function(err,med1){
         if(err)
             console.log("error:can't insert");
         else
             console.log("insertion success");
     });
+
     res.redirect('/med', {user:req.user});
-    
 });
 
 /*news 보여주기*/

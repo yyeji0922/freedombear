@@ -14,10 +14,21 @@
 /* ===========
    Common
  =============*/
+@font-face {
+  font-family: 'font1';
+  src: url("/fonts/font1.ttf") format('truetype');
+}
+
+@font-face{
+  font-family: 'SDMiSaeng';
+  src: url("/fonts/SDMiSaeng.ttf") format('truetype');
+}
+
 body {
   background: #f5f5f5;
   
-  font-family: 'Noto Sans', sans-serif;
+  font-family: 'font1', sans-serif;
+  font-size: 20px;
   margin: 0;
   color: #4c5667;
   padding-bottom: 61px;

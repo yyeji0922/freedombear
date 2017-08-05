@@ -17,25 +17,37 @@
       min-height: 100%;
       width: auto;
       height: auto;
-      z-index: -100;
+      z-index: 0;
       overflow: hidden;
     }
     
+    #box{
+        padding: 5px;
+        margin: 10px;
+    }
+    
     </style>
+    
 </head>
 
      <body class="login">
-        
+        <div id="box">
+            
+        </div>
         
         <video id="videobcg" preload="auto" autoplay="true" loop="loop" muted="muted" volume="0">
         <source src="/images/login2.mp4">    
         </video>
         
-        <div class="wrapper-page"; z-index: 5>
+        <div class="wrapper-page">
+        
+        <div class="col-xs-12">
+        
             <div class="text-center">
-                <a href="/" class="logo logo-lg"><span style="color: MintCream">데이터 대리</span> </a>
+                <a href="/" class="logo logo-lg"><img src="/images/data-logo.png"></a>
             </div>
-            
+        </div>
+
             <form class="form-horizontal m-t-20" action="/login" method="post">
 
                 <div class="form-group">
