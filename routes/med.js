@@ -11,12 +11,44 @@ var storage = multer.diskStorage({
   }
 });
 /* GET news listing. */
+
 router.get('/med',isLoggedIn, function(req, res,next) {
-    Med.find({}).sort('-due_date').exec( function(err,data){
-		if (err) return res.json({success: false, message: err, user:req.user});
-		res.render('med',{ data : data, user:req.user} );
-	});
+        Med.find({}).sort('-upload_time').exec( function(err,data){
+            if (err) return res.json({success: false, message: err, user:req.user});
+            res.render('med',{ data : data, user:req.user} );
+        });
 });
+
+router.get('/med/:id',isLoggedIn, function(req, res,next) {
+    
+    if(req.params.id==1){
+        Med.find({}).sort('-pay').exec( function(err,data){
+            if (err) return res.json({success: false, message: err, user:req.user});
+            res.render('med',{ data : data, user:req.user} );
+        });
+    }
+    else if(req.params.id==2){
+        Med.find({}).sort('pay').exec( function(err,data){
+            if (err) return res.json({success: false, message: err, user:req.user});
+            res.render('med',{ data : data, user:req.user} );
+        });
+    }
+    else if(req.params.id==3){
+        Med.find({}).sort('-upload_time').exec( function(err,data){
+            if (err) return res.json({success: false, message: err, user:req.user});
+            res.render('med',{ data : data, user:req.user} );
+        });
+    }
+    else{
+        Med.find({}).sort('due_date').exec( function(err,data){
+            if (err) return res.json({success: false, message: err, user:req.user});
+            res.render('med',{ data : data, user:req.user} );
+        });
+    }
+
+
+
+    });
 
 /* search & show */
 router.post('/med', isLoggedIn,function(req, res) {
