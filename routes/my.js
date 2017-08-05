@@ -20,18 +20,20 @@ router.get('/my/show', isLoggedIn, function(req, res) {
 router.get('/my/update', isLoggedIn, function(req, res) {
     User.findById(req.user,function(err,data){
         if(err) return res.json({success:false, message:err}); 
-       res.render('my_update', { title: 'My' ,user: req.user, data: data,
+       res.render('my_update', { title: 'My' ,
+                                user: req.user, 
+                                data: data,
                                 formData: req.flash("formData")[0],
                                 emailError: req.flash('emailError')[0],
                                 passwordError:req.flash('passwordError')[0]
                               });
-    })
-
+    });
 });
 
 router.post('/my/update',checkUserRegValidation, function(req,res){
   User.findById(req.user, function(err,user){
-    if(err) return res.json({success:"false",message:err});
+    if(err) return res.json( { success:"false", message:err });
+    console.log("1");
     if(req.body.user.password==user.password){
       if(req.body.user.newpassword){
         req.body.user.password=req.body.user.newpassword;
@@ -51,7 +53,7 @@ router.post('/my/update',checkUserRegValidation, function(req,res){
 })
 
 router.get('/my/:id', isLoggedIn, function(req, res) {
-
+  
   Med.findById(req.params.id, function(err,content){
     if (err) return res.json({success: false, message: err});
     res.render('med_per', { title: 'My',user: req.user ,data:content});
