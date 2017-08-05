@@ -65,15 +65,15 @@ File: Menu
   font-size: 16px;
 }
 #topnav .topbar-main .nav > li > a {
-  padding: 13px 15px !important;
+  padding: 10px 10px !important;
 }
 #topnav .topbar-main .navbar-nav > .open > a {
   background-color: rgba(255, 255, 255, 0.1) !important;
 }
 #topnav .topbar-main .profile img {
   border: 2px solid #edf0f0;
-  height: 36px;
-  width: 36px;
+  height: 50px;
+  width: 50px;
 }
 #topnav .topbar-main .dropdown-menu-lg {
   width: 300px;

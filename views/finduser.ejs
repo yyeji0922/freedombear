@@ -3,15 +3,16 @@
 
     
 #cover {
-  padding-top: 90px;
+  padding-top: 100px;
   text-align:center;
   font-family: "SDMiSaeng" ;
-  font-size: 50px;
-  color: red;
-  background: url("/images/cat2.jpg") no-repeat center bottom;
+  font-size: 70px;
+  font-weight: bold;
+  color: White;
+  background: url("/images/teamwork.jpg") no-repeat center bottom;
   background-size: cover;
   background-attachment: fixed;
-  height: 300px;
+  height: 450px;
   position: relative;
   width: 100%;
 }
@@ -46,12 +47,12 @@
                             </div>
                         </div>
 
-                        <div class="row m-t-40">
+                        <div class="row m-t-40" >
 
                             <!--Pricing Column-->
-                            <article class="pricing-column col-lg-4 col-md-4">
+                            <article class="pricing-column col-lg-4 col-md-4"  >
                                 <div class="ribbon"><span>일반인</span></div>
-                                <div class="inner-box card-box">
+                                <div class="inner-box card-box" style="height:600px; position:relative">
                                     <div class="plan-header text-center">
                                         <h3 class="plan-title">단순 노가다 작업일 때</h3>
                                         <h2 class="plan-price"  style="font-size:33px">아무나!</h2>
@@ -62,10 +63,12 @@
                                         <li><i class="ti-user text-success"></i> 단순한 분류 작업이나 간단한 라벨링과 같은 일</li>
                                         
                                     </ul>
-
-                                    <div class="text-center">
-                                        <a href="#" class="btn btn-danger btn-bordred btn-rounded waves-effect waves-light">대리찾기</a>
-                                    </div>
+                                    <form action="/match/1" method="post">
+                                        <div class="text-center" style="padding-bottom: 50px; position:absolute; left:141px; bottom:0px"> 
+                                            <button class="btn btn-danger btn-bordred btn-rounded waves-effect waves-light" type="submit">대리찾기</button>
+                                        </div>
+                                    
+                                    </form>
                                 </div>
                             </article>
 
@@ -73,7 +76,7 @@
                             <!--Pricing Column-->
                             <article class="pricing-column col-lg-4 col-md-4">
                                 <div class="ribbon"><span>전문가</span></div>
-                                <div class="inner-box card-box">
+                                <div class="inner-box card-box" style="height:600px; position: relative">
                                     <div class="plan-header text-center">
                                         <h3 class="plan-title" style="font-size:12px">많은 양의 정보를 처리하고 수집할 때</h3>
                                         <h2 class="plan-price" style="font-size:31px">빅데이터 전문가</h2>
@@ -85,29 +88,32 @@
                                         <li><i class="ti-user text-success"></i>방대한 양의 데이터를 전문적인 툴로 작업</li>
                                     </ul>
                                     <p class="ti-pin-alt" style="padding:5px">&nbsp선택할 컴퓨터 언어</p>
-                                     <div class="checkbox checkbox-primary form-group">
-                                                    <input id="checkbox2" type="checkbox">
+                                    <form action="/match/2" method="post"> 
+                                         <div class="checkbox checkbox-primary form-group">
+                                                    <input class="langcl lang_checkbox" id="lang_checkbox2" type="checkbox" name="lang" value=1 required>
                                                     <label for="checkbox2">
-                                                        EXCEL
+                                                        <b>Excel</b>
                                                     </label>
-                                    </div>
-                                     <div class="checkbox checkbox-primary form-group">
-                                                    <input id="checkbox2" type="checkbox">
-                                                    <label for="checkbox2">
-                                                        PYTHON
+                                                </div>
+                                                <div class="checkbox checkbox-success form-group">
+                                                    <input class="langcl lang_checkbox" id="lang_checkbox3" type="checkbox" name="lang" value=2>
+                                                    <label for="checkbox3">
+                                                        <b>Python</b>
                                                     </label>
-                                    </div>
-                                     <div class="checkbox checkbox-primary form-group">
-                                                    <input id="checkbox2" type="checkbox">
-                                                    <label for="checkbox2">
-                                                        R/SAS
+                                                </div>
+                                                <div class="checkbox checkbox-info form-group">
+                                                    <input class="langcl lang_checkbox" id="lang_checkbox4" type="checkbox" name="lang" value=3>
+                                                    <label for="checkbox4">
+                                                        <b>R/SAS</b>
                                                     </label>
-                                    </div>
-                                    <p><br><br></p>
-                                    <div class="text-center">
-                                        <a href="#" class="btn btn-danger btn-bordred btn-rounded waves-effect waves-light">대리찾기</a>
+                                                </div>
+                                    
+                                    <div class="text-center" style="padding-bottom: 50px; position:absolute; left:141px; bottom:0px"> 
+                                        <button class="btn btn-danger btn-bordred btn-rounded waves-effect waves-light" type="submit">대리찾기</button>
                                     </div>
                                     
+                                    
+                                    </form>
                                 </div>
                             </article>
 
@@ -115,7 +121,7 @@
                             <!--Pricing Column-->
                             <article class="pricing-column col-lg-4 col-md-4">
                                 <div class="ribbon"><span>전문가</span></div>
-                                <div class="inner-box card-box">
+                                <div class="inner-box card-box" style="height:600px">
                                     <div class="plan-header text-center">
                                         <h3 class="plan-title" style="font-size:13px">특정 분야의 고급 정보가 필요할 때</h3>
                                         <h2 class="plan-price" style="font-size:33px">전문직 종사자</h2>
@@ -125,39 +131,44 @@
                                         <li><i class="ti-user text-success"></i>다양한 분야에서 흔하지 않은 정보가 필요할 경우</li>
                                     </ul>
                                     <p class="ti-pin-alt" style="padding:5px">&nbsp선택할 분야</p>
+                                    <form action="/match/3" method="post">
+                                        
                                     <div class="checkbox checkbox-primary form-group">
-                                                    <input id="checkbox2" type="checkbox">
-                                                    <label for="checkbox2">
-                                                        생명/의학/약학
-                                                    </label>
-                                    </div>
-                                    <div class="checkbox checkbox-primary form-group">
-                                                    <input id="checkbox2" type="checkbox">
-                                                    <label for="checkbox2">
-                                                        금융/경제
-                                                    </label>
-                                    </div>
-                                    <div class="checkbox checkbox-primary form-group">
-                                                    <input id="checkbox2" type="checkbox">
-                                                    <label for="checkbox2">
-                                                        IT/공학
-                                                    </label>
-                                    </div>
-                                    <div class="checkbox checkbox-primary form-group">
-                                                    <input id="checkbox2" type="checkbox">
-                                                    <label for="checkbox2">
-                                                        사회/교육/심리
-                                                    </label>
-                                    </div>
-                                     <div class="checkbox checkbox-primary form-group">
-                                                    <input id="checkbox2" type="checkbox">
-                                                    <label for="checkbox2">
-                                                        언어
-                                                    </label>
-                                    </div>
-                                    <div class="text-center">
-                                        <a href="#" class="btn btn-danger btn-bordred btn-rounded waves-effect waves-light">대리찾기</a>
-                                    </div>
+                                                        <input class="majorcl major_checkbox" id="major_checkbox2" type="checkbox" name="major" value=1 required>
+                                                        <label for="checkbox2">
+                                                            <b>생명/의학/약학</b>
+                                                        </label>
+                                                    </div>
+                                                    <div class="checkbox checkbox-success form-group">
+                                                        <input class="majorcl major_checkbox" id="major_checkbox3" type="checkbox" name="major" value=2>
+                                                        <label for="checkbox3">
+                                                            <b>금융/경제</b>
+                                                        </label>
+                                                    </div>
+                                                    <div class="checkbox checkbox-info form-group">
+                                                        <input class="majorcl major_checkbox" id="major_checkbox4" type="checkbox" name="major" value=3>
+                                                        <label for="checkbox4">
+                                                            <b>IT/공학</b>
+                                                        </label>
+                                                    </div>
+                                                    <div class="checkbox checkbox-warning form-group">
+                                                        <input class="majorcl major_checkbox" id="major_checkbox5" type="checkbox" name="major" value=4>
+                                                        <label for="checkbox5">
+                                                            <b>사회/교육/심리</b>
+                                                        </label>
+                                                    </div>
+                                                    <div class="checkbox checkbox-danger form-group">
+                                                        <input class="majorcl major_checkbox" id="major_checkbox6" type="checkbox" name="major" value=5>
+                                                        <label for="checkbox6">
+                                                            <b>언어</b>
+                                                        </label>
+                                                    </div>
+                                    
+                                            <div class="text-center" style="padding-bottom: 50px; position:absolute; left:141px; bottom:0px"> 
+                                                <button class="btn btn-danger btn-bordred btn-rounded waves-effect waves-light" type="submit">대리찾기</button>
+                                            </div>
+                                    
+                                    </form>
                                 </div>
                             </article>
 
