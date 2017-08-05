@@ -1,10 +1,20 @@
 <%include main%>
 <style>
-    #ti {
-        margin: 10px;
-        font-family: "SDMiSaeng" ;
-        font-size: 30px;
-    }
+
+    
+#cover {
+  padding-top: 90px;
+  text-align:center;
+  font-family: "SDMiSaeng" ;
+  font-size: 50px;
+  color: red;
+  background: url("/images/cat2.jpg") no-repeat center bottom;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 300px;
+  position: relative;
+  width: 100%;
+}
 </style>
 
 </head>
@@ -21,9 +31,16 @@
                              <div id="ti">
                                 <div class="row">
                                     <div class="col-sm-12">
-                                        <p class="text-center">저희가 대신 대리를 찾아드립니다.<br>
-                                        해당 사항에 체크를 해 주세요!
-                                        </p>
+                                        
+                                        
+                                      <div id="cover">
+                                        <div class="cover-content">
+                                          <p>저희가 대신 찾아서 매칭해드립니다.</p>
+                                          <p>필요한 사항에 체크해주세요!</p>
+                                        </div>
+                                      </div>
+
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -33,23 +50,21 @@
 
                             <!--Pricing Column-->
                             <article class="pricing-column col-lg-4 col-md-4">
+                                <div class="ribbon"><span>일반인</span></div>
                                 <div class="inner-box card-box">
                                     <div class="plan-header text-center">
-                                        <h3 class="plan-title">Starter Pack</h3>
-                                        <h2 class="plan-price">$19</h2>
-                                        <div class="plan-duration">Per Month</div>
+                                        <h3 class="plan-title">단순 노가다 작업일 때</h3>
+                                        <h2 class="plan-price"  style="font-size:33px">아무나!</h2>
+                                        
                                     </div>
                                     <ul class="plan-stats list-unstyled text-center">
-                                        <li><i class="ti-cloud text-success"></i> 10 GB Storege</li>
-                                        <li><i class="ti-briefcase text-success"></i> 500 GB Bandwidth</li>
-                                        <li><i class="ti-wand text-success"></i> No Domain</li>
-                                        <li><i class="ti-user text-success"></i> 1 User</li>
-                                        <li><i class="ti-email text-success"></i> Email Support</li>
-                                        <li><i class="ti-headphone-alt text-success"></i> 24x7 Support</li>
+                                        <li><i class="ti-wand text-success"></i> 인터넷 사용 경험이 있음</li>
+                                        <li><i class="ti-user text-success"></i> 단순한 분류 작업이나 간단한 라벨링과 같은 일</li>
+                                        
                                     </ul>
 
                                     <div class="text-center">
-                                        <a href="#" class="btn btn-danger btn-bordred btn-rounded waves-effect waves-light">Signup Now</a>
+                                        <a href="#" class="btn btn-danger btn-bordred btn-rounded waves-effect waves-light">대리찾기</a>
                                     </div>
                                 </div>
                             </article>
@@ -57,48 +72,91 @@
 
                             <!--Pricing Column-->
                             <article class="pricing-column col-lg-4 col-md-4">
-                                <div class="ribbon"><span>POPULAR</span></div>
+                                <div class="ribbon"><span>전문가</span></div>
                                 <div class="inner-box card-box">
                                     <div class="plan-header text-center">
-                                        <h3 class="plan-title">Professional Pack</h3>
-                                        <h2 class="plan-price">$29</h2>
-                                        <div class="plan-duration">Per Month</div>
+                                        <h3 class="plan-title" style="font-size:13px">많은 양의 정보를 처리하고 수집할 때</h3>
+                                        <h2 class="plan-price" style="font-size:33px">빅데이터 전문가</h2>
+                                        
                                     </div>
                                     <ul class="plan-stats list-unstyled text-center">
-                                        <li><i class="ti-cloud text-success"></i> 50 GB Storege</li>
-                                        <li><i class="ti-briefcase text-success"></i> 1200 GB Bandwidth</li>
-                                        <li><i class="ti-wand text-success"></i> 5 Domain</li>
-                                        <li><i class="ti-user text-success"></i> 100 User</li>
-                                        <li><i class="ti-email text-success"></i> Email Support</li>
-                                        <li><i class="ti-headphone-alt text-success"></i> 24x7 Support</li>
+                                        
+                                        <li><i class="ti-wand text-success"></i>Python, R/SAS 전문가</li>
+                                        <li><i class="ti-user text-success"></i>방대한 양의 데이터를 전문적인 툴로 작업</li>
                                     </ul>
-
-                                    <div class="text-center">
-                                        <a href="#" class="btn btn-danger btn-bordred btn-rounded waves-effect waves-light">Signup Now</a>
+                                    <p class="ti-pin-alt" style="padding:5px">&nbsp선택할 컴퓨터 언어</p>
+                                     <div class="checkbox checkbox-primary form-group">
+                                                    <input id="checkbox2" type="checkbox">
+                                                    <label for="checkbox2">
+                                                        EXCEL
+                                                    </label>
                                     </div>
+                                     <div class="checkbox checkbox-primary form-group">
+                                                    <input id="checkbox2" type="checkbox">
+                                                    <label for="checkbox2">
+                                                        PYTHON
+                                                    </label>
+                                    </div>
+                                     <div class="checkbox checkbox-primary form-group">
+                                                    <input id="checkbox2" type="checkbox">
+                                                    <label for="checkbox2">
+                                                        R/SAS
+                                                    </label>
+                                    </div>
+                                    <p><br><br></p>
+                                    <div class="text-center">
+                                        <a href="#" class="btn btn-danger btn-bordred btn-rounded waves-effect waves-light">대리찾기</a>
+                                    </div>
+                                    
                                 </div>
                             </article>
 
 
                             <!--Pricing Column-->
                             <article class="pricing-column col-lg-4 col-md-4">
+                                <div class="ribbon"><span>전문가</span></div>
                                 <div class="inner-box card-box">
                                     <div class="plan-header text-center">
-                                        <h3 class="plan-title">Enterprise Pack</h3>
-                                        <h2 class="plan-price">$39</h2>
-                                        <div class="plan-duration">Per Month</div>
+                                        <h3 class="plan-title" style="font-size:15px">특정 분야의 고급 정보가 필요할 때</h3>
+                                        <h2 class="plan-price" style="font-size:33px">전문직 종사자</h2>
                                     </div>
                                     <ul class="plan-stats list-unstyled text-center">
-                                        <li><i class="ti-cloud text-success"></i> 1000 GB Storege</li>
-                                        <li><i class="ti-briefcase text-success"></i> Unlimited Bandwidth</li>
-                                        <li><i class="ti-wand text-success"></i> 20 Domain</li>
-                                        <li><i class="ti-user text-success"></i> Unlimited User</li>
-                                        <li><i class="ti-email text-success"></i> Email Support</li>
-                                        <li><i class="ti-headphone-alt text-success"></i> 24x7 Support</li>
+                                        <li><i class="ti-wand text-success"></i>여러 분야의 전문가</li>
+                                        <li><i class="ti-user text-success"></i>다양한 분야에서 흔하지 않은 정보가 필요할 경우</li>
                                     </ul>
-
+                                    <p class="ti-pin-alt" style="padding:5px">&nbsp선택할 분야</p>
+                                    <div class="checkbox checkbox-primary form-group">
+                                                    <input id="checkbox2" type="checkbox">
+                                                    <label for="checkbox2">
+                                                        생명/의학/약학
+                                                    </label>
+                                    </div>
+                                    <div class="checkbox checkbox-primary form-group">
+                                                    <input id="checkbox2" type="checkbox">
+                                                    <label for="checkbox2">
+                                                        금융/경제
+                                                    </label>
+                                    </div>
+                                    <div class="checkbox checkbox-primary form-group">
+                                                    <input id="checkbox2" type="checkbox">
+                                                    <label for="checkbox2">
+                                                        IT/공학
+                                                    </label>
+                                    </div>
+                                    <div class="checkbox checkbox-primary form-group">
+                                                    <input id="checkbox2" type="checkbox">
+                                                    <label for="checkbox2">
+                                                        사회/교육/심리
+                                                    </label>
+                                    </div>
+                                     <div class="checkbox checkbox-primary form-group">
+                                                    <input id="checkbox2" type="checkbox">
+                                                    <label for="checkbox2">
+                                                        언어
+                                                    </label>
+                                    </div>
                                     <div class="text-center">
-                                        <a href="#" class="btn btn-danger btn-bordred btn-rounded waves-effect waves-light">Signup Now</a>
+                                        <a href="#" class="btn btn-danger btn-bordred btn-rounded waves-effect waves-light">대리찾기</a>
                                     </div>
                                 </div>
                             </article>

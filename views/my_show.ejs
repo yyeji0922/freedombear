@@ -17,14 +17,9 @@
              ======================= -->
 
         <div class="wrapper">
-            <div class="container">
+            <div class="container" style="margin-top:160px">
 
-                <!-- Page-Title -->
-                <div class="row">
-                    <div class="col-sm-12">
-                        <h4 class="page-title">Profile</h4>
-                    </div>
-                </div>
+                
                 <!-- Page-Title -->
 
 
@@ -38,17 +33,15 @@
 
                                 <div class="">
                                     <h4 class="m-b-5"><%=data.userinfo.name%></h4>
-                                    <p class="text-muted">@webdesigner</p>
+                                    <p class="text-muted"><%=data.userinfo.uid%></p>
                                 </div>
 
-                                <button type="button" class="btn btn-success btn-sm w-sm waves-effect m-t-10 waves-light">Follow</button>
-                                <button type="button" class="btn btn-danger btn-sm w-sm waves-effect m-t-10 waves-light">Message</button>
+                                <button type="button" class="btn btn-success btn-sm w-sm waves-effect m-t-10 waves-light">프로필 변경</button>
+                                <button type="button" class="btn btn-danger btn-sm w-sm waves-effect m-t-10 waves-light">포인트 충전</button>
 
 
                                 <div class="text-left m-t-40">
                                     <p class="text-muted font-13"><strong>Full Name :</strong> <span class="m-l-15"><%=data.userinfo.name%></span></p>
-
-                                    <p class="text-muted font-13"><strong>Mobile :</strong><span class="m-l-15"><%=data.userinfo.contact%></span></p>
 
                                     <p class="text-muted font-13"><strong>Email :</strong> <span class="m-l-15"><%=data.userinfo.email%></span></p>
 
@@ -110,6 +103,8 @@
                                                 <% for( var i=0; i < data.medinfo.length ;i++){%>
                                                 
                                                 <tr>
+                                                    <td></td>
+                                                    <td><%=data.medinfo[i].writer_id%></td>
                                                     <td><%= data.medinfo[i].title%></td>
                                                     <td><%= data.medinfo[i].summary%></td>
                                                     <td><%= data.medinfo[i].due_date%></td>

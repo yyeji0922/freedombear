@@ -1094,8 +1094,8 @@ h3.timeline-title {
   border-radius: 15px;
   padding: 5px 20px;
   margin: 20% auto;
-  margin-top: 100px;
-  max-width: 350px;
+  margin-top: 30px;
+  max-width: 450px;
   z-index: 5;
 }
 
@@ -1195,6 +1195,7 @@ h3.timeline-title {
   position: relative;
   padding: 30px 20px 25px;
 }
+
 .pricing-column .plan-title {
   font-size: 16px;
   margin-bottom: 10px;
