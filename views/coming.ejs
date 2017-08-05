@@ -1,0 +1,111 @@
+<% include main %>
+
+</head>
+    <body>
+
+
+        <% include navbar%>        
+        <!-- =======================
+             ===== START PAGE ======
+             ======================= -->
+
+        <div class="wrapper">
+            <div class="container">
+
+                <!-- Page-Title -->
+
+                <!-- Page-Title -->
+                <!--<div class="row" style="background-image:url('/images/login.jpg'); backgorund-size: cover;margin-bottom:20px">-->
+                <!--    아아아아아아-->
+                <!--</div>-->
+                여기다가 이용방법 영상을 넣고싶
+                <!-- end row -->
+
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <!-- end row -->
+
+
+
+
+               <%include footer%>
+
+            </div> <!-- end container -->
+        </div>
+        <!-- End wrapper -->
+
+
+
+       <!-- jQuery  -->
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/bootstrap.min.js"></script>
+        <script src="/js/detect.js"></script>
+        <script src="/js/fastclick.js"></script>
+        <script src="/js/jquery.blockUI.js"></script>
+        <script src="/js/waves.js"></script>
+        <script src="/js/wow.min.js"></script>
+        <script src="/js/jquery.nicescroll.js"></script>
+        <script src="/js/jquery.scrollTo.min.js"></script>
+
+        <!-- Counter Up  -->
+        <script src="/js/plugins/jquery.waypoints.js"></script>
+        <script src="/js/plugins/jquery.counterup.min.js"></script>
+
+        <!-- circliful Chart -->
+        <script src="/js/plugins/jquery.circliful.min.js"></script>
+        <script src="/js/plugins/jquery.sparkline.min.js"></script>
+
+        <!-- skycons -->
+        <script src="/js/plugins/skycons.min.js" type="text/javascript"></script>
+
+        <!-- Page js  -->
+        <script src="/js/pages/jquery.dashboard.js"></script>
+
+        <!-- Custom main Js -->
+        <script src="/js/jquery.core.js"></script>
+        <script src="/js/jquery.app.js"></script>
+
+
+        
+
+
+        <script type="text/javascript">
+            jQuery(document).ready(function($) {
+                $('.counter').counterUp({
+                    delay: 100,
+                    time: 1200
+                });
+                $('.circliful-chart').circliful();
+            });
+
+            /* BEGIN SVG WEATHER ICON */
+            if (typeof Skycons !== 'undefined'){
+            var icons = new Skycons(
+                {"color": "#6a76fc"},
+                {"resizeClear": true}
+                ),
+                    list  = [
+                        "clear-day", "clear-night", "partly-cloudy-day",
+                        "partly-cloudy-night", "cloudy", "rain", "sleet", "snow", "wind",
+                        "fog"
+                    ],
+                    i;
+
+                for(i = list.length; i--; )
+                icons.set(list[i], list[i]);
+                icons.play();
+            };
+
+        </script>
+
+    </body>
+</html>
