@@ -105,8 +105,8 @@ router.post('/my/:id', isLoggedIn, function(req, res) {
 });
  */
 /* 해야함. */
-router.delete('/my/:id', isLoggedIn, function (req, res) {
-	Med.findOneAndRemove({ _id : req.params.id }, function (err,user) {
+router.delete('/my', isLoggedIn, function (req, res) {
+	User.findOneAndRemove( req.user, function (err,user) {
     	if(err) return res.json({success: false, message: err});
         res.redirect('/my');
   });
