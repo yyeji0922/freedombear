@@ -15,7 +15,7 @@ router.get('/howto', function(req, res, next) {
 router.get('/', function(req, res, next) {
   Med.find({}).sort('due_date').limit(6).exec(function(err,data){
     if (err) return res.json({success: false, message: err});
-    User.find({}).sort('point').limit(12).exec(function(err,data2){
+    User.find({}).sort('point').limit(9).exec(function(err,data2){
       if (err) return res.json({success: false, message: err});
       res.render('index',{ medinfo : data , userinfo:data2, user:req.user} );
     });
