@@ -36,7 +36,9 @@
                 </div>
                 
                 <div class="row">
-                    <div class="col-md-4 col-sm-6">
+                
+                    <% for(var i=0; i<6; i++){%>
+                    <div class="col-md-4 col-sm-6">    
                         <div class="text-center card-box">
                             <div class="member-card">
                                 <div class="thumb-lg member-thumb m-b-10 center-block">
@@ -44,7 +46,7 @@
                                 </div>
 
                                 <div class="">
-                                    <h4 class="m-b-5">Mark A. McKnight</h4>
+                                    <h4 class="m-b-5"><%=medinfo[i].writer_id%></h4>
                                     <p class="text-muted">@webdesigner</p>
                                 </div>
 
@@ -52,13 +54,13 @@
                                 
 
                                 <div class="text-left m-t-40">
-                                    <p class="text-muted font-13"><strong>작성자 :</strong> <span class="m-l-15">Johnathan Deo</span></p>
+                                    <p class="text-muted font-13"><strong>작성자 :</strong> <span class="m-l-15"><%=medinfo[i].name%></span></p>
 
-                                    <p class="text-muted font-13"><strong>제목 :</strong><span class="m-l-15">(123) 123 1234</span></p>
+                                    <p class="text-muted font-13"><strong>제목 :</strong><span class="m-l-15"><%=medinfo[i].contact%></span></p>
 
-                                    <p class="text-muted font-13"><strong>요약 :</strong> <span class="m-l-15">coderthemes@gmail.com</span></p>
+                                    <p class="text-muted font-13"><strong>요약 :</strong> <span class="m-l-15"><%=medinfo[i].email%></span></p>
 
-                                    <p class="text-muted font-13"><strong>날짜 :</strong> <span class="m-l-15">USA</span></p>
+                                    <p class="text-muted font-13"><strong>날짜 :</strong> <span class="m-l-15"><%=medinfo[i].due_date%></span></p>
                                 </div>
 
                                 
@@ -66,168 +68,10 @@
                             </div>
 
                         </div> <!-- end card-box -->
+                        
                     </div> <!-- end col -->
 
-                    <div class="col-md-4 col-sm-6">
-                        <div class="text-center card-box">
-                            <div class="member-card">
-                                <div class="thumb-lg member-thumb m-b-10 center-block">
-                                    <img src="/images/gom.jpg" class="img-circle img-thumbnail" alt="profile-image">
-                                </div>
-
-                                <div class="">
-                                    <h4 class="m-b-5">Mark A. McKnight</h4>
-                                    <p class="text-muted">@webdesigner</p>
-                                </div>
-
-                                <button type="button" class="btn btn-success btn-sm w-sm waves-effect m-t-10 waves-light">자세히보기</button>
-                                
-
-                                <div class="text-left m-t-40">
-                                    <p class="text-muted font-13"><strong>작성자 :</strong> <span class="m-l-15">Johnathan Deo</span></p>
-
-                                    <p class="text-muted font-13"><strong>제목 :</strong><span class="m-l-15">(123) 123 1234</span></p>
-
-                                    <p class="text-muted font-13"><strong>요약 :</strong> <span class="m-l-15">coderthemes@gmail.com</span></p>
-
-                                    <p class="text-muted font-13"><strong>날짜 :</strong> <span class="m-l-15">USA</span></p>
-                                </div>
-
-                                
-
-                            </div>
-
-                        </div> <!-- end card-box -->
-                    </div> <!-- end col -->
-
-                    <div class="col-md-4 col-sm-6">
-                        <div class="text-center card-box">
-                            <div class="member-card">
-                                <div class="thumb-lg member-thumb m-b-10 center-block">
-                                    <img src="/images/gom.jpg" class="img-circle img-thumbnail" alt="profile-image">
-                                </div>
-
-                                <div class="">
-                                    <h4 class="m-b-5">Mark A. McKnight</h4>
-                                    <p class="text-muted">@webdesigner</p>
-                                </div>
-
-                                <button type="button" class="btn btn-success btn-sm w-sm waves-effect m-t-10 waves-light">자세히보기</button>
-                                
-
-                                <div class="text-left m-t-40">
-                                    <p class="text-muted font-13"><strong>작성자 :</strong> <span class="m-l-15">Johnathan Deo</span></p>
-
-                                    <p class="text-muted font-13"><strong>제목 :</strong><span class="m-l-15">(123) 123 1234</span></p>
-
-                                    <p class="text-muted font-13"><strong>요약 :</strong> <span class="m-l-15">coderthemes@gmail.com</span></p>
-
-                                    <p class="text-muted font-13"><strong>날짜 :</strong> <span class="m-l-15">USA</span></p>
-                                </div>
-
-                                
-
-                            </div>
-
-                        </div> <!-- end card-box -->
-                    </div> <!-- end col -->
-
-                    <div class="col-md-4 col-sm-6">
-                        <div class="text-center card-box">
-                            <div class="member-card">
-                                <div class="thumb-lg member-thumb m-b-10 center-block">
-                                    <img src="/images/gom.jpg" class="img-circle img-thumbnail" alt="profile-image">
-                                </div>
-
-                                <div class="">
-                                    <h4 class="m-b-5">Mark A. McKnight</h4>
-                                    <p class="text-muted">@webdesigner</p>
-                                </div>
-
-                                <button type="button" class="btn btn-success btn-sm w-sm waves-effect m-t-10 waves-light">자세히보기</button>
-                                
-
-                                <div class="text-left m-t-40">
-                                    <p class="text-muted font-13"><strong>작성자 :</strong> <span class="m-l-15">Johnathan Deo</span></p>
-
-                                    <p class="text-muted font-13"><strong>제목 :</strong><span class="m-l-15">(123) 123 1234</span></p>
-
-                                    <p class="text-muted font-13"><strong>요약 :</strong> <span class="m-l-15">coderthemes@gmail.com</span></p>
-
-                                    <p class="text-muted font-13"><strong>날짜 :</strong> <span class="m-l-15">USA</span></p>
-                                </div>
-
-                                
-
-                            </div>
-
-                        </div> <!-- end card-box -->
-                    </div> <!-- end col -->
-
-                    <div class="col-md-4 col-sm-6">
-                        <div class="text-center card-box">
-                            <div class="member-card">
-                                <div class="thumb-lg member-thumb m-b-10 center-block">
-                                    <img src="/images/gom.jpg" class="img-circle img-thumbnail" alt="profile-image">
-                                </div>
-
-                                <div class="">
-                                    <h4 class="m-b-5">Mark A. McKnight</h4>
-                                    <p class="text-muted">@webdesigner</p>
-                                </div>
-
-                                <button type="button" class="btn btn-success btn-sm w-sm waves-effect m-t-10 waves-light">자세히보기</button>
-                                
-
-                                <div class="text-left m-t-40">
-                                    <p class="text-muted font-13"><strong>작성자 :</strong> <span class="m-l-15">Johnathan Deo</span></p>
-
-                                    <p class="text-muted font-13"><strong>제목 :</strong><span class="m-l-15">(123) 123 1234</span></p>
-
-                                    <p class="text-muted font-13"><strong>요약 :</strong> <span class="m-l-15">coderthemes@gmail.com</span></p>
-
-                                    <p class="text-muted font-13"><strong>날짜 :</strong> <span class="m-l-15">USA</span></p>
-                                </div>
-
-                                
-
-                            </div>
-
-                        </div> <!-- end card-box -->
-                    </div> <!-- end col -->
-
-                    <div class="col-md-4 col-sm-6">
-                        <div class="text-center card-box">
-                            <div class="member-card">
-                                <div class="thumb-lg member-thumb m-b-10 center-block">
-                                    <img src="/images/gom.jpg" class="img-circle img-thumbnail" alt="profile-image">
-                                </div>
-
-                                <div class="">
-                                    <h4 class="m-b-5">Mark A. McKnight</h4>
-                                    <p class="text-muted">@webdesigner</p>
-                                </div>
-
-                                <button type="button" class="btn btn-success btn-sm w-sm waves-effect m-t-10 waves-light">자세히보기</button>
-                                
-
-                                <div class="text-left m-t-40">
-                                    <p class="text-muted font-13"><strong>작성자 :</strong> <span class="m-l-15">Johnathan Deo</span></p>
-
-                                    <p class="text-muted font-13"><strong>제목 :</strong><span class="m-l-15">(123) 123 1234</span></p>
-
-                                    <p class="text-muted font-13"><strong>요약 :</strong> <span class="m-l-15">coderthemes@gmail.com</span></p>
-
-                                    <p class="text-muted font-13"><strong>날짜 :</strong> <span class="m-l-15">USA</span></p>
-                                </div>
-
-                                
-
-                            </div>
-
-                        </div> <!-- end card-box -->
-                    </div> <!-- end col -->
-
+                    <%}%>
                 </div>
                 <!-- end row -->
 
@@ -262,99 +106,17 @@
                                         <th>상태</th>
                                     </tr>
                                     </thead>
-                                    <tbody>
+                                    <tbody>    
+                                    <%for(var i=0; i<userinfo.length; i++){%>
                                         <tr>
-                                            <td>1</td>
-                                            <td>Minton Admin v1</td>
-                                            <td>01/01/2016</td>
-                                            <td>26/04/2016</td>
-                                            <td>Coderthemes</td>
+                                            <td><%=i%>위</td>
+                                            <td><%=userinfo[i].point%></td>
+                                            <td><%=userinfo[i].uid%></td>
+                                            <td><%=userinfo[i].name%></td>
+                                            <td><%=userinfo[i].email%></td>
                                             <td><span class="label label-info">Released</span></td>
                                         </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>Minton Frontend v1</td>
-                                            <td>01/01/2016</td>
-                                            <td>26/04/2016</td>
-                                            <td>Minton admin</td>
-                                            <td><span class="label label-success">Released</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td>Minton Admin v1.1</td>
-                                            <td>01/05/2016</td>
-                                            <td>10/05/2016</td>
-                                            <td>Coderthemes</td>
-                                            <td><span class="label label-pink">Pending</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>4</td>
-                                            <td>Minton Frontend v1.1</td>
-                                            <td>01/01/2016</td>
-                                            <td>31/05/2016</td>
-                                            <td>Minton admin</td>
-                                            <td><span class="label label-purple">Work in Progress</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>5</td>
-                                            <td>Minton Admin v1.3</td>
-                                            <td>01/01/2016</td>
-                                            <td>31/05/2016</td>
-                                            <td>Coderthemes</td>
-                                            <td><span class="label label-warning">Coming soon</span></td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>6</td>
-                                            <td>Minton Admin v1.3</td>
-                                            <td>01/01/2016</td>
-                                            <td>31/05/2016</td>
-                                            <td>Minton admin</td>
-                                            <td><span class="label label-warning">Coming soon</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>7</td>
-                                            <td>Minton Admin v1.3</td>
-                                            <td>01/01/2016</td>
-                                            <td>31/05/2016</td>
-                                            <td>Minton admin</td>
-                                            <td><span class="label label-warning">Coming soon</span></td>
-                                        </tr>
-                                        
-                                        <tr>
-                                            <td>8</td>
-                                            <td>Minton Admin v1.3</td>
-                                            <td>01/01/2016</td>
-                                            <td>31/05/2016</td>
-                                            <td>Minton admin</td>
-                                            <td><span class="label label-warning">Coming soon</span></td>
-                                        </tr>
-                                        
-                                         <tr>
-                                            <td>9</td>
-                                            <td>Minton Admin v1.3</td>
-                                            <td>01/01/2016</td>
-                                            <td>31/05/2016</td>
-                                            <td>Minton admin</td>
-                                            <td><span class="label label-warning">Coming soon</span></td>
-                                        </tr>
-                                         <tr>
-                                            <td>10</td>
-                                            <td>Minton Admin v1.3</td>
-                                            <td>01/01/2016</td>
-                                            <td>31/05/2016</td>
-                                            <td>Minton admin</td>
-                                            <td><span class="label label-warning">Coming soon</span></td>
-                                        </tr>
-                                         <tr>
-                                            <td>11</td>
-                                            <td>Minton Admin v1.3</td>
-                                            <td>01/01/2016</td>
-                                            <td>31/05/2016</td>
-                                            <td>Minton admin</td>
-                                            <td><span class="label label-warning">Coming soon</span></td>
-                                        </tr>
+                                    <%}%>    
                                      
                                     </tbody>
                                 </table>
