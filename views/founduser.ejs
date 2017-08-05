@@ -18,54 +18,55 @@
                 <!--<div class="row" style="background-image:url('/images/login.jpg'); backgorund-size: cover;margin-bottom:20px">-->
                 <!--    아아아아아아-->
                 <!--</div>-->
-                <div class="row" style="margin-bottom:20px">
-                   
-                    <div class="col-lg-3"></div>
-                    <div class="col-lg-6">
-                            
-                        <form role="search" class="form-inline">
-                                    
-                             <input type="text" class="form-control" placeholder="Search" style="width:90%;background-color:white; line-height:40px;height:40px;">
-                             <a href=""><i class="fa fa-search"></i></a>
-                                        
-                        </form>
-                    </div>            
-                    <div class="col-lg-3"></div>            
-                           
-                    
-                </div>
                 
+
                 <div class="row">
-                
                     <% for(var i=0; i< data.length; i++){%>
-                    <div class="col-md-4 col-sm-6" style="position: relative">    
-                        <div class="text-center card-box" >
-                            <div class="member-card" style="height:250px">
-                                <img src="/upload/profile/<%=data[i].image%>">
-                                <p class="text-muted font-13 text-center text-dark" style="font-size:18px; font-weight:bold"><span class="m-l-15 text-center"><%=data.uid%></span></p>
-                                <p class="text-muted font-13 text-center text-dark" style="font-size:14px"><span class="m-l-15 text-center"><%=data.name%></span></p>
-                                <div class="text-left m-t-10" style="position: absolute; bottom:20px;">    
-                                    <p class="text-muted font-13"><strong>작성자 :</strong> <span class="m-l-15"><%data.name%></span></p>
-                                    <p class="text-muted font-13"><strong>연락처 :</strong> <span class="m-l-15"><%=data.email%></span></p>
-                                    <p class="text-muted font-13"><strong>포인트 :</strong> <span class="m-l-15"><%=data.point%></span></p>
-                                    <div  style="text-align:center">
-                                        <button type="button" class="btn btn-success btn-sm w-sm waves-effect m-t-10 waves-light">자세히보기</button>
-                                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="text-center card-box">
+                            <div class="member-card">
+                                <div class="thumb-lg member-thumb m-b-10 center-block">
+                                    <img src="/upload/profile/<%=data[i].image%>" class="img-circle img-thumbnail" alt="profile-image">
                                 </div>
 
-                                
+                                <div class="">
+                                    <h4 class="m-b-5"><%=data[i].name%></h4>
+                                    <p class="text-muted"><%=data[i].uid%></p>
+                                </div>
+
+                                <button type="button" class="btn btn-success btn-sm w-sm waves-effect m-t-10 waves-light">Follow</button>
+                                <button type="button" class="btn btn-danger btn-sm w-sm waves-effect m-t-10 waves-light">Message</button>
+
+                                <div class="text-left m-t-40">
+
+                                    <p class="text-muted font-13"><strong>Mobile :</strong><span class="m-l-15">(123) 123 1234</span></p>
+
+                                    <p class="text-muted font-13"><strong>Email :</strong> <span class="m-l-15">coderthemes@gmail.com</span></p>
+
+                                    <p class="text-muted font-13"><strong>Location :</strong> <span class="m-l-15">USA</span></p>
+                                </div>
+
+                                <ul class="social-links list-inline m-t-30">
+                                    <li>
+                                        <a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="Facebook"><i class="fa fa-facebook"></i></a>
+                                    </li>
+                                    <li>
+                                        <a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="Twitter"><i class="fa fa-twitter"></i></a>
+                                    </li>
+                                    <li>
+                                        <a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="Skype"><i class="fa fa-skype"></i></a>
+                                    </li>
+                                </ul>
 
                             </div>
 
                         </div> <!-- end card-box -->
-                        
                     </div> <!-- end col -->
 
-                    <%}%>
+                <%}%>   
                 </div>
                 <!-- end row -->
 
-                
                 
                 
                 

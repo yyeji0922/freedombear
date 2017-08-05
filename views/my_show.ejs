@@ -28,7 +28,7 @@
                         <div class="text-center card-box">
                             <div class="member-card">
                                 <div class="thumb-xl member-thumb m-b-10 center-block">
-                                    <img src="/upload/profile/<%= data.userinfo.image %>" class="img-circle img-thumbnail" alt="profile-image">
+                                    <img src="/upload/profile/<%= data.userinfo.image %>" onerror="/images/gom.jpg" width="200px" height="200px" class="img-circle" alt="profile-image">
                                 </div>
 
                                 <div class="">
@@ -38,8 +38,11 @@
                                 
                                 
                             <form class="" action="/my" role="form" method="post" enctype="multipart/form-data">
-                                <input type="file" name="filetoupload" class="btn btn-success btn-sm w-sm waves-effect m-t-10 waves-light">프로필 변경</button>
-                                <button type="submit" class="btn btn-danger btn-sm w-sm waves-effect m-t-10 waves-light">submit</button>
+                                <div class="fileupload  btn-sm w-sm m-t-10 btn btn-primary waves-effect waves-light">
+                                    <span>프사선택</span>
+                                    <input type="file" class="upload" name="filetoupload">
+                                </div>
+                                <button type="submit" class="btn btn-danger btn-sm w-sm waves-effect m-t-10 waves-light">변경</button>
                             </form>
 
                                 <div class="text-left m-t-40">
