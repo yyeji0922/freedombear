@@ -5,12 +5,16 @@ var User= require("../models/User");
 var multer = require('multer');
 var path = require('path');
 const dede = 1; 
+
 var storage = multer.diskStorage({
-  destination: path.join(__dirname, '../public/upload/news'),
+  destination: path.join(__dirname, '../public/upload/med'),
   filename: function (req, file, cb) {
-    cb(null, "profile"  + Date.now());
+    cb(null, "med"  + Date.now());
   }
 });
+
+var upload = multer({ storage: storage });
+
 /* GET news listing. */
 
 /*
@@ -67,7 +71,7 @@ router.get('/med/new',isLoggedIn, function(req, res) {
 
 /*새로운 news 작성 ->완료*/ 
 //LOGIN!
-router.post('/med/new', isLoggedIn,/*upload.single('filetoupload'),*/ function (req, res) {
+router.post('/med/new', upload.single('filetoupload'),isLoggedIn,/*upload.single('filetoupload'),*/ function (req, res) {
     console.log(req.body);
     var due_date = req.body.date;
     var strDate = due_date.split('/');
@@ -82,7 +86,8 @@ router.post('/med/new', isLoggedIn,/*upload.single('filetoupload'),*/ function (
             email:req.body.email,
             due_date: mydate,
             pay:req.body.pay,
-            summary:req.body.summary
+            summary:req.body.summary,
+            image: req.file.filename
         });
         console.log(med1);
         /*

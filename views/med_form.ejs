@@ -65,7 +65,7 @@
                             <div class="col-sm-12">
                                 <div class="card-box m-t-20">
                                     <div class="p-20" style="padding:40px">
-                                        <form role="form" class="form-horizontal" action="/med/new" method="post">
+                                        <form role="form" class="form-horizontal" action="/med/new" method="post" enctype="multipart/form-data">
                                             <div class="form-group">
                                                 <input type="text" class="form-control" placeholder="제목" name="title">
                                             </div>
@@ -92,6 +92,10 @@
                                             </div>
                                             <div class="form-group">
                                                 <textarea class="form-control" rows="15" placeholder="내용입력" name="content"></textarea>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <input type="file" name="filetoupload" class="btn btn-success btn-sm w-sm waves-effect m-t-10 waves-light">파일 업로드
                                             </div>
                                             <!--<div class="form-group">-->
                                             <!--    <div class="summernote">-->
