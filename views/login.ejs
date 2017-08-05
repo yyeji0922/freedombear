@@ -5,7 +5,11 @@
       height:100%;
     }
     
-    #video { 
+    span {
+        z-index:6;
+    }
+    
+    #videobcg { 
       position: absolute;
       top: 0px;
       left: 0px;
@@ -13,24 +17,21 @@
       min-height: 100%;
       width: auto;
       height: auto;
-      z-index: 0;
+      z-index: -100;
       overflow: hidden;
     }
     
-    .wrapper-page{
-        z-index:3;
-    }
-
-
     </style>
 </head>
 
      <body class="login">
         
         
-        <video src="/images/login2.mp4" id="video" preload="auto" autoplay="true" loop="loop" muted="muted" volume="0"> </video>
+        <video id="videobcg" preload="auto" autoplay="true" loop="loop" muted="muted" volume="0">
+        <source src="/images/login2.mp4">    
+        </video>
         
-        <div class="wrapper-page">
+        <div class="wrapper-page"; z-index: 5>
             <div class="text-center">
                 <a href="/" class="logo logo-lg"><span style="color: MintCream">데이터 대리</span> </a>
             </div>
