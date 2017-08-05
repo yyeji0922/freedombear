@@ -61,7 +61,16 @@
                                             <img alt="" src="/images/users/avatar-2.jpg" class="media-object thumb-sm img-circle">
                                         </a>
                                         <div class="media-body">
-                                            <span class="media-meta pull-right"><%=data.upload_time%></span>
+                                            <% var oneItem = data.upload_time;
+                                            var month = ("0"+oneItem.getMonth().toString()).substr(-2);
+                                            var date = ("0"+oneItem.getDate().toString()).substr(-2);
+                                            var year = oneItem.getFullYear().toString();
+                                            var hour = ("0"+oneItem.getHours().toString()).substr(-2);
+                                            var minute = ("0"+oneItem.getMinutes().toString()).substr(-2);
+                                            var full_date = year+"/"+month+"/"+date+" "+hour +":"+minute;
+                                            %>
+
+                                            <span class="media-meta pull-right"><%=full_date%></span>
                                             <h4 class="text-primary m-0"><%=data.writer_id%></h4>
                                             <small class="text-muted"><%=data.contact%>pys2@gmail.com</small>
                                         </div>
