@@ -1,108 +1,117 @@
+var express = require('express');
+var router = express.Router();
+var Med= require("../models/Med");
 
-// get mongoose package
-var mongoose = require('mongoose');
+/* GET news listing. */
+router.get('/med', function(req, res,next) {
+    /*Med.find({}).sort('-due_date').exec( function(err,data){
+		if (err) return res.json({success: false, message: err});
+		res.render('med',{ data : data} );
+	});*/
 
-// connect to MongoDB / the name of DB is set to 'myDB'
-//mongoose.connect('mongodb://'+config.account.mongoid+':'+config.account.mongopw+'@ds129030.mlab.com:29030/freedombear');
-mongoose.connect('mongodb://freedombear:freedombear@ds129030.mlab.com:29030/freedombear');
-// we get the pending connection to myDB running on localhost
-var db = mongoose.connection;
-// executed when the connection opens
-db.once('open', function () {
-	// add your code here when opening
-  	console.log("db connection ok");
-});
-// we get notified if error occurs
-db.on('error', function(err){
-	console.log("db error : ",err);
-});
+    //금액높은순(작성자, 제목, 내용, 날짜, 상태)
+    /*
+    if(req.sort_method == 0){
+        Med.find({}).sort(pay:-1).exec( function(err,data){
+        if (err) return res.json({success: false, message: err});
+        res.render('med',{med_id:med_id, title : title,content:summary,due_date:due_date,finished:finished} );
+    });}else if(req.sort_method == 1){
+        Med.find({}).sort(pay:1).exec( function(err,data){
+        if (err) return res.json({success: false, message: err});
+        res.render('med',{med_id:med_id, title : title, content:summary,due_date:due_date,finished:finished} );
+    });else if(req.sort_method == 2){
+        Med.find({}).sort(upload_time:-1).exec( function(err,data){
+        if (err) return res.json({success: false, message: err});
+        res.render('med',{med_id:med_id, title : title, content:summary,due_date:due_date,finished:finished} );
+    });else if(req.sort_method == 3){
+        Med.find({}).sort(due_date:1).exec( function(err,data){
+        if (err) return res.json({success: false, message: err});
+        res.render('med',{med_id:med_id, title : title, content:summ,due_date:due_date,finished:finished} );
+    });
+        }
+    }
+    
+    */
+};
 
-var Schema = mongoose.Schema;
-/*
-var userSchema= new Schema({
-	id: {type: String, required: true, unique: true },
-	password: {type:String, required: true },
-	name: {type:String, required: true },
-	point : {type: Number, required: true },
-	contact : {type: String },
-	email : {type: String,required:true},
-	image: {type:String, required:true, default: "default.jpg"},
-});
-*/
+/* search & show */
+router.post('/med', function(req, res) {
+    console.log(req.body.query);
 
-//var User = mongoose.model('User', userSchema); 
-/*
-var user1 = new User({ id: 'yyeji0922', 
-			password: 'yyeji0922',
-			name:'에지',
-			point:0,
-			email:'yyeji0922@naver.com',
-			image:'default.jpg' });
-var user2 = new User({ id: 'ilikefruit', 
-			password: 'ilikefruit',
-			name:'다우니',
-			point:0,
-			email:'ilikefruit@naver.com',
-			image:'default.jpg' });
-// save user1
-user1.save(function(err,user1){
-	if(err)
-		console.log("error");
-});
-//save user2
-user2.save(function(err,user1){
-	if(err)
-		console.log("error");
-});
-var med1 = new Med({
-	med_id:1,
-	title:'인물 사진 데이터 정형화 해주실분 구합니다.',
-	content:'안녕하세요 저희가 얼굴인식기능을 구현하기 위해 데이터를 정형화 해주실 분을 구합니다. 관심 있으신 분은 저희에게 연락해주세요.',
-	writer_id:'ilikefruit',
-	email:'freedombear@naver.com',
-	due_date:Date.now + 1000*60*24*3,
-	pay:1,
-	summary:'인물 사진 데이터 정형화 알바 구합니다.'
-});
-*/
-/*med1.save(function(err,med1){
-	if(err)
-		console.log("error");
-});*/
-
-var Schema = mongoose.Schema;
-
-var medSchema= new Schema({
-	med_id:{type:Number,required:true, unique:true},
-	title : {type: String, required:true },
-	content : {type: String, required:true },
-	writer_id : {type: String, required:true },
-	email : {type: String, required:true},
-	due_date : {type: Date},
-	pay: {type: Number, required: true, default: -1},
-	finished: {type: Boolean, required: true, default: false},
-	upload_time : { type: Date, required: true, default: Date.now },
-	summary : {type: String, required:true, default: "상세정보를 위해서 클릭하세요" },
+    res.redirect('/med');
 });
 
 
-var Med = mongoose.model('Med',medSchema);
-var mydate =  new Date(2017,08,20,18,00);
-var med1 = new Med({
-	med_id:1,
-	title:'인물 사진 데이터 정형화 해주실분 구합니다.',
-	content:'안녕하세요 저희가 얼굴인식기능을 구현하기 위해 데이터를 정형화 해주실 분을 구합니다. 관심 있으신 분은 저희에게 연락해주세요.',
-	writer_id:'ilikefruit',
-	email:'freedombear@naver.com',
-	due_date: mydate,
-	pay:1,
-	summary:'인물 사진 데이터 정형화 알바 구합니다.'
+/*새로운 news 작성*/
+//LOGIN!
+router.get('/med/new', function(req, res) {
+
+    //if(err) return res.json({success:false, message:err});
+
+    res.render('med_form');
 });
 
-
-med1.save(function(err,med2){
-	if(err)
-		console.log("error:can't insert");
-	else
-		console.log("insertion success");
+/*새로운 news 작성*/ 
+//LOGIN!
+router.post('/med/new', /*upload.single('filetoupload'),*/ function (req, res) {
+    console.log(req.body);
+    var due_date = req.body.text;
+    var strDate = due_date.split('/');
+    var mydate = (strDate[2],strDate[0],strDate[1],23,59);
+    var med1 = new Med({
+    med_id:Med.count()+1,
+    title:req.body.title,
+    content:req.body.content,
+    writer_id: Med.findById(req.user),
+    email:req.body.email,
+    due_date: mydate,
+    pay:req.body.pay,
+    summary:req.body.summernote
 });
+med1.save(function(err,med1){
+    if(err)
+        console.log("error:can't insert");
+    else
+        console.log("insertion success");
+});
+    res.redirect('/med');
+});
+
+/*news 보여주기*/
+router.get('/med/:id', function(req, res) {
+    Med.findById(req.params.id, function(err,content){
+        if (err) return res.json({success: false, message: err});
+        res.render('med_per', { data : content , showornot : 0 } );
+    });
+ });
+
+/*update 페이지로 고우*/
+//LOGIN
+router.get('/med/:id/update', function(req, res) {
+    Med.findById(req.params.id, function(err,content){
+        if (err) return res.json({success: false, message: err});
+        res.render('med_per', { data : content , showornot : 1 } );
+    });    
+});
+
+/*update 페이지 update*/
+//LOGIN + 내꺼
+router.post('/med/:id/update', function(req, res) {
+    var updated={title: req.body.title, content:req.body.content, contact:req.body.contact, email:req.body.email, due_date:req.body.due_date, pay:req.body.pay, finished:req.body.finished, summary:req.body.summary };
+	Med.findByIdAndUpdate(req.params.id, updated, function (err,content) {
+		if(err) return res.json({success: false, message: err});
+		res.redirect('back');
+	});
+
+});
+
+/*update 해서 지우기로함*/
+//LOGIN
+router.delete('/med/:id/update', function(req, res) {
+    News.findOneAndRemove({ _id : req.params.id }, function (err,user) {
+    	if(err) return res.json({success: false, message: err});
+      res.redirect('back');
+  });
+});
+
+module.exports = router;
