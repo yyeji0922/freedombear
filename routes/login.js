@@ -4,6 +4,7 @@ var path = require('path');
 var mongoose = require('mongoose');
 var passport=require('../config/passport.js')
 var User= require('../models/User.js');
+var path = require('path');
 var router = express.Router();
  
 router.get('/login',function(req,res){
