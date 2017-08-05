@@ -69,7 +69,7 @@ router.post('/my',checkUserRegValidation, function(req,res){
 router.get('/my/:id', isLoggedIn, function(req, res) {
 
   Med.findById(req.params.id, function(err,content){
-    if (err) return res.json({success: false, message: err});
+    if (err) return res.json({ success: false, message: err});
     res.render('med_per', { title: 'My',user: req.user ,data:content});
   });
 
@@ -77,7 +77,7 @@ router.get('/my/:id', isLoggedIn, function(req, res) {
 
 router.get('/my/test', function(req, res) {
 
-    es.render('find_user', {user: req.user });
+    res.render('find_user', {user: req.user });
 
 
 });
