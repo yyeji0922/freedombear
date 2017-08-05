@@ -11,22 +11,24 @@ router.get('/med', function(req, res,next) {
 	});
 });
 
-/* serach & show */
+/* search & show */
 router.post('/med', function(req, res) {
     console.log(req.body.query);
     res.redirect('/med',{user:req.user});
 });
 
-
-/*새로운 news 작성*/
+/*새로운 news 작성-> 완료*/
 //LOGIN!
 router.get('/med/new', function(req, res) {
-
+    User.findById(req.user, function(err,data){
+        if(err) return res.json({success:false,message:err});
+        res.render('med_form',{user:req.user,data:data});
+    })
     //if(err) return res.json({success:false, message:err});
-    res.render('med_form',{user:req.user});
+    
 });
 
-/*새로운 news 작성*/ 
+/*새로운 news 작성 ->완료*/ 
 //LOGIN!
 router.post('/med/new', /*upload.single('filetoupload'),*/ function (req, res) {
     console.log(req.body);
