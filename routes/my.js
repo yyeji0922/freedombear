@@ -19,9 +19,9 @@ router.get('/my',isLoggedIn, function(req, res) {
         callback(null, data);
     })},
     function(args, callback){
+      console.log(args.uid);
       Med.find({writer_id: args.uid },function(err,data){
         if(err) return res.json({success:false, message:err});
-        data={};
         callback(null,{medinfo:data, userinfo:args });
     })}
     ],
@@ -41,10 +41,10 @@ router.get('/my',isLoggedIn, function(req, res) {
 router.put('/my', isLoggedIn, checkUserRegValidation2, function(req,res){
   
   User.findById(req.user, req.body.user, function(err,user){
-    console.log('hahahahaha');
+
     if(err) return res.json( { success:"false", message:err });
     if(user.authenticate( req.body.user.password ) ){
-      console.log(11111111);
+
       if(req.body.user.newpassword1.length!=0){
         if(req.body.user.newpassword1==req.body.user.newpassword2){
           req.body.user.password=req.user.hash(req.body.user.newpassword1); //req.body.user.newpassword1;//;
