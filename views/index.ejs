@@ -22,12 +22,12 @@
                    
                     <div class="col-lg-3"></div>
                     <div class="col-lg-6">
-                            
-                        <form role="search" class="form-inline">
+                            <br>
+                        <form role="search" class="form-inline" action='/' method='post'>
                                     
-                             <input type="text" class="form-control" placeholder="Search" style="width:90%;background-color:white; line-height:40px;height:40px;">
-                             <a href=""><i class="fa fa-search"></i></a>
-                                        
+                             <input type="text" name="q" class="form-control" placeholder="Search" style="width:90%;background-color:white; line-height:40px;height:40px;">
+                             <a href="">&nbsp<i class="fa fa-search" style="color:#6A76FC"></i></a>
+                                    
                         </form>
                     </div>            
                     <div class="col-lg-3"></div>            
@@ -38,52 +38,33 @@
                 <div class="row">
                 
                     <% for(var i=0; i<6; i++){%>
+                    <a href='/med/<%=medinfo[i].id%>'>
                     <div class="col-md-4 col-sm-6" style="position: relative">    
                         <div class="text-center card-box" >
                             <div class="member-card" style="height:300px">
                                 <span><img src="/upload/med/<%=medinfo[i].image%>" width=100px height=100px class="img-circle text-center"></span>
-                                <p class="text-muted font-13 text-center text-dark" style="font-size:18px; font-weight:bold"><span class="text-center"><%=medinfo[i].title%></span></p>
+                                <p class="text-muted font-13 text-center text-dark" style="font-size:18px; font-weight:bold"><span class="text-center"><br><%=medinfo[i].title%></span></p>
                                 <p class="text-muted font-13 text-center text-dark" style="font-size:14px"><span class="text-center"><%=medinfo[i].summary%></span></p>
-                                <div class="text-left m-t-10" style="position: absolute; bottom:20px;">    
+                                <div class="text-left m-t-10" style="position: absolute; bottom:40px;">    
                                     <p class="text-muted font-13"><strong>작성자 :</strong> <span class="m-l-15"><%=medinfo[i].writer_id%></span></p>
                                     <p class="text-muted font-13"><strong>연락처 :</strong> <span class="m-l-15"><%=medinfo[i].email%></span></p>
                                     <p class="text-muted font-13"><strong>마감일 :</strong> <span class="m-l-15"><%=medinfo[i].due_date%></span></p>
                                     
-                                        <button type="button" style="margin-left: 180px" onclick="location.href='/med/<%=medinfo[i].id%>'"; class="btn btn-success btn-sm w-sm waves-effect m-t-10 waves-light">자세히보기</button>
-                                    
+                                    <!--center><button type="button" style="margin-left: 180px" onclick="location.href='/med/<%=medinfo[i].id%>'"; class="btn btn-success btn-sm w-sm waves-effect m-t-10 waves-light">자세히보기</button>
+                                    </center-->
                                 </div>
-
-                                
-
                             </div>
-
                         </div> <!-- end card-box -->
-                        
                     </div> <!-- end col -->
-
+                    </a>
                     <%}%>
                 </div>
                 <!-- end row -->
-
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
+                                
                 <div class="row">
                     <div class="col-lg-8">
-                        <div class="card-box">
-                            <h4 class="text-dark  header-title m-t-0">최근 업로드</h4>
-                            <p class="text-muted m-b-25 font-13">
-                                
-                            </p>
-
+                        <div class="card-box" style="padding-bottom:10px;">
+                            <h5 class="text-dark  header-title m-t-0">최근 업로드</h5>
                             <div class="table-responsive">
                                 <table class="table">
                                     <thead>
@@ -93,7 +74,7 @@
                                         <th>작성자</th>
                                         <th>내용</th>
                                         <th>이메일</th>
-                                        <th>상태</th>
+                                        <th>&nbsp&nbsp&nbsp상태</th>
                                     </tr>
                                     </thead>
                                     <tbody>    
@@ -104,7 +85,7 @@
                                             <td><%=userinfo[i].uid%></td>
                                             <td><%=userinfo[i].name%></td>
                                             <td><%=userinfo[i].email%></td>
-                                            <td><span class="label label-info">Released</span></td>
+                                            <td><span class="label label-info">진행중</span></td>
                                         </tr>
                                     <%}%>    
                                      
@@ -168,7 +149,6 @@
                 <div class="row">
                     <div>
                         <p class="text-center" style="margin: 10px">Special Thanks to</p>
-                    </div>
                 </div>
                 <div class="row">
                     <div class="col-lg-4">
@@ -210,7 +190,7 @@
                 </div>
                 <div class="row">
 
-
+<br><br>
                <%include footer%>
 
             </div> <!-- end container -->
