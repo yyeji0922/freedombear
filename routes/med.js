@@ -122,7 +122,7 @@ router.post('/med/new', upload.single('filetoupload'),isLoggedIn,/*upload.single
 router.get('/med/:id', isLoggedIn,function(req, res) {
     Med.findById(req.params.id, function(err,content){
         if (err) return res.json({success: false, message: err});
-        res.render('med_per', { data : content , showornot : 0 ,user:req.user} );
+        res.render('med_per', { data : content ,user:req.user} );
     });
  });
 
@@ -131,25 +131,44 @@ router.get('/med/:id', isLoggedIn,function(req, res) {
 router.get('/med/:id/update', isLoggedIn,function(req, res) {
     Med.findById(req.params.id, function(err,content){
         if (err) return res.json({success: false, message: err});
-        res.render('med_per', { data : content , showornot : 1 ,user:req.user} );
+        res.render('med_form', { data : content , showornot : 1 ,user:req.user} );
     });    
 });
 
 /*update 페이지 update*/
 //LOGIN + 내꺼
-router.post('/med/:id/update', isLoggedIn,function(req, res) {
-    var updated={title: req.body.title, content:req.body.content, contact:req.body.contact, email:req.body.email, due_date:req.body.due_date, pay:req.body.pay, finished:req.body.finished, summary:req.body.summary };
-	Med.findByIdAndUpdate(req.params.id, updated, function (err,content) {
+/*
+router.post('/med/:id/update', upload.single('filetoupload'),isLoggedIn,function(req, res) {
+    var updated={title: req.body.title, content:req.body.content, writer_id:req.body.writer_id, email:req.body.email, due_date:req.body.due_date, pay:req.body.pay, finished:req.body.finished, summary:req.body.summary, image:req.body.image};
+	Med.update(req.params.id, updated, function (err,content) {
 		if(err) return res.json({success: false, message: err, user:req.user});
-		res.redirect('back');
+		res.redirect('/med/:id');
 	});
 
 });
 
+*/
+//router.post('/med/:id/update', upload.single('filetoupload'),isLoggedIn, function (req, res) {
+  //  console.log(req.body);
+    
+
+    
+
+    /*med1.save(function(err,med1){
+        if(err)
+            console.log("error:can't insert");
+        else
+            console.log("insertion success");
+    });
+    res.redirect('/med');*/
+
+//});
+
+
+
 /*update 해서 지우기로함*/
 //LOGIN
 router.delete('/med/:id', isLoggedIn,function(req, res) {
-    console.log(req.params.id);
     Med.remove({ _id : req.params.id }, function (err,user) {
     	if(err) return res.json({success: false, message: err,user:req.user});
       res.redirect('/med');

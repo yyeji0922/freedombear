@@ -99,9 +99,9 @@
                                 
                                 <div class="text-right">
                                    <% 
-                                   console.log(data);
                                    if(data.writer_id == user.uid) {%>
-                                    <button type="submit" class="btn btn-primary waves-effect waves-light w-md m-b-30" onclick="location.href='/med/<%=data.id%>';">수정하기</button>
+                                    
+                                    <button type="submit" class="btn btn-primary waves-effect waves-light w-md m-b-30" onclick="location.href='/med/<%=data.id%>/update';">수정하기</button>
                                     <form action="/med/<%= data._id %>?_method=delete" method="post">
                                         <button type="submit" class="btn btn-primary waves-effect waves-light w-md m-b-30" onclick="med_delete();">삭제하기</button>
                                     </form>
@@ -150,6 +150,7 @@
                 document.body.appendChild(form)
                 form.submit();
             }
+
         </script>
 
 
