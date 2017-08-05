@@ -23,12 +23,14 @@
 
                         <div class="m-t-20">
                             <a href="/med/new" class="btn btn-danger btn-custom btn-block waves-effect waves-light">새로 등록하기</a>
-
+                            
+                            <form action='/med' method='post'>
                             <div class="list-group mail-list  m-t-20">
-                                <a href="/med/1" class="list-group-item b-0"><i class="fa fa-download m-r-10"></i>금액높은순</a>
-                                <a href="/med/2" class="list-group-item b-0"><i class="fa fa-star-o m-r-10"></i>금액낮은순</a>
-                                <a href="/med/3" class="list-group-item b-0"><i class="fa fa-file-text-o m-r-10"></i>최신등록순</a>
-                                <a href="/med/4" class="list-group-item b-0"><i class="fa fa-paper-plane-o m-r-10"></i>마감임박순</a>
+                                <input type="submit" value="1" name="which" class="list-group-item b-0"><i class="fa fa-download m-r-10"></i>금액높은순
+                                <input type="submit" value="2" name="which" class="list-group-item b-0"><i class="fa fa-star-o m-r-10"></i>금액낮은순
+                                <input type="submit" value="3"  name="which" class="list-group-item b-0"><i class="fa fa-file-text-o m-r-10"></i>최신등록순
+                                <input type="submit" value="4" name="which" class="list-group-item b-0"><i class="fa fa-paper-plane-o m-r-10"></i>금액높은순
+                            </form>
                             </div>
                             
                             <!--<div class="list-group mail-list  m-t-20">-->
@@ -87,11 +89,11 @@
                                     <div class="col-lg-3"></div>
                                     <div class="col-lg-6">
                                             
-                                        <form action="/med" method="post" class="form-inline">
+                                        <!--=form action="/med" method="post" class="form-inline">
                                              <input type="text" name="query" class="form-control" placeholder="Search" style="width:80%;background-color:white; line-height:40px;height:45px;">
                                              <button class="btn btn-icon waves-effect waves-light btn-purple m-b-5" type="submit"> <i class="fa fa-search"></i> </button>
                                                         
-                                        </form>
+                                        </form-->
                                     </div>            
                                     <div class="col-lg-3"></div>            
                                            
