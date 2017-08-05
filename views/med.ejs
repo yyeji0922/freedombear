@@ -88,7 +88,6 @@
                                     <div class="col-lg-6">
                                             
                                         <form action="/med" method="post" class="form-inline">
-                                                    
                                              <input type="text" name="query" class="form-control" placeholder="Search" style="width:80%;background-color:white; line-height:40px;height:45px;">
                                              <button class="btn btn-icon waves-effect waves-light btn-purple m-b-5" type="submit"> <i class="fa fa-search"></i> </button>
                                                         
@@ -99,15 +98,28 @@
                                 </div>
                                 </div>
                                 <tbody>
-                                <%for(var i=0;i<10;i++){ %>
+                                <%var i=0;
+                                for(i=0;i<data.length;i++){ 
+                                    var oneItem = data[i];
+                                    var month = ("0"+oneItem.upload_time.getMonth().toString()).substr(-2);
+                                    var date = ("0"+oneItem.upload_time.getDate().toString()).substr(-2);
+                                    var year = oneItem.upload_time.getFullYear().toString();
+                                    var hour = ("0"+oneItem.upload_time.getHours().toString()).substr(-2);
+                                    var minute = ("0"+oneItem.upload_time.getMinutes().toString()).substr(-2);
+                                    var full_date = year+"/"+month+"/"+date+" "+hour +":"+minute;
+
+                                 %>
                                     <tr>
-                                        <td>Isidra</td>
-                                        <td>Boudreaux</td>
-                                        <td>Traffic Court Referee</td>
-                                        <td>22 Jun 1972</td>
-                                        <td><span class="label label-table label-success">Active</span></td>
+                                        <td><%=oneItem.writer_id%></td>
+                                        <td><%=oneItem.title%></td>
+                                        <td><%=oneItem.summary%></td>
+                                        <td><%=full_date%></td>
+                                        <td><%if(!oneItem.finished){%>
+                                        <span class="label label-table label-success">진행 중</span><%}
+                                        else{%>
+                                        <span class="label label-table label-danger">마감</span><%}%></td>
                                     </tr>
-                                <% } %>    
+                                <% }%>    
                                 </tbody>
                                 <tfoot>
                                     <tr>
