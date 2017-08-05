@@ -29,7 +29,25 @@ router.get('/med/new', function(req, res) {
 //LOGIN!
 router.post('/med/new', /*upload.single('filetoupload'),*/ function (req, res) {
     console.log(req.body);
-
+    var due_date = req.body.text;
+    var strDate = due_date.split('/');
+    var mydate = (strDate[2],strDate[0],strDate[1],23,59);
+    var med1 = new Med({
+        med_id:Med.count()+1,
+        title:req.body.title,
+        content:req.body.content,
+        writer_id: Med.findById(req.user),
+        email:req.body.email,
+        due_date: mydate,
+        pay:req.body.pay,
+        summary:req.body.summernote
+    });
+    med1.save(function(err,med1){
+        if(err)
+            console.log("error:can't insert");
+        else
+            console.log("insertion success");
+    });
     res.redirect('/med', {user:req.user});
     
 });
