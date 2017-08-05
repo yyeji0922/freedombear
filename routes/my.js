@@ -5,7 +5,7 @@ var router = express.Router();
 var User= require('../models/User.js');
 var Med= require('../models/Med.js');
 
-/* 해야함. */
+/* 해야함. 
 router.get('/my/show', isLoggedIn, function(req, res) {
     User.findById( req.user, function(errs, datas){
         if(errs) return res.json({success:false, message:errs});
@@ -16,21 +16,35 @@ router.get('/my/show', isLoggedIn, function(req, res) {
         });
     });
 });
+*/
 
-router.get('/my/update', isLoggedIn, function(req, res) {
-    User.findById(req.user,function(err,data){
+router.get('/my',isLoggedIn, function(req, res) {
+  
+  async.waterfall(
+    
+    [ function(callback){
+      User.findById(req.user, function(err,data){
+        
         if(err) return res.json({success:false, message:err}); 
-       res.render('my_update', { title: 'My' ,
-                                user: req.user, 
-                                data: data,
-                                formData: req.flash("formData")[0],
-                                emailError: req.flash('emailError')[0],
-                                passwordError:req.flash('passwordError')[0]
-                              });
-    });
+        
+        callback(null, data);
+    })},
+    function(args, callback){
+      Med.find({writer_id: args.uid },function(err,data){
+        if(err) return res.json({success:false, message:err});
+        data={};
+        callback(null,{medinfo:data, userinfo:args });
+    })}
+    ],
+      function (err, data) {
+        console.log(data);
+        if (err) return res.json({success:'false', message: err});
+          res.render('my_show',{user:req.user, data:data});
+    }
+  )
 });
 
-router.post('/my/update',checkUserRegValidation, function(req,res){
+router.post('/my',checkUserRegValidation, function(req,res){
   User.findById(req.user, function(err,user){
     if(err) return res.json( { success:"false", message:err });
     console.log("1");
@@ -47,17 +61,24 @@ router.post('/my/update',checkUserRegValidation, function(req,res){
     } else{
       req.flash("formData",req.body.user);
       req.flash("passwordError","-Invalid password");
-      res.redirect('/my/update');
+      res.redirect('/my');
     }
   })
 })
 
 router.get('/my/:id', isLoggedIn, function(req, res) {
-  
+
   Med.findById(req.params.id, function(err,content){
     if (err) return res.json({success: false, message: err});
     res.render('med_per', { title: 'My',user: req.user ,data:content});
   });
+
+});
+
+router.get('/my/test', function(req, res) {
+
+    es.render('find_user', {user: req.user });
+
 
 });
 
@@ -75,15 +96,9 @@ router.post('/my/:id', isLoggedIn, function(req, res) {
 router.delete('/my/:id', isLoggedIn, function (req, res) {
 	Med.findOneAndRemove({ _id : req.params.id }, function (err,user) {
     	if(err) return res.json({success: false, message: err});
-        res.redirect('/my/show');
+        res.redirect('/my');
   });
 });
-
-router.get('/my/posted/list', isLoggedIn, function(req, res) {
-    res.render('my_show', { title: 'My',user: req.user });
-
-});
-
 
 function isLoggedIn (req, res, next) {
   if (req.isAuthenticated()) {
