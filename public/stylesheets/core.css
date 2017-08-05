@@ -129,13 +129,14 @@ a:focus {
   margin-top: 0px;
 }
 .card-box {
+  margin: 10px;
   padding: 20px;
   border: 1px solid rgba(54, 64, 74, 0.08);
   -webkit-border-radius: 5px;
   border-radius: 5px;
   -moz-border-radius: 5px;
   background-clip: padding-box;
-  margin-bottom: 12px;
+ 
   background-color: #fff;
 }
 .card-box2 {
@@ -318,6 +319,9 @@ pre {
 }
 .text-dark {
   color: #797979 !important;
+}
+.text-blue{
+  color:blue;
 }
 .form-control {
   -moz-border-radius: 2px;

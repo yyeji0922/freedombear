@@ -38,7 +38,13 @@ var bootstrapWizardCreate = function(element, options) {
 
 		// See if we're currently in the first/last then disable the previous and last buttons
 		$($settings.previousSelector, element).toggleClass('disabled', (obj.firstIndex() >= obj.currentIndex()));
-		$($settings.nextSelector, element).toggleClass('disabled', (obj.currentIndex() >= obj.navigationLength()));
+		$($settings.nextSelector, element).toggleClass('doregister', (obj.currentIndex() >= obj.navigationLength()));
+		
+		$('.doregister').text("")
+		$('.doregister').append('<button class="btn btn-primary btn-custom waves-effect waves-light w-md" type="submit">Register</button>');
+		
+
+출처: http://ooz.co.kr/46 [이러쿵저러쿵]
 		$($settings.nextSelector, element).toggleClass('hidden', (obj.currentIndex() >= obj.navigationLength() && $($settings.finishSelector, element).length > 0));
 		$($settings.lastSelector, element).toggleClass('hidden', (obj.currentIndex() >= obj.navigationLength() && $($settings.finishSelector, element).length > 0));
 		$($settings.finishSelector, element).toggleClass('hidden', (obj.currentIndex() < obj.navigationLength()));

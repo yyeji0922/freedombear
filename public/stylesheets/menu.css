@@ -65,7 +65,7 @@ File: Menu
   font-size: 16px;
 }
 #topnav .topbar-main .nav > li > a {
-  padding: 15px 15px !important;
+  padding: 13px 15px !important;
 }
 #topnav .topbar-main .navbar-nav > .open > a {
   background-color: rgba(255, 255, 255, 0.1) !important;

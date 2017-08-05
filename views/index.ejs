@@ -38,29 +38,19 @@
                 <div class="row">
                 
                     <% for(var i=0; i<6; i++){%>
-                    <div class="col-md-4 col-sm-6">    
-                        <div class="text-center card-box">
-                            <div class="member-card">
-                                <div class="thumb-lg member-thumb m-b-10 center-block">
-                                    <img src="/images/gom.jpg" class="img-circle img-thumbnail" alt="profile-image">
-                                </div>
-
-                                <div class="">
-                                    <h4 class="m-b-5"><%=medinfo[i].writer_id%></h4>
-                                    <p class="text-muted">@webdesigner</p>
-                                </div>
-
-                                <button type="button" class="btn btn-success btn-sm w-sm waves-effect m-t-10 waves-light">자세히보기</button>
-                                
-
-                                <div class="text-left m-t-40">
-                                    <p class="text-muted font-13"><strong>작성자 :</strong> <span class="m-l-15"><%=medinfo[i].name%></span></p>
-
-                                    <p class="text-muted font-13"><strong>제목 :</strong><span class="m-l-15"><%=medinfo[i].contact%></span></p>
-
-                                    <p class="text-muted font-13"><strong>요약 :</strong> <span class="m-l-15"><%=medinfo[i].email%></span></p>
-
-                                    <p class="text-muted font-13"><strong>날짜 :</strong> <span class="m-l-15"><%=medinfo[i].due_date%></span></p>
+                    <div class="col-md-4 col-sm-6" style="position: relative">    
+                        <div class="text-center card-box" >
+                            <div class="member-card" style="height:250px">
+                                <img src="/upload/profile/<%=medinfo[i].image%>">
+                                <p class="text-muted font-13 text-center text-dark" style="font-size:18px; font-weight:bold"><span class="m-l-15 text-center"><%=medinfo[i].title%></span></p>
+                                <p class="text-muted font-13 text-center text-dark" style="font-size:14px"><span class="m-l-15 text-center"><%=medinfo[i].summary%></span></p>
+                                <div class="text-left m-t-10" style="position: absolute; bottom:20px;">    
+                                    <p class="text-muted font-13"><strong>작성자 :</strong> <span class="m-l-15"><%=medinfo[i].writer_id%></span></p>
+                                    <p class="text-muted font-13"><strong>연락처 :</strong> <span class="m-l-15"><%=medinfo[i].email%></span></p>
+                                    <p class="text-muted font-13"><strong>마감일 :</strong> <span class="m-l-15"><%=medinfo[i].due_date%></span></p>
+                                    <div  style="text-align:center">
+                                        <button type="button" class="btn btn-success btn-sm w-sm waves-effect m-t-10 waves-light">자세히보기</button>
+                                    </div>
                                 </div>
 
                                 
@@ -102,14 +92,14 @@
                                         <th>제목</th>
                                         <th>작성자</th>
                                         <th>내용</th>
-                                        <th>날짜</th>
+                                        <th>이메일</th>
                                         <th>상태</th>
                                     </tr>
                                     </thead>
                                     <tbody>    
-                                    <%for(var i=0; i<userinfo.length; i++){%>
+                                    <%for(var i=0; i<9; i++){%>
                                         <tr>
-                                            <td><%=i%>위</td>
+                                            <td><%=i+1%>위</td>
                                             <td><%=userinfo[i].point%></td>
                                             <td><%=userinfo[i].uid%></td>
                                             <td><%=userinfo[i].name%></td>
@@ -126,6 +116,7 @@
                     <!-- end col -8 -->
 
                     <div class="col-lg-4">
+                      
                         <div class="card-box widget-user">
                             <div>
                                 <img src="/images/ddacjy.jpg" class="img-responsive img-circle" alt="user">
@@ -143,7 +134,7 @@
                                 <div class="wid-u-info">
                                     <h4 class="m-t-0 m-b-5">정다운</h4>
                                     <p class="text-muted m-b-5 font-13">downdown@gmail.com</p>
-                                    <small class="text-success"><b>Server Administrator</b></small>
+                                    <small class="text-danger"><b>Server Administrator</b></small>
                                 </div>
                             </div>
                         </div>
@@ -166,12 +157,22 @@
                                 <div class="wid-u-info">
                                     <h4 class="m-t-0 m-b-5">김동은</h4>
                                     <p class="text-muted m-b-5 font-13">mimi@gmail.com</p>
-                                    <small class="text-warning"><b>Designer</b></small>
+                                    <small class="text-purple"><b>Designer</b></small>
                                 </div>
                             </div>
                         </div>
+                    </div>
 
-                        <div class="card-box widget-user">
+                </div>
+                <!-- end row --> 
+                <div class="row">
+                    <div>
+                        <p class="text-center" style="margin: 10px">Special Thanks to</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="card-box widget-user text-left" style="margin: 3px">
                             <div>
                                 <img src="/images/gojack.jpg" class="img-responsive img-circle" alt="user">
                                 <div class="wid-u-info">
@@ -181,8 +182,9 @@
                                 </div>
                             </div>
                         </div>
-
-                        <div class="card-box widget-user">
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card-box widget-user" style="margin: 3px">
                             <div>
                                 <img src="/images/panda.jpg" class="img-responsive img-circle" alt="user">
                                 <div class="wid-u-info">
@@ -193,11 +195,20 @@
                             </div>
                         </div>
                     </div>
-
+                    <div class="col-lg-4">
+                        <div class="card-box widget-user" style="margin: 3px">
+                            <div>
+                                <img src="/images/zebra.jpg" class="img-responsive img-circle" alt="user">
+                                <div class="wid-u-info">
+                                    <h4 class="m-t-0 m-b-5">이선웅</h4></h4>
+                                    <p class="text-muted m-b-5 font-13">RapIsMyLife@gmail.com</p>
+                                    <small class="text-success"><b>Server Adviser</b></small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>    
                 </div>
-                <!-- end row -->
-
-
+                <div class="row">
 
 
                <%include footer%>
