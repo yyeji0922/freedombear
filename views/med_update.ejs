@@ -67,31 +67,37 @@
                                     <div class="p-20" style="padding:40px">
                                         <form role="form" class="form-horizontal" action="/med/new" method="post" enctype="multipart/form-data">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" placeholder="제목" name="title">
+                                                <input type="text" class="form-control" placeholder="제목"
+                                                value="<%=data2.title%>" name="title">
                                             </div>
                                             <div class="form-group">
                                                 <div class="row">
                                                     <div class="col-md-6">
-                                                        <input type="email" class="form-control" placeholder="담당자연락처" name="email">
+                                                        <input type="email" class="form-control" name="email" value=<%=data2.email%> >
                                                     </div>
                                                     <div class="col-md-6">
-                                                        <input type="number" class="form-control" placeholder="예상금액" name="pay">
+                                                        <input type="number" class="form-control" placeholder="예상금액" value="<%=data2.pay%>" name="pay">
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <div class="input-group">
                                                         
-                                                        <input type="text" class="form-control" placeholder="mm/dd/yyyy" id="datepicker-autoclose" name="date">
+                                                        <input type="text" class="form-control" placeholder="mm/dd/yyyy" value="<%=data2.due_date%>" id="datepicker-autoclose" name="date">
                                                         <span class="input-group-addon bg-primary b-0 text-white"><i class="ion-calendar"></i></span>
                                                         
                                                 </div><!-- input-group -->
                                             </div>
                                             <div class="form-group">
-                                                <input type="text" class="form-control" placeholder="요약" name="summary">
+                                                <input type="text" class="form-control" placeholder="요약" value=<%=data2.summary%>name="summary">
                                             </div>
                                             <div class="form-group">
-                                                <textarea class="form-control" rows="15" placeholder="내용입력" name="content"></textarea>
+                                                <textarea class="form-control" rows="15" placeholder="내용입력" name="content" ><%=data2.content%></textarea>
+                                            </div>
+
+                                           <div class="fileupload btn btn-success waves-effect waves-light">
+                                                <span><i class="ion-upload m-r-5"></i>Upload</span>
+                                                <input type="file" class="upload" name="filetoupload">
                                             </div>
                                             <!--<div class="form-group">-->
                                             <!--    <div class="summernote">-->
@@ -110,10 +116,10 @@
 
                                             <!--    </div>-->
                                             <!--</div>-->
-                                            <span class="upload">
+                                            <!--<span class="upload">-->
                                             
-                                                   <input type="file" class="btn btn-purple waves-effect waves-light" name="profile"  >
-                                            </span>
+                                            <!--       <input type="file" class="btn btn-purple waves-effect waves-light" name="profile"  >-->
+                                            <!--</span>-->
                                             
                                             <div class="btn-toolbar form-group m-b-0">
                                                 <div class="pull-right">
@@ -141,6 +147,7 @@
 
 
                 <%include footer%>
+
 
             </div> <!-- end container -->
         </div>
