@@ -59,8 +59,8 @@ app.all('/med*', med);
 app.all('/login*', login);
 app.all('/match*', match);
 app.all('/howto*', index);
-app.all('/coming*', index);
 app.all('/', index);
+app.all('/coming*', index);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -83,10 +83,10 @@ app.use(function(err, req, res, next) {
 
 
 //localhost 실행시
- app.listen(3010,function(){
-   console.log("Server connected");
- });
+// app.listen(3010,function(){
+//   console.log("Server connected");
+// });
 
-//app.listen(process.env.PORT, process.env.IP);  //c9 실행시 알아서 주석을 없애요
+app.listen(process.env.PORT, process.env.IP);  //c9 실행시 알아서 주석을 없애요
 
 module.exports = app;
