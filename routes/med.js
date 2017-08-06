@@ -128,26 +128,40 @@ router.get('/med/:id', isLoggedIn,function(req, res) {
 
 /*update 페이지로 고우*/
 //LOGIN
+/*
 router.get('/med/:id/update', isLoggedIn,function(req, res) {
     Med.findById(req.params.id, function(err,content){
         if (err) return res.json({success: false, message: err});
-        res.render('med_form', { data : content , showornot : 1 ,user:req.user} );
+        res.render('med_update', { data2 : content ,user:req.user} );
     });    
 });
-
+*/
 /*update 페이지 update*/
 //LOGIN + 내꺼
 /*
 router.post('/med/:id/update', upload.single('filetoupload'),isLoggedIn,function(req, res) {
+
+    if(!(req.body.due_date==data2.due_date)){
+        var due_date = data2.due_date;
+        var strDate = due_date.split('/');
+        var mydate = new Date(parseInt(strDate[2],10),parseInt(strDate[0],10),parseInt(strDate[1],10),23,59);        
+    }
+
     var updated={title: req.body.title, content:req.body.content, writer_id:req.body.writer_id, email:req.body.email, due_date:req.body.due_date, pay:req.body.pay, finished:req.body.finished, summary:req.body.summary, image:req.body.image};
-	Med.update(req.params.id, updated, function (err,content) {
-		if(err) return res.json({success: false, message: err, user:req.user});
-		res.redirect('/med/:id');
-	});
+
+    User.findById(req.user, function(err,data){
+        if(err)  return res.json({success:false, messsage:err});
+        console.log(updated);
+
+
+    Med.update(req.params.id, updated, function (err,content) {
+        if(err) return res.json({success: false, message: err, user:req.user});
+        res.redirect('/med/:id');
+    });
 
 });
-
 */
+
 //router.post('/med/:id/update', upload.single('filetoupload'),isLoggedIn, function (req, res) {
   //  console.log(req.body);
     
@@ -164,13 +178,11 @@ router.post('/med/:id/update', upload.single('filetoupload'),isLoggedIn,function
 
 //});
 
-
-
 /*update 해서 지우기로함*/
 //LOGIN
 router.delete('/med/:id', isLoggedIn,function(req, res) {
     Med.remove({ _id : req.params.id }, function (err,user) {
-    	if(err) return res.json({success: false, message: err,user:req.user});
+       if(err) return res.json({success: false, message: err,user:req.user});
       res.redirect('/med');
   });
 });
