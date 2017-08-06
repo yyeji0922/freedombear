@@ -42,7 +42,7 @@ var bootstrapWizardCreate = function(element, options) {
 		$($settings.nextSelector, element).toggleClass('doregister', (obj.currentIndex() >= obj.navigationLength()));
 		
 		$('.lastlast').remove()
-		$('.doregister').append('<button class="btn btn-primary btn-custom waves-effect waves-light w-md lastlast" type="submit">Register</button>');
+		$('.doregister').append('<button onclick="checkcheck()" class="btn btn-primary btn-custom waves-effect waves-light w-md lastlast" type="submit">Register</button>');
 
 
 		$($settings.nextSelector, element).toggleClass('hidden', (obj.currentIndex() >= obj.navigationLength() && $($settings.finishSelector, element).length > 0));

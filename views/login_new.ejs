@@ -20,7 +20,7 @@
     }
 
 </style>
-    <link href="../plugins/bootstrap-sweetalert/sweet-alert.css" rel="stylesheet" type="text/css">
+    <link href="/stylesheets/plugins/sweet-alert.css" rel="stylesheet" type="text/css">
 </head>
 
     <body class="login">
@@ -37,7 +37,7 @@
             <!--</div>-->
             
              <div class="col-lg-12">
-                        <form class="form-horizontal m-t-20" id="user" action="/login/new" method="post">
+                        <form class="form-horizontal m-t-20 commentForm" id="user" action="/login/new" method="post">
                             <div id="progressbarwizard" class="pull-in" >
                                 <ul style="visibility:hidden">
                                     <li><a href="#account-2" data-toggle="tab">Account</a></li>
@@ -61,33 +61,33 @@
                                         <div class="row">
                                             <div class="form-group">
                                                 <div class="col-xs-12">
-                                                    <input class="form-control" type="text" required="" placeholder="아이디 입력" name="user[uid]">
+                                                    <input id="new_id" class="form-control" type="text" required="" placeholder="아이디 입력" name="user[uid]">
                                                     <i class="md md-perm-identity form-control-feedback l-h-34"></i>
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <div class="col-xs-12">
-                                                    <input class="form-control" type="password" required="" placeholder="비밀번호 입력" name="user[password]">
+                                                    <input id="new_pw" class="form-control" type="password" required="" placeholder="비밀번호 입력" name="user[password]">
                                                     <i class="md md-vpn-key form-control-feedback l-h-34"></i>
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <div class="col-xs-12">
-                                                    <input class="form-control" type="password" required="" placeholder="비밀번호 확인" name="user[passwordConfirmation]">
+                                                    <input id="new_pw_confirm" class="form-control" type="password" required="" placeholder="비밀번호 확인" name="user[passwordConfirmation]">
                                                     <i class="md md-done form-control-feedback l-h-34"></i>
                                                 </div>
                                             </div>
                                             
                                              <div class="form-group">
                                                 <div class="col-xs-12">
-                                                    <input class="form-control" type="email" required="" placeholder="Email" name="user[email]">
+                                                    <input id="new_email" class="form-control" type="email" required="" placeholder="Email" name="user[email]">
                                                     <i class="md md-email form-control-feedback l-h-34"></i>
                                                 </div>
                                             </div>
                             
                                             <div class="form-group">
                                                 <div class="col-xs-12">
-                                                    <input class="form-control" type="text" required="" placeholder="이용자 이름" name="user[name]">
+                                                    <input id="new_name" class="form-control" type="text" required="" placeholder="이용자 이름" name="user[name]">
                                                     <i class="md md-account-circle form-control-feedback l-h-34"></i>
                                                 </div>
                                             </div>
@@ -106,31 +106,31 @@
                                                         </label>
                                                     </div>
                                                     <div class="checkbox checkbox-primary form-group">
-                                                        <input class="majorcl major_checkbox" id="checkbox2" type="checkbox" name="major" value=1>
+                                                        <input class="majorcl major_checkbox" id="majorcl_checkbox2" type="checkbox" name="major" value=1>
                                                         <label for="checkbox2">
                                                             <b>생명/의학/약학</b>
                                                         </label>
                                                     </div>
                                                     <div class="checkbox checkbox-success form-group">
-                                                        <input class="majorcl major_checkbox" id="checkbox3" type="checkbox" name="major" value=2>
+                                                        <input class="majorcl major_checkbox" id="majorcl_checkbox3" type="checkbox" name="major" value=2>
                                                         <label for="checkbox3">
                                                             <b>금융/경제</b>
                                                         </label>
                                                     </div>
                                                     <div class="checkbox checkbox-info form-group">
-                                                        <input class="majorcl major_checkbox" id="checkbox4" type="checkbox" name="major" value=3>
+                                                        <input class="majorcl major_checkbox" id="majorcl_checkbox4" type="checkbox" name="major" value=3>
                                                         <label for="checkbox4">
                                                             <b>IT/공학</b>
                                                         </label>
                                                     </div>
                                                     <div class="checkbox checkbox-warning form-group">
-                                                        <input class="majorcl major_checkbox" id="checkbox5" type="checkbox" name="major" value=4>
+                                                        <input class="majorcl major_checkbox" id="majorcl_checkbox5" type="checkbox" name="major" value=4>
                                                         <label for="checkbox5">
                                                             <b>사회/교육/심리</b>
                                                         </label>
                                                     </div>
                                                     <div class="checkbox checkbox-danger form-group">
-                                                        <input class="majorcl major_checkbox" id="checkbox6" type="checkbox" name="major" value=5>
+                                                        <input class="majorcl major_checkbox" id="majorcl_checkbox6" type="checkbox" name="major" value=5>
                                                         <label for="checkbox6">
                                                             <b>언어</b>
                                                         </label>
@@ -152,19 +152,19 @@
                                                     </label>
                                                 </div>
                                                 <div class="checkbox checkbox-primary form-group">
-                                                    <input class="langcl lang_checkbox" id="checkbox2" type="checkbox" name="lang" value=1>
+                                                    <input class="langcl lang_checkbox" id="langcl_checkbox2" type="checkbox" name="lang" value=1>
                                                     <label for="checkbox2">
                                                         <b>Excel</b>
                                                     </label>
                                                 </div>
                                                 <div class="checkbox checkbox-success form-group">
-                                                    <input class="langcl lang_checkbox" id="checkbox3" type="checkbox" name="lang" value=2>
+                                                    <input class="langcl lang_checkbox" id="langcl_checkbox3" type="checkbox" name="lang" value=2>
                                                     <label for="checkbox3">
                                                         <b>Python</b>
                                                     </label>
                                                 </div>
                                                 <div class="checkbox checkbox-info form-group">
-                                                    <input class="langcl lang_checkbox" id="checkbox4" type="checkbox" name="lang" value=3>
+                                                    <input class="langcl lang_checkbox" id="langcl_checkbox4" type="checkbox" name="lang" value=3>
                                                     <label for="checkbox4">
                                                         <b>R/SAS</b>
                                                     </label>
@@ -192,7 +192,7 @@
                                         </li>
                                         <li class="previous"><a href="#" class="btn btn-primary waves-effect waves-light">Previous</a></li>
                                         <li class="next last" style="display:none;"><a href="#">Last</a></li>
-                                        <li class="next"><a href="#" class="btn btn-primary waves-effect waves-light" onclick="checkcheck()">&nbsp Next &nbsp</a></li>
+                                        <li class="next"><a href="#" class="btn btn-primary waves-effect waves-light" id="sa-title">&nbsp Next &nbsp</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -218,7 +218,10 @@
         <script src="/js/plugins/jquery.bootstrap.wizard.js"></script>
         <script src="/js/plugins/jquery.validate.min.js"></script>
 
-       
+               <!-- Sweet-Alert  -->
+        <script src="/js/plugins/sweet-alert.min.js"></script>
+        <script src="/js/pages/jquery.sweet-alert.init.js"></script>
+
        
        <script type="text/javascript">
             $(document).ready(function() {
@@ -279,8 +282,7 @@
                       $("#langcl_checkbox0").attr("checked", false);
                }
                
-              var legchecked = $('input[class=lang_checkbox]:checked').length;
-                if (legchecked){ $("#langcl_checkbox0").attr("checked", true);}; 
+               
             });
             
             $('#langcl_checkbox0').on('change', function() {
@@ -311,13 +313,89 @@
                }
             });
         
-            function checkcheck(){
-                temp=$('.form-control').val();
-                if(temp==""){
-                    alert("빈 칸을 채워주세요")    
-                }
+            // $('#sa-title').click(function () {
+            
+            //     temptemp=$('#new_id').val();
+            //     console.log(temptemp)
+            //         if(temptemp==""){
+            //             swal("아이디 입력해주세요")                    
+            //         }
                 
-            }
+                
+            //     temptemp=$('#new_pw').val();
+            //     console.log(temptemp)
+            //         if(temptemp==""){
+            //             swal("비밀번호 입력해주세요")                    
+            //         }
+                    
+            //     temptemp=$('#new_pw_confirm').val();
+            //     console.log(temptemp)
+            //         if(temptemp==""){
+            //             swal("비밀번호 확인 입력해주세요")                    
+            //         }
+                
+            //     temptemp=$('#new_email').val();
+            //     console.log(temptemp)
+            //         if(temptemp==""){
+            //             swal("이메일 입력해주세요")                    
+            //         }    
+                    
+            //     temptemp=$('#new_name').val();
+            //     console.log(temptemp)
+            //         if(temptemp==""){
+            //             swal("닉네임 입력해주세요")                    
+            //         }    
+                    
+                
+            //     var legchecked = $('input[class=lang_checkbox]:checked').length;
+            //     if (legchecked){ $("#langcl_checkbox0").attr("checked", true);};
+                
+            //     var legchecked = $('input[class=major_checkbox]:checked').length;
+            //     if (legchecked){ $("#major_checkbox0").attr("checked", true);};
+            // });
+                
+            function checkcheck(){
+                temptemp=$('#new_id').val();
+                console.log(temptemp)
+                    if(temptemp==""){
+                        swal("아이디 입력해주세요")                    
+                    }
+                
+                
+                temptemp=$('#new_pw').val();
+                console.log(temptemp)
+                    if(temptemp==""){
+                        swal("비밀번호 입력해주세요")                    
+                    }
+                    
+                temptemp=$('#new_pw_confirm').val();
+                console.log(temptemp)
+                    if(temptemp==""){
+                        swal("비밀번호 확인 입력해주세요")                    
+                    }
+                
+                temptemp=$('#new_email').val();
+                console.log(temptemp)
+                    if(temptemp==""){
+                        swal("이메일 입력해주세요")                    
+                    }    
+                    
+                temptemp=$('#new_name').val();
+                console.log(temptemp)
+                    if(temptemp==""){
+                        swal("닉네임 입력해주세요")                    
+                    }    
+                    
+                
+                var legchecked = $('input[class=lang_checkbox]:checked').length;
+                if (legchecked){ $("#langcl_checkbox0").attr("checked", true);};
+                
+                var legchecked = $('input[class=major_checkbox]:checked').length;
+                if (legchecked){ $("#major_checkbox0").attr("checked", true);};
+            }   
+                
+                
+              
         </script>
 	</body>
 </html>

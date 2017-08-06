@@ -21,12 +21,19 @@
         });
 
         //A title with a text under
-        $('#sa-title').click(function () {
-            swal("Here's a message!", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lorem erat, tincidunt vitae ipsum et, pellentesque maximus enim. Mauris eleifend ex semper, lobortis purus sed, pharetra felis")
-        });
+        // $('#sa-title').click(function () {
+        //     swal("뭐야")
+        //     temptemp=$('.form-control').val();
+        //     console.log(temptemp)
+        //         if(temptemp==""){
+        //             swal("빈 칸 안 채우면 가입 안 됩니다.")                    
+        //         }
+            
+        // });
 
         //Success Message
         $('#sa-success').click(function () {
+            
             swal("Good job!", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lorem erat, tincidunt vitae ipsum et, pellentesque maximus enim. Mauris eleifend ex semper, lobortis purus sed, pharetra felis", "success")
         });
 
