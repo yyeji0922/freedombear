@@ -1,40 +1,36 @@
 <% include main %>
 
 </head>
+<style>
+        html, body {
+      overflow-y:hidden;
+      height:100%;
+    }
+    
+    #video { 
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      overflow: hidden;
+    }
+    
+</style>
     <body>
 
 
         <% include navbar%>        
-        <!-- =======================
-             ===== START PAGE ======
-             ======================= -->
+       <video  id="video" preload="auto" autoplay="true" loop="loop" muted="muted" volume="0">
+        <source src="/images/coming.mp4">
+        </video>
 
         <div class="wrapper">
             <div class="container">
 
-                <!-- Page-Title -->
-
-                <!-- Page-Title -->
-                <!--<div class="row" style="background-image:url('/images/login.jpg'); backgorund-size: cover;margin-bottom:20px">-->
-                <!--    아아아아아아-->
-                <!--</div>-->
-                여기다가 이용방법 영상을 넣고싶
-                <!-- end row -->
-
                 
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                <!-- end row -->
-
-
 
 
                <%include footer%>
