@@ -76,7 +76,14 @@
                                         </div>
                                     </div> <!-- media -->
                                     <p><b>예상금액: <%=data.pay%></b>&nbsp;&nbsp;
-                                        <b>마감날짜: <%=data.pay%></b>
+                                        <%var due_dateformat = data.due_date;
+                                            var month = ("0"+due_dateformat.getMonth().toString()).substr(-2);
+                                            var date = ("0"+due_dateformat.getDate().toString()).substr(-2);
+                                            var year = due_dateformat.getFullYear().toString();
+                                            var hour = ("0"+due_dateformat.getHours().toString()).substr(-2);
+                                            var minute = ("0"+due_dateformat.getMinutes().toString()).substr(-2);
+                                            due_dateformat = year+"/"+month+"/"+date+" "+hour +":"+minute;%>
+                                        <b>마감날짜: <%=due_dateformat%></b>
                                     </p>
                                     <p><b><%=data.summary%></b></p>
                                     <%=data.content%>
