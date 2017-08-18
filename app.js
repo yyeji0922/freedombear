@@ -42,8 +42,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(flash());
 app.use(session({
-  secret : "freedombear",
-  key: "freedombear",
+  secret : config.server_account.secret,
+  key: config.server_account.key,
   resave: false,
   saveUninitialized: true,
   cookie: {
