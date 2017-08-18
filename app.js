@@ -24,8 +24,7 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-mongoose.connect('mongodb://'+config.account.mongoid+':'+config.account.mongopw+'@ds129030.mlab.com:29030/freedombear');
-
+mongoose.connect('mongodb://'+config.account.mongoid+':'+config.account.mongopw+'@ds123351.mlab.com:23351/freedombear');
 var db = mongoose.connection;
 db.once("open",function(){
   console.log("DB connected!");
@@ -83,10 +82,10 @@ app.use(function(err, req, res, next) {
 
 
 //localhost 실행시
-// app.listen(3010,function(){
-//   console.log("Server connected");
-// });
+ app.listen(3010,function(){
+   console.log("Server connected");
+ });
 
-app.listen(process.env.PORT, process.env.IP);  //c9 실행시 알아서 주석을 없애요
+//app.listen(process.env.PORT, process.env.IP);  //c9 실행시 알아서 주석을 없애요
 
 module.exports = app;
